@@ -1,0 +1,53 @@
+{
+  "Common": {
+    "nav": {
+      "home": "Accueil",
+      "about": "À propos",
+      "projects": "Réalisations",
+      "pricing": "Tarifs",
+      "contact": "Contact"
+    },
+    "footer": {
+      "copyright": "© {year} MonSite. Tous droits réservés.",
+      "madeWith": "Fait avec <heart /> à Paris"
+    },
+    "actions": {
+      "readMore": "Lire la suite",
+      "goBack": "Retour",
+      "goBackHome": "Retour à l'Accueil",
+      "goHome": "Aller à l'Accueil",
+      "submit": "Envoyer",
+      "cancel": "Annuler",
+      "loading": "Chargement…"
+    },
+    "errors": {
+      "title": "Une Erreur est survenu",
+      "description": "Oups nous sommes désolés, il semblerait qu'une erreur soit survenue",
+      "401": {
+        "title": "Non autorisé",
+        "description": "Vous devez être connecté pour voir cette page."
+      },
+      "403": {
+        "title": "Accès interdit",
+        "description": "Vous n'avez pas les droits nécessaires pour accéder à cette page."
+      },
+      "404": {
+        "title": "Page introuvable",
+        "description": "Oups ! La page que vous recherchez semble avoir disparu dans le code. . ."
+      },
+      "500": {
+        "title": "Erreur serveur",
+        "description": "Un problème est survenu de notre côté. Nous travaillons à le résoudre."
+      },
+      "503": {
+        "title": "Erreur Interne du serveur",
+        "description": "Le service est temporairement indisponible. Réessayez dans quelques instants."
+      }
+    },
+    "locale": {
+      "switchTo": "Passer en {locale}",
+      "fr": "Français",
+      "en": "English"
+    }
+  }
+}
