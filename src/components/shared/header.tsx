@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import { SwitchLang } from "./toggle-lang";
 import { Messages, NamespaceKeys, useTranslations } from "next-intl";
 import { Link, usePathname } from "@/src/i18n/navigation";
+import Image from "next/image";
 
 export function Header() {
   const pathname = usePathname();
@@ -45,10 +46,14 @@ export function Header() {
     >
       <nav className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between">
         <Link href={"/"} className="flex items-center gap-3 group">
-          <div className="size-10 border border-primary flex items-center justify-center group-hover:bg-primary transition-colors duration-300">
-            <span className="font-heading text-primary group-hover:text-background font-bold transition-colors duration-300">
-              YWS
-            </span>
+          <div className="size-10  flex items-center justify-center">
+            <Image
+              src={"/logo-white-gpt.png"}
+              alt="logo de Yvernaux Web Solutions"
+              width={5}
+              height={5}
+              className="size-full"
+            />
           </div>
           <div className="hidden md:block">
             <p className="text-lg">Yvernaux</p>
@@ -62,9 +67,9 @@ export function Header() {
                 href={item.path}
                 // ${item.path === "/about" || item.path === "/projects" ? "opacity-25 cursor-not-allowed transition-none hover:text-foreground" : ""}
                 style={{
-                  color: `${(item.path === "/about" || item.path === "/projects") && "var(--color-foreground)"}`,
+                  color: `${item.path === "/about" || item.path === "/projects" ? "var(--color-foreground)" : ""}`,
                 }}
-                className={`uppercase text-sm font-medium ${pathname === item.path ? "text-primary" : ""} ${item.path === "/about" || item.path === "/projects" ? "opacity-25 cursor-not-allowed transition-none hover:text-foreground" : ""} tracking-widest transition-colors duration-300 hover:text-primary`}
+                className={`uppercase text-sm text-foreground font-medium ${pathname === item.path ? "text-primary" : ""} ${item.path === "/about" || item.path === "/projects" ? "opacity-25 cursor-not-allowed transition-none" : ""} tracking-widest transition-colors duration-300 hover:text-primary`}
               >
                 {t(item.id as NamespaceKeys<Messages, string>)}
               </Link>

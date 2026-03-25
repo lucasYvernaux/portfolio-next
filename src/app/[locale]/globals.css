@@ -9,7 +9,7 @@
 
 @theme {
   --color-background: var(--color-zinc-800);
-  --color-foreground: var(--color-gray-100);
+  --color-foreground: var(--color-zinc-100);
   --color-gray-custom: #121212;
   --color-primary: #c4a35a;
   --color-surface: rgb(42 42 42 / var(--tw-bg-opacity, 1));
@@ -21,7 +21,7 @@
 
 .dark {
   --color-background: #0a0a0a;
-  --color-foreground: var(--color-zinc-800);
+  --color-foreground: var(--color-zinc-100);
   --color-primary: #c4a35a;
   --color-surface-border: "rgb(61 61 61 / var(--tw-border-opacity, 1))";
 }
