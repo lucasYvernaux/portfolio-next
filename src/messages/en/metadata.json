@@ -1,0 +1,20 @@
+{
+  "Metadata": {
+    "site": {
+      "title": "Yvernaux Web Solutions | Développeur Web & IA",
+      "description": "Web development and Artificial Intelligence specialist."
+    },
+    "home": {
+      "title": "Web & IA Developer - Custom Solutions",
+      "description": "Web development and Artificial Intelligence specialist. Yvernaux Web Solutions offers innovative solutions for business. Contact us for a free quote."
+    },
+    "about": {
+      "title": "About Us",
+      "description": "Discover Yvernaux Web Solutions, expert in web development and AI. Our mission : to provide innovative and high-performance solutions for business"
+    },
+    "blog": {
+      "title": "Blog",
+      "description": "Articles and news from MonSite."
+    }
+  }
+}

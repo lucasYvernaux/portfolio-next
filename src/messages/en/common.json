@@ -1,0 +1,53 @@
+{
+  "Common": {
+    "nav": {
+      "home": "Home",
+      "about": "About",
+      "projects": "Projects",
+      "pricing": "Pricing",
+      "contact": "Contact"
+    },
+    "footer": {
+      "copyright": "© {year} MonSite. All rights reserved.",
+      "madeWith": "Made with <heart /> in Paris"
+    },
+    "actions": {
+      "readMore": "Read more",
+      "goBack": "Go back",
+      "goBackHome": "Back to home",
+      "goHome": "Go to home",
+      "submit": "Submit",
+      "cancel": "Cancel",
+      "loading": "Loading…"
+    },
+    "errors": {
+      "title": "An Error has occured",
+      "description": "Oops, we're sorry, it looks like an error occured",
+      "401": {
+        "title": "Unauthorized access",
+        "description": "You must be logged in to view this page."
+      },
+      "403": {
+        "title": "Forbidden access",
+        "description": "You do not have the necessary permissions to access this page."
+      },
+      "404": {
+        "title": "Page not found",
+        "description": "Oops! The page you're looking for seems to have disappeared from the code. . ."
+      },
+      "500": {
+        "title": "Internal Server Error",
+        "description": "We're experiencing a problem on our end. We're working to resolve it."
+      },
+      "503": {
+        "title": "Service Unavailable",
+        "description": "The service is temporarily unavailable. Please try again later."
+      }
+    },
+    "locale": {
+      "switchTo": "Switch to {locale}",
+      "fr": "Français",
+      "en": "English"
+    }
+  }
+}

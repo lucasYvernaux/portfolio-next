@@ -1,0 +1,11 @@
+{
+  "Home": {
+    "title": "À propos",
+    "intro": "Nous sommes une équipe passionnée par <bold>la technologie</bold> et <bold>le design</bold>.",
+    "team": {
+      "title": "Notre équipe",
+      "members": "{count, plural, =0 {Aucun membre} one {# membre} other {# membres}}"
+    },
+    "breadcrumb": "À propos"
+  }
+}

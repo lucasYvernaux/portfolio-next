@@ -1,0 +1,11 @@
+{
+  "About": {
+    "title": "About",
+    "intro": "We are a passionnate team by <b>technology</b> and <b>design</b>.",
+    "team": {
+      "title": "Notre équipe",
+      "members": "{count, plural, =0 {Aucun membre} one {# membre} other {# membres}}"
+    },
+    "breadcrumb": "À propos"
+  }
+}
