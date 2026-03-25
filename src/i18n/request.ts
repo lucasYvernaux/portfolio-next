@@ -6,8 +6,8 @@ import { env } from "@/env";
 const NAMESPACE_FILES = [
   { file: "metadata", rootKey: "Metadata" },
   { file: "common", rootKey: "Common" },
-  { file: "about", rootKey: "About" },
   { file: "home", rootKey: "Home" },
+  { file: "about", rootKey: "About" },
   // { file: "blog", rootKey: "Blog" },
 ] as const;
 

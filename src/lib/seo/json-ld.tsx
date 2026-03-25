@@ -1,3 +1,4 @@
+import { StaticPathname } from "../types";
 import { SITE_URL, SITE_NAME, type Locale } from "./constants";
 import { buildUrl } from "./metadata";
 
@@ -75,7 +76,7 @@ export function WebSiteJsonLd({ locale }: { locale: Locale }) {
 
 type BreadcrumbItem = {
   name: string;
-  path: string;
+  path: StaticPathname;
 };
 
 export function BreadcrumbJsonLd({
@@ -114,7 +115,7 @@ export function WebPageJsonLd({
   locale: Locale;
   title: string;
   description: string;
-  path: string;
+  path: StaticPathname;
   datePublished?: string;
   dateModified?: string;
 }) {

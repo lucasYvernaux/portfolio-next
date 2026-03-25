@@ -2,18 +2,18 @@
 
 import { usePathname, useRouter } from "@/src/i18n/navigation";
 import { routing } from "@/src/i18n/routing";
+import { StaticPathname } from "@/src/lib/types";
 import { useLocale, useTranslations } from "next-intl";
 
 export function SwitchLang() {
   const locale = useLocale();
-  const pathname = usePathname(); // route INTERNE ("/about", pas "/a-propos")
+  const pathname = usePathname() as StaticPathname; // route INTERNE ("/about", pas "/a-propos")
   const router = useRouter();
   const t = useTranslations("Common.locale");
 
   const handleSwitch = (nextLocale: string) => {
     router.replace(
-      // @ts-expect-error - t
-      { pathname },
+      { pathname: pathname as StaticPathname },
       { locale: nextLocale },
     );
   };
