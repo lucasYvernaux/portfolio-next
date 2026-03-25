@@ -12,7 +12,10 @@ export function SwitchLang() {
   const t = useTranslations("Common.locale");
 
   const handleSwitch = (nextLocale: string) => {
-    router.replace({ pathname }, { locale: nextLocale });
+    router.replace(
+      { pathname: pathname as StaticPathname },
+      { locale: nextLocale },
+    );
   };
 
   return (
