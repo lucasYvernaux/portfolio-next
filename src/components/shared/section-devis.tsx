@@ -1,19 +1,24 @@
 import Link from "next/link";
 import { heading, text } from "@/src/lib/utils/primitives";
 import { ArrowRight } from "lucide-react";
+import { getTranslations } from "next-intl/server";
 
 interface PropsSectionDevis {
   title: string;
   paragraph?: string;
 }
 
-export default function SectionDevis({ title, paragraph }: PropsSectionDevis) {
+export default async function SectionDevis({
+  title,
+  paragraph,
+}: PropsSectionDevis) {
+  const t = await getTranslations("Common.actions");
   return (
-    <section className="relative py-24 hex-pattern bg-background">
-      <div className="absolute inset-0 bg-linear-to-r from-background via-transparent to-background"></div>
+    <section className="relative py-24 hex-pattern bg-[#0a0a0a] text-foreground">
+      <div className="absolute inset-0 bg-linear-to-r from-[#0a0a0a] via-transparent to-[#0a0a0a]"></div>
       <div className="content relative max-w-4xl mx-auto flex flex-col items-center justify-center gap-4 px-6 md:px-12">
         <h2
-          className={`${heading({ size: "sm" })} capitalize`}
+          className={`${heading({ size: "sm" })} `}
           style={{ fontWeight: "normal" }}
         >
           {title}
@@ -25,7 +30,7 @@ export default function SectionDevis({ title, paragraph }: PropsSectionDevis) {
           href="/contact"
           data-discover="true"
         >
-          Démarrer un projet
+          {t("startProject")}
           <ArrowRight
             size={20}
             className="transition-all duration-300 group-hover:translate-x-2"

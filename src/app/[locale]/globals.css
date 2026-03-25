@@ -9,9 +9,10 @@
 
 @theme {
   --color-background: var(--color-zinc-800);
-  --color-foreground: #0a0a0a;
+  --color-foreground: var(--color-gray-100);
   --color-gray-custom: #121212;
   --color-primary: #c4a35a;
+  --color-surface: rgb(42 42 42 / var(--tw-bg-opacity, 1));
   --color-surface-border: "rgb(61 61 61 / var(--tw-border-opacity, 1))";
   --font-serif: var(--font-playfair), serif;
   --font-mono: var(--font-jetbrains), monospace;
@@ -20,7 +21,7 @@
 
 .dark {
   --color-background: #0a0a0a;
-  --color-foreground: #fff;
+  --color-foreground: var(--color-zinc-800);
   --color-primary: #c4a35a;
   --color-surface-border: "rgb(61 61 61 / var(--tw-border-opacity, 1))";
 }

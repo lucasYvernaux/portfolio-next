@@ -79,7 +79,7 @@ export default async function LocalLayout({
         <NextIntlClientProvider locale={locale} messages={messages}>
           <ThemeProvider>
             <Header />
-            <main>{children}</main>
+            <main className="bg-background text-foreground">{children}</main>
             <div className="fixed bottom-4 right-4 z-50">
               <SwitchTheme />
             </div>

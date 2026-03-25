@@ -1,0 +1,10 @@
+{
+  "Error": {
+    "NotFound": {
+      "title": "Page Not Found",
+      "description": "English La page que vous recherchez n'existe pas ou a été déplacé"
+    },
+    "backHome": "Back to home",
+    "goBack": "Go Back"
+  }
+}

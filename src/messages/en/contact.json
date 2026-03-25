@@ -1,0 +1,19 @@
+{
+  "Contact": {
+    "title": "Let's talk about your project",
+    "introduction": "Do you have a project in mind ? I'd be happy to discuss this with you.",
+    "information": {
+      "email": "email",
+      "phone": "phone",
+      "location": "location",
+      "follow": "Follow me"
+    },
+    "tooltip": {
+      "email": "Send Email",
+      "phone": "Call me",
+      "linkedin": "Go to my LinkedIn page",
+      "gitlab": "Go to my GitLab page",
+      "github": "Go to my GitHub page"
+    }
+  }
+}
