@@ -25,7 +25,7 @@ export function SwitchLang() {
           key={l}
           onClick={() => handleSwitch(l)}
           disabled={l === locale}
-          className="px-2 py-1 text-sm cursor-pointer rounded-md disabled:opacity-40 hover:bg-muted transition-colors uppercase"
+          className="px-2 py-1 text-sm cursor-pointer rounded-md disabled:opacity-25 disabled:cursor-not-allowed hover:bg-muted transition-colors uppercase"
           title={t("switchTo", { locale: t(l) })}
         >
           {l}

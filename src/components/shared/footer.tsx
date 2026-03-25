@@ -1,6 +1,7 @@
 "use client";
 
 import { Link as NavLink } from "@/src/i18n/navigation";
+import Image from "next/image";
 
 import Link from "next/link";
 
@@ -53,7 +54,7 @@ export function Footer() {
               x-dynamic="false"
             >
               <div
-                className="w-10 h-10 border border-primary flex items-center justify-center"
+                className="w-10 h-10 flex items-center justify-center"
                 x-file-name="Footer"
                 x-line-number={17}
                 x-column={14}
@@ -61,17 +62,13 @@ export function Footer() {
                 x-id="Footer_17_14"
                 x-dynamic="false"
               >
-                <span
-                  className="font-heading text-primary text-xl font-bold"
-                  x-file-name="Footer"
-                  x-line-number={18}
-                  x-column={16}
-                  x-component="span"
-                  x-id="Footer_18_16"
-                  x-dynamic="false"
-                >
-                  LY
-                </span>
+                <Image
+                  src={"/logo-white-gpt.png"}
+                  alt="logo de Yvernaux Web Solutions"
+                  width={5}
+                  height={5}
+                  className="size-full"
+                />
               </div>
               <div
                 x-file-name="Footer"
