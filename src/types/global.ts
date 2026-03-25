@@ -1,0 +1,15 @@
+import type frCommon from "../messages/fr/common.json";
+import type frMetadata from "../messages/fr/metadata.json";
+import type frAbout from "../messages/fr/about.json";
+import type frHome from "../messages/fr/home.json";
+
+type Messages = typeof frCommon &
+  typeof frMetadata &
+  typeof frAbout &
+  typeof frHome;
+
+declare module "next-intl" {
+  interface AppConfig {
+    Messages: Messages;
+  }
+}

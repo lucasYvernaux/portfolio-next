@@ -1,0 +1,20 @@
+{
+  "Metadata": {
+    "site": {
+      "title": "MonSite",
+      "description": "Description du site pour le SEO en français."
+    },
+    "home": {
+      "title": "Développeur Web & IA - Solutions sur mesure",
+      "description": "Spécialiste du développement web et de l’intelligence artificielle. Yvernaux Web Solutions propose des solutions innovantes pour les entreprises. Contactez-nous pour un devis gratuit."
+    },
+    "about": {
+      "title": "Qui sommes-nous ?",
+      "description": "Découvrez Yvernaux Web Solutions expert en développement web et IA. Notre mission : fournir des solutions innovantes et performantes pour les entreprises."
+    },
+    "blog": {
+      "title": "Blog",
+      "description": "Articles et actualités de MonSite."
+    }
+  }
+}
