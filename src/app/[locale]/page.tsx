@@ -50,14 +50,11 @@ export default async function HomePage({
         locale={locale as Locale}
         title={t("title")}
         description={t("title")}
-        path="/about"
+        path="/"
       />
       <BreadcrumbJsonLd
         locale={locale as Locale}
-        items={[
-          { name: tCommon("nav.home"), path: "/" },
-          { name: t("breadcrumb"), path: "/about" },
-        ]}
+        items={[{ name: tCommon("nav.home"), path: "/" }]}
       />
 
       <div className="relative">
@@ -77,7 +74,7 @@ export default async function HomePage({
                   className="font-heading text-5xl md:text-7xl font-bold text-gray-100 mb-4"
                   data-testid="hero-name"
                 >
-                  Lucas Yvernaux
+                  {t("title")}
                 </h1>
                 <h2
                   className="font-heading text-2xl md:text-3xl text-primary mb-6"
