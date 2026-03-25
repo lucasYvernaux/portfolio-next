@@ -5,6 +5,7 @@ import { useLocale, useTranslations } from "next-intl";
 import { Languages } from "lucide-react";
 import { usePathname, useRouter } from "@/src/i18n/navigation";
 import { LOCALES, type Locale } from "@/src/i18n/locale";
+import { StaticPathname } from "@/src/lib/types";
 
 /**
  * Sélecteur de langue.
@@ -25,7 +26,10 @@ export function LocaleSwitcher() {
     if (!LOCALES.includes(newLocale)) return;
     if (newLocale === locale) return;
 
-    router.replace(pathname, { locale: newLocale });
+    router.replace(
+      { pathname: pathname as StaticPathname },
+      { locale: newLocale },
+    );
   }
 
   return (
