@@ -8,6 +8,9 @@ const NAMESPACE_FILES = [
   { file: "common", rootKey: "Common" },
   { file: "home", rootKey: "Home" },
   { file: "about", rootKey: "About" },
+  { file: "contact", rootKey: "Contact" },
+  { file: "projects", rootKey: "Projects" },
+  { file: "pricing", rootKey: "Pricing" },
   // { file: "blog", rootKey: "Blog" },
 ] as const;
 

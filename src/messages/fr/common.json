@@ -12,6 +12,7 @@
       "madeWith": "Fait avec <heart /> à Paris"
     },
     "actions": {
+      "startProject": "Démarrer un Projet",
       "readMore": "Lire la suite",
       "goBack": "Retour",
       "goBackHome": "Retour à l'Accueil",
@@ -48,6 +49,15 @@
       "switchTo": "Passer en {locale}",
       "fr": "Français",
       "en": "English"
+    },
+    "message": {
+      "coming": "à venir"
+    },
+    "components": {
+      "sectionDevis": {
+        "title": "Parlons de votre projet",
+        "text": "Vous avez un projet en tête ? Une question ? N'hésitez pas à me contacter. Un appel de 30 minutes peut suffire pour clarifier votre besoin et vous proposer une approche."
+      }
     }
   }
 }

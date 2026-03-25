@@ -12,6 +12,7 @@
       "madeWith": "Made with <heart /> in Paris"
     },
     "actions": {
+      "startProject": "Start a Project",
       "readMore": "Read more",
       "goBack": "Go back",
       "goBackHome": "Back to home",
@@ -48,6 +49,15 @@
       "switchTo": "Switch to {locale}",
       "fr": "Français",
       "en": "English"
+    },
+    "message": {
+      "coming": "coming soon"
+    },
+    "components": {
+      "sectionDevis": {
+        "title": "Let's talk about your project",
+        "text": "Do you have a project in mind ? A question ? Feel free to contact me. A 30-minute call is often all it takes to understand your needs and suggest a solution."
+      }
     }
   }
 }
