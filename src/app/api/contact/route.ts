@@ -1,3 +1,3 @@
-export function calendar() {
+export function contact() {
   return;
 }
