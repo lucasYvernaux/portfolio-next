@@ -1,0 +1,19 @@
+{
+  "Contact": {
+    "title": "Parlons de Votre Projet",
+    "introduction": "Vous avez un projet en tête ? Je serais ravi d'en discuter avec vous.",
+    "information": {
+      "email": "email",
+      "phone": "téléphone",
+      "location": "localisation",
+      "follow": "Suivez-moi"
+    },
+    "tooltip": {
+      "email": "Envoyer un email",
+      "phone": "Appelez-moi",
+      "linkedin": "Aller à ma page Linkedin",
+      "gitlab": "Aller à ma page GitLab",
+      "github": "Aller à ma page GitHub"
+    }
+  }
+}
