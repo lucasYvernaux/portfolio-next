@@ -9,9 +9,9 @@ type ChangeFrequency = MetadataRoute.Sitemap[number]["changeFrequency"];
 
 type StaticPathname = "/" | "/about" | "/projects" | "/pricing" | "/contact";
 
-type SitemapAlternates = NonNullable<
-  MetadataRoute.Sitemap[number]["alternates"]
->;
+// type SitemapAlternates = NonNullable<
+//   MetadataRoute.Sitemap[number]["alternates"]
+// >;
 
 interface StaticRouteConfig {
   href: StaticPathname;
@@ -40,11 +40,11 @@ function buildStaticUrl(locale: Locale, href: StaticPathname): string {
 //   return `${env.BASE_URL}${pathname}`;
 // }
 
-function buildStaticAlternates(href: StaticPathname): SitemapAlternates {
-  return Object.fromEntries(
-    routing.locales.map((locale) => [locale, buildStaticUrl(locale, href)]),
-  );
-}
+// function buildStaticAlternates(href: StaticPathname): SitemapAlternates {
+//   return Object.fromEntries(
+//     routing.locales.map((locale) => [locale, buildStaticUrl(locale, href)]),
+//   );
+// }
 
 // function buildDynamicAlternates(slug: string): Record<string, string> {
 //   return Object.fromEntries(

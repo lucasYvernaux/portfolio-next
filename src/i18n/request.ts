@@ -85,6 +85,7 @@ export default getRequestConfig(async ({ requestLocale }) => {
       // Affiche la clé manquante au lieu de crasher
       const fullKey = [namespace, key].filter(Boolean).join(".");
       if (process.env.NODE_ENV === "development") {
+        console.log("err : " + error);
         return `⚠️ ${fullKey}`;
       }
       return fullKey;

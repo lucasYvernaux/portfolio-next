@@ -3,14 +3,7 @@
  * → source de vérité UNIQUE pour toute l'app.
  */
 
-import { z } from "zod/v4";
-import {
-  LOCALES,
-  DEFAULT_LOCALE,
-  type Locale,
-  isValidLocale,
-  safeParseLocale,
-} from "@/src/i18n/locale";
+import { type Locale } from "@/src/i18n/locale";
 import { env } from "@/env";
 
 // Re-export pour que le reste de _lib/seo n'ait pas

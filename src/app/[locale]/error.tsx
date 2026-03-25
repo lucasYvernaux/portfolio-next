@@ -1,6 +1,6 @@
 "use client";
 
-import { ReactNode, useEffect, useState } from "react";
+import { ReactNode, useEffect } from "react";
 import {
   ForbiddenError,
   NotFoundError,
@@ -9,13 +9,10 @@ import {
   UnavailableError,
 } from "@/src/lib/error/codes";
 import { sanitizeForClient } from "@/src/lib/error/sanitize";
-import {
-  ErrorPageCustom,
-  ErrorPageCustomProps,
-} from "@/src/components/error/error-page-custom";
+import { ErrorPageCustom } from "@/src/components/error/error-page-custom";
 import { useTranslations } from "next-intl";
 import { env } from "@/env";
-import { Search, SearchX } from "lucide-react";
+import { Search } from "lucide-react";
 
 type Props = {
   error: Error & { digest?: string; statusCode?: number };

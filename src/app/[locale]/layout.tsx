@@ -13,7 +13,7 @@ import {
 } from "next-intl/server";
 import SwitchTheme from "@/src/components/shared/toggle-dark-mode";
 import { ThemeProvider } from "@/src/components/providers/theme-provider";
-import { isValidLocale, type Locale, LOCALES } from "@/src/i18n/locale";
+import { type Locale, LOCALES } from "@/src/i18n/locale";
 import { createMetadata } from "@/src/lib/seo/metadata";
 import { SITE_NAME } from "@/src/lib/seo/constants";
 
@@ -37,8 +37,8 @@ export async function generateMetadata({
   return {
     ...createMetadata({
       locale: locale as Locale,
-      title: 't("site.title")',
-      description: 't("site.description")',
+      title: t("site.title"),
+      description: t("site.description"),
       path: "/",
     }),
     title: {
@@ -69,9 +69,9 @@ export default async function LocalLayout({
   const messages = await getMessages();
 
   //charge un message specific
-  const clientMessages = {
-    Common: (messages as Record<string, unknown>).Common,
-  };
+  // const clientMessages = {
+  //   Common: (messages as Record<string, unknown>).Common,
+  // };
 
   return (
     <html lang={locale} suppressHydrationWarning>

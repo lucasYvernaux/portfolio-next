@@ -3,5 +3,5 @@ import type { Messages } from "@/src/types/global";
 
 declare global {
   // Utiliser le type `IntlMessages` pour que useTranslations soit typé
-  interface IntlMessages extends Messages {}
+  type IntlMessages = Messages;
 }

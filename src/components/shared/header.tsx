@@ -7,7 +7,7 @@ import { SwitchLang } from "./toggle-lang";
 import { Messages, NamespaceKeys, useTranslations } from "next-intl";
 import { Link, usePathname } from "@/src/i18n/navigation";
 
-export function Header({ params }: { params: Promise<{ locale: string }> }) {
+export function Header() {
   const pathname = usePathname();
   const t = useTranslations("Common.nav");
 

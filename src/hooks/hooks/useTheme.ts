@@ -2,7 +2,7 @@
 "use client";
 
 import { useTheme as useNextTheme } from "next-themes";
-import { useEffect, useState, useSyncExternalStore } from "react";
+import { useSyncExternalStore } from "react";
 
 type Theme = "light" | "dark" | "system";
 
