@@ -8,6 +8,7 @@ import { BreadcrumbJsonLd, WebPageJsonLd } from "@/src/lib/seo/json-ld";
 import SectionDevis from "@/src/components/shared/section-devis";
 import { ArrowRight } from "lucide-react";
 import { Link } from "@/src/i18n/navigation";
+import Image from "next/image";
 
 /* ── Metadata traduite ── */
 export async function generateMetadata({
@@ -132,9 +133,12 @@ export default async function HomePage({
                   <div className="absolute inset-4 border border-primary" />
                   <div className="absolute inset-8 bg-surface/50 backdrop-blur-sm flex items-center justify-center">
                     <div className="text-center">
-                      <span className="font-heading text-8xl text-primary">
-                        LY
-                      </span>
+                      <Image
+                        src={"/logo-white-gpt.png"}
+                        alt="logo de Yvernaux Web Solutions"
+                        fill
+                        className="size-full"
+                      />
                     </div>
                   </div>
                   <div className="absolute -top-2 -left-2 w-8 h-8 border-l-2 border-t-2 border-primary" />
