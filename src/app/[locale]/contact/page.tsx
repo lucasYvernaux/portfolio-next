@@ -14,7 +14,7 @@ export default async function ContactPage() {
         intro={tContact("introduction")}
       />
       <section className="relative py-16 md:py-24 bg-background text-foreground">
-        <div className="content relative max-w-7xl mx-auto flex gap-16">
+        <div className="content relative max-w-7xl px-6 md:px-12 mx-auto flex gap-16 flex-col md:flex-row">
           <div className="content-text flex-1">
             <h2 className="font-heading text-2xl text-gray-100 mb-8">
               Contact Information

@@ -5,6 +5,9 @@ import { routing } from "@/src/i18n/routing";
 import { createMetadata } from "@/src/lib/seo/metadata";
 import { type Locale } from "@/src/i18n/locale";
 import { BreadcrumbJsonLd, WebPageJsonLd } from "@/src/lib/seo/json-ld";
+import SectionHero from "@/src/components/shared/section-hero";
+import SectionDevis from "@/src/components/shared/section-devis";
+// import Pattern from "@/src/components/shared/background";
 
 /* ── Metadata traduite ── */
 export async function generateMetadata({
@@ -56,16 +59,25 @@ export default async function AboutPage({
         ]}
       />
 
-      <main className="mx-auto max-w-3xl px-6 py-12 flex flex-col items-center justify-center min-h-screen">
-        <h1 className="mb-6 text-4xl font-bold text-foreground">
-          {t("title")}
-        </h1>
-        {/* Pluralisation */}
-        <p className="mt-8 text-sm text-foreground-muted">
-          {t("team.members", { count: 12 })}
-          {/* → "12 membres" (fr) / "12 members" (en) */}
-        </p>
-      </main>
+      <div className="pt-23 min-h-screen">
+        <SectionHero
+          path="contact"
+          title={"Mon approche"}
+          intro={
+            "Développeur web passionné avec plus de 4 ans d'expérience, je transforme vos idées en solutions digitales performantes."
+          }
+        />
+        <section className="min-h-screen max-w-4xl mx-auto">
+          <p className="mt-3 fs-3 text-start bg-gray-custom rounded p-3 shadow-lg">
+            Je suis un développeur web talentueux avec 4 ans d&apos;expérience,
+            passionné par la création d&apos;interfaces pour offrir des
+            expériences utilisateur exceptionnelles. Mon objectif est de
+            collaborer avec une équipe dynamique pour développer des solutions
+            web innovantes et stimulantes.
+          </p>
+        </section>
+        <SectionDevis title="Pret a collaborer ?" />
+      </div>
     </>
   );
 }

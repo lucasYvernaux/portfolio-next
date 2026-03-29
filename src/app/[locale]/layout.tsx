@@ -16,6 +16,7 @@ import { ThemeProvider } from "@/src/components/providers/theme-provider";
 import { type Locale, LOCALES } from "@/src/i18n/locale";
 import { createMetadata } from "@/src/lib/seo/metadata";
 import { SITE_NAME } from "@/src/lib/seo/constants";
+import Pattern from "@/src/components/shared/background";
 
 export function generateStaticParams() {
   return LOCALES.map((locale) => ({ locale }));
@@ -79,7 +80,10 @@ export default async function LocalLayout({
         <NextIntlClientProvider locale={locale} messages={messages}>
           <ThemeProvider>
             <Header />
-            <main className="bg-background text-foreground">{children}</main>
+            <main className="relative bg-background text-foreground">
+              {/* <Pattern className="absolute size-full" /> */}
+              {children}
+            </main>
             <div className="fixed bottom-4 right-4 z-50">
               <SwitchTheme />
             </div>
