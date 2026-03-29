@@ -42,7 +42,7 @@ export function Header() {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 text-foreground transition-all duration-300 ${isScroll ? "bg-background/60 backdrop-blur-md shadow-lg py-3" : "bg-[#0a0a0a] py-6"}`}
+      className={`fixed top-0 left-0 right-0 z-50 text-foreground transition-all duration-300 ${isScroll ? "bg-[#2a2a2a99] backdrop-blur-md shadow-lg py-3" : "bg-[#0a0a0a] py-6"}`}
     >
       <nav className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between">
         <Link href={"/"} className="flex items-center gap-3 group">

@@ -8,7 +8,7 @@ import Link from "next/link";
 export function Footer() {
   return (
     <footer
-      className="bg-gray-custom border-t border-surface-border"
+      className="bg-gray-custom  z-10 border-t border-surface-border"
       data-testid="footer"
       x-file-name="Footer"
       x-line-number={11}

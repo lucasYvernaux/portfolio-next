@@ -1,6 +1,7 @@
 @import "tailwindcss";
 
-/* #4C4449
+/* 
+#4C4449
 #302E34
 #B1974B
  */
@@ -21,6 +22,10 @@
 
 .dark {
   --color-background: #0a0a0a;
+  /* --color-test: rgb(196, 163, 90);
+  --color-test: rgba(0, 150, 255, 0.4);
+  --color-test: rgba(100, 200, 255, 1);
+  --color-test: rgba(255, 105, 180, 1); */
   --color-foreground: var(--color-zinc-100);
   --color-primary: #c4a35a;
   --color-surface-border: "rgb(61 61 61 / var(--tw-border-opacity, 1))";
