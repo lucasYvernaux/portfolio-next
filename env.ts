@@ -22,6 +22,15 @@ const envSchema = z.object({
     .url()
     .refine((u) => !u.endsWith("/"), "Pas de trailing slash")
     .optional(),
+  RESEND_API_KEY: z
+    .string()
+    .startsWith("re_", "Clé Resend invalide")
+    .optional(),
+  RESEND_FROM_EMAIL: z.string().optional(),
+  RESEND_TO_EMAIL: z
+    .string()
+    .email("RESEND_TO_EMAIL doit être un email valide")
+    .optional(),
 
   // Example
   //   RESEND_API_KEY: z.string().min(1),
@@ -35,6 +44,9 @@ const envVars = {
   NEXT_PUBLIC_BASE_URL: process.env.NEXT_PUBLIC_BASE_URL,
   NODE_ENV: process.env.NODE_ENV,
   BASE_URL: process.env.BASE_URL,
+  RESEND_API_KEY: process.env.RESEND_API_KEY,
+  RESEND_FROM_EMAIL: process.env.RESEND_FROM_EMAIL,
+  RESEND_TO_EMAIL: process.env.RESEND_TO_EMAIL,
 };
 
 // Validation

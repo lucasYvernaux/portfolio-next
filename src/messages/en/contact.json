@@ -3,6 +3,7 @@
     "title": "Let's talk about your project",
     "introduction": "Do you have a project in mind ? I'd be happy to discuss this with you.",
     "information": {
+      "title": "Contact Information",
       "email": "email",
       "phone": "phone",
       "location": "location",
@@ -14,6 +15,18 @@
       "linkedin": "Go to my LinkedIn page",
       "gitlab": "Go to my GitLab page",
       "github": "Go to my GitHub page"
+    },
+    "form": {
+      "firstName": "First Name",
+      "lastName": "Last Name",
+      "company": "Company (optional)",
+      "job": "Position (optional)",
+      "email": "Email",
+      "subject": "Subject",
+      "message": "Message",
+      "message_placeholder": "Describe your project...",
+      "submit": "Send the message",
+      "sending": "Sending ..."
     }
   }
 }

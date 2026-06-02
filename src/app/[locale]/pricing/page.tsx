@@ -34,7 +34,7 @@ export default async function PricingPage() {
                   <div className="flex items-baseline justify-center gap-1">
                     <span className="text-gray-500 text-sm">À partir de</span>
                     <span className="font-heading text-4xl text-primary">
-                      990€
+                      950€
                     </span>
                   </div>
                   <span className="text-gray-500 text-sm">par projet</span>
@@ -137,7 +137,7 @@ export default async function PricingPage() {
                   <div className="flex items-baseline justify-center gap-1">
                     <span className="text-gray-500 text-sm">À partir de</span>
                     <span className="font-heading text-4xl text-primary">
-                      2490€
+                      1800€
                     </span>
                   </div>
                   <span className="text-gray-500 text-sm">par projet</span>
@@ -323,7 +323,7 @@ export default async function PricingPage() {
                   Maintenance mensuelle
                 </span>
                 <span className="text-gold-500 font-heading font-bold">
-                  99€/mois
+                  50€/mois
                 </span>
               </div>
               <div
@@ -348,6 +348,18 @@ export default async function PricingPage() {
                 </span>
                 <span className="text-gold-500 font-heading font-bold">
                   À partir de 290€
+                </span>
+              </div>
+              <div
+                className="flex items-center justify-between p-6 bg-surface border border-surface-border card-hover"
+                data-testid="extra-2"
+                style={{ opacity: 1, transform: "none" }}
+              >
+                <span className="text-gray-300 font-medium">
+                  Optimisation SEO
+                </span>
+                <span className="text-gold-500 font-heading font-bold">
+                  À partir de 200€
                 </span>
               </div>
             </div>

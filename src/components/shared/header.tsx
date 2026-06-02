@@ -96,8 +96,9 @@ export function Header() {
               <li key={item.id}>
                 <Link
                   href={item.path}
-                  className={` capitalize  ${pathname.includes(item.path) ? "text-primary" : ""}`}
+                  className={` capitalize  ${pathname === item.path ? "text-primary" : ""} ${item.path === "/about" || item.path === "/projects" ? "opacity-25 cursor-not-allowed transition-none" : ""}`}
                   style={{ fontWeight: "normal" }}
+                  onClick={() => setOpenMenu(!openMenu)}
                 >
                   {t(item.id as NamespaceKeys<Messages, string>)}
                 </Link>
