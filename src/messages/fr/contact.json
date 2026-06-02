@@ -3,6 +3,7 @@
     "title": "Parlons de Votre Projet",
     "introduction": "Vous avez un projet en tête ? Je serais ravi d'en discuter avec vous.",
     "information": {
+      "title": "Informations de Contact",
       "email": "email",
       "phone": "téléphone",
       "location": "localisation",
@@ -14,6 +15,18 @@
       "linkedin": "Aller à ma page Linkedin",
       "gitlab": "Aller à ma page GitLab",
       "github": "Aller à ma page GitHub"
+    },
+    "form": {
+      "firstName": "Prénom",
+      "lastName": "Nom",
+      "company": "Entreprise (optionnel)",
+      "job": "Poste (optionnel)",
+      "email": "Email",
+      "subject": "Sujet",
+      "message": "Message",
+      "message_placeholder": "Décrivez votre projet...",
+      "submit": "Envoyer le message",
+      "sending": "Envoi en cours..."
     }
   }
 }
