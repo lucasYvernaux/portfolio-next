@@ -27,6 +27,12 @@
       "message_placeholder": "Décrivez votre projet...",
       "submit": "Envoyer le message",
       "sending": "Envoi en cours..."
+    },
+    "calendly": {
+      "title": "Réserver un appel",
+      "description": "Choisissez un créneau de 30 minutes pour discuter de votre projet.",
+      "cta": "Réserver un créneau",
+      "booked_confirmation": "Votre rendez-vous est confirmé ! Vous recevrez un email de confirmation."
     }
   }
 }

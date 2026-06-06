@@ -5,6 +5,7 @@ import {
   contactSchema,
   type ContactFormData,
   type ContactApiResponse,
+  OptionalFields,
 } from "@/src/lib/validations/contact.schema";
 
 type FieldErrors = Partial<Record<keyof ContactFormData, string>>;
@@ -15,6 +16,8 @@ type FormState =
   | { status: "success"; message: string }
   | { status: "error"; error: string; fields?: FieldErrors };
 
+const OPTIONAL_FIELDS: OptionalFields[] = ["company", "job"];
+
 export function useContactForm() {
   const [state, setState] = useState<FormState>({ status: "idle" });
   const [fieldErrors, setFieldErrors] = useState<FieldErrors>({});
@@ -24,6 +27,9 @@ export function useContactForm() {
     name: keyof ContactFormData,
     value: string,
   ): string | undefined {
+    const isOptional = (OPTIONAL_FIELDS as string[]).includes(name);
+    if (isOptional && (!value || value.trim() === "")) return undefined;
+
     const fieldSchema = contactSchema.shape[name];
     const result = fieldSchema.safeParse(value);
     return result.success ? undefined : result.error.issues[0]?.message;
@@ -50,7 +56,7 @@ export function useContactForm() {
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(parsed.data),
+        body: JSON.stringify(removeEmptyOptionals(parsed.data)),
       });
 
       const json: ContactApiResponse = await res.json();
@@ -70,4 +76,17 @@ export function useContactForm() {
   }
 
   return { state, fieldErrors, validateField, handleSubmit };
+}
+
+// Supprime les champs optionnels vides pour ne pas les envoyer
+function removeEmptyOptionals(data: ContactFormData): ContactFormData {
+  const cleaned = { ...data };
+  const optionals: OptionalFields[] = ["company", "job"];
+  for (const key of optionals) {
+    const val = cleaned[key];
+    if (val === "" || val === undefined) {
+      delete cleaned[key];
+    }
+  }
+  return cleaned;
 }
