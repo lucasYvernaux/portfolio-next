@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
-import { hasLocale, useTranslations } from "next-intl";
+import { hasLocale } from "next-intl";
 import { routing } from "@/src/i18n/routing";
 import { createMetadata } from "@/src/lib/seo/metadata";
 import { type Locale } from "@/src/i18n/locale";

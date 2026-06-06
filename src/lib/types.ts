@@ -12,8 +12,10 @@ export type Project = {
   id: string;
   title: string;
   description: string;
+  type: string;
   year: number;
-  city: string;
-  area: number;
+  stack: string[];
   urlImageCover: StaticImageData;
+  urlProject?: string;
+  urlRepo?: string;
 };

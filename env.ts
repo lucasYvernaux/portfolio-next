@@ -1,7 +1,7 @@
 import { z } from "zod";
 
-// schéma avec toutes les variables
-const envSchema = z.object({
+//Schéma des variable côté Client (accessible via navigateur)
+const clienSchema = z.object({
   // Variables NEXT_PUBLIC_ (accessibles côté client)
   NEXT_PUBLIC_NODE_ENV: z
     .enum(["development", "test", "production"])
@@ -10,9 +10,14 @@ const envSchema = z.object({
     .string()
     .url()
     .refine((u) => !u.endsWith("/"), "Pas de trailing slash"),
+  NEXT_PUBLIC_CALENDLY_URL: z
+    .string()
+    .url("NEXT_PUBLIC_CALENDLY_URL doit être une URL valide")
+    .startsWith("https://calendly.com", "L'URL doit pointer vers calendly.com"),
+});
 
-  // autre Variables (serveur uniquement)
-  // Optionnelles côté client
+//schema des variable côté server (caché du client)
+const serverSchema = z.object({
   NODE_ENV: z
     .enum(["development", "test", "production"])
     .optional()
@@ -20,28 +25,25 @@ const envSchema = z.object({
   BASE_URL: z
     .string()
     .url()
-    .refine((u) => !u.endsWith("/"), "Pas de trailing slash")
-    .optional(),
-  RESEND_API_KEY: z
-    .string()
-    .startsWith("re_", "Clé Resend invalide")
-    .optional(),
-  RESEND_FROM_EMAIL: z.string().optional(),
+    .refine((u) => !u.endsWith("/"), "Pas de trailing slash"),
+  RESEND_API_KEY: z.string().startsWith("re_", "Clé Resend invalide"),
+  RESEND_FROM_EMAIL: z.string(),
   RESEND_TO_EMAIL: z
     .string()
-    .email("RESEND_TO_EMAIL doit être un email valide")
-    .optional(),
-
-  // Example
-  //   RESEND_API_KEY: z.string().min(1),
-  //   CAL_API_KEY: z.string().min(1),
-  //   UPSTASH_REDIS_URL: z.string().url(),
+    .email("RESEND_TO_EMAIL doit être un email valide"),
 });
+
+const isServer = typeof window === "undefined";
+// schéma avec toutes les variables
+const envSchema = isServer
+  ? clienSchema.extend(serverSchema.shape)
+  : clienSchema;
 
 // Créer les variables à partir de process.env
 const envVars = {
   NEXT_PUBLIC_NODE_ENV: process.env.NEXT_PUBLIC_NODE_ENV,
   NEXT_PUBLIC_BASE_URL: process.env.NEXT_PUBLIC_BASE_URL,
+  NEXT_PUBLIC_CALENDLY_URL: process.env.NEXT_PUBLIC_CALENDLY_URL,
   NODE_ENV: process.env.NODE_ENV,
   BASE_URL: process.env.BASE_URL,
   RESEND_API_KEY: process.env.RESEND_API_KEY,
@@ -63,9 +65,3 @@ if (!parsed.success) {
 export const env = parsed.data;
 
 export type Env = typeof env;
-
-// ✅ Raccourcis pratiques
-// export const isDev = env.NEXT_PUBLIC_NODE_ENV === "development";
-// export const isProd = env.NEXT_PUBLIC_NODE_ENV === "production";
-// export const isTest = env.NEXT_PUBLIC_NODE_ENV === "test";
-// export const baseUrl = env.NEXT_PUBLIC_BASE_URL;

@@ -51,6 +51,9 @@ export const contactSchema = z.object({
 
 export type ContactFormData = z.infer<typeof contactSchema>;
 
+export type RequiredFields = "name" | "email" | "message";
+export type OptionalFields = Exclude<keyof ContactFormData, RequiredFields>;
+
 // Type retourné par le Route Handler
 export type ContactApiResponse =
   | { success: true; message: string }

@@ -14,7 +14,7 @@ import { env } from "@/env";
  * @see https://nextjs.org/docs/app/api-reference/file-conventions/metadata/robots
  */
 export default function robots(): MetadataRoute.Robots {
-  const isProduction = env.NODE_ENV === "production";
+  const isProduction = env.NEXT_PUBLIC_NODE_ENV === "production";
 
   return {
     rules: [

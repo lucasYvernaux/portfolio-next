@@ -5,9 +5,13 @@ import { useState } from "react";
 import { useContactForm } from "./use-contact";
 import type { ContactFormData } from "@/src/lib/validations/contact.schema";
 
-export function ContactForm() {
+interface ContactFormProps {
+  onValuesChange?: (values: Partial<ContactFormData>) => void;
+}
+
+export function ContactForm({ onValuesChange }: ContactFormProps) {
   const t = useTranslations("Contact");
-  const { state, fieldErrors, validateField, handleSubmit } = useContactForm();
+  const { state, fieldErrors, handleSubmit } = useContactForm();
 
   const [values, setValues] = useState<ContactFormData>({
     lastName: "",
@@ -24,6 +28,8 @@ export function ContactForm() {
   >({});
 
   function handleChange(field: keyof ContactFormData, value: string) {
+    const next = { ...values, [field]: value };
+    onValuesChange?.(next);
     setValues((prev) => ({ ...prev, [field]: value }));
   }
 
@@ -92,7 +98,7 @@ export function ContactForm() {
           id="company"
           label={t("form.company")}
           type="text"
-          value={values.company!}
+          value={values.company ?? ""}
           error={touched.company ? fieldErrors.company : undefined}
           onChange={(v) => handleChange("company", v)}
           onBlur={() => handleBlur("company")}
@@ -102,7 +108,7 @@ export function ContactForm() {
           id="job"
           label={t("form.job")}
           type="text"
-          value={values.job!}
+          value={values.job ?? ""}
           error={touched.job ? fieldErrors.job : undefined}
           onChange={(v) => handleChange("job", v)}
           onBlur={() => handleBlur("job")}
