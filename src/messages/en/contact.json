@@ -27,6 +27,12 @@
       "message_placeholder": "Describe your project...",
       "submit": "Send the message",
       "sending": "Sending ..."
+    },
+    "calendly": {
+      "title": "Book a call",
+      "description": "Choose a 30-minute slot to discuss your project.",
+      "cta": "Book a slot",
+      "booked_confirmation": "Your appointment is confirmed! You'll receive a confirmation email."
     }
   }
 }

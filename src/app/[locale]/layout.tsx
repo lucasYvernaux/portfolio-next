@@ -16,7 +16,7 @@ import { ThemeProvider } from "@/src/components/providers/theme-provider";
 import { type Locale, LOCALES } from "@/src/i18n/locale";
 import { createMetadata } from "@/src/lib/seo/metadata";
 import { SITE_NAME } from "@/src/lib/seo/constants";
-import Pattern from "@/src/components/shared/background";
+import { CalendlyProvider } from "@/src/components/feature/calendly/calendlyProvider";
 
 export function generateStaticParams() {
   return LOCALES.map((locale) => ({ locale }));
@@ -76,11 +76,14 @@ export default async function LocalLayout({
 
   return (
     <html lang={locale} suppressHydrationWarning>
+      <head>
+        <CalendlyProvider />
+      </head>
       <body>
         <NextIntlClientProvider locale={locale} messages={messages}>
           <ThemeProvider>
             <Header />
-            <main className="relative bg-background text-foreground">
+            <main id="root" className="relative bg-background text-foreground">
               {/* <Pattern className="absolute size-full" /> */}
               {children}
             </main>

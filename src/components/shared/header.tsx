@@ -64,12 +64,12 @@ export function Header() {
           {allNavItems.map((item) => (
             <li key={item.path}>
               <Link
-                href={item.path}
+                href={item.path === "/about" ? "#" : item.path}
                 // ${item.path === "/about" || item.path === "/projects" ? "opacity-25 cursor-not-allowed transition-none hover:text-foreground" : ""}
                 style={{
                   color: `${item.path === "/about" || item.path === "/projects" ? "var(--color-foreground)" : ""}`,
                 }}
-                className={`uppercase text-sm text-foreground font-medium ${pathname === item.path ? "text-primary" : ""} ${item.path === "/about" || item.path === "/projects" ? "opacity-25 cursor-not-allowed transition-none" : ""} tracking-widest transition-colors duration-300 hover:text-primary`}
+                className={`uppercase text-sm text-foreground font-medium ${pathname === item.path ? "text-primary" : ""} ${item.path === "/about" ? "opacity-25 cursor-not-allowed transition-none" : ""} tracking-widest transition-colors duration-300 hover:text-primary`}
               >
                 {t(item.id as NamespaceKeys<Messages, string>)}
               </Link>
@@ -95,8 +95,8 @@ export function Header() {
             {allNavItems.map((item) => (
               <li key={item.id}>
                 <Link
-                  href={item.path}
-                  className={` capitalize  ${pathname === item.path ? "text-primary" : ""} ${item.path === "/about" || item.path === "/projects" ? "opacity-25 cursor-not-allowed transition-none" : ""}`}
+                  href={item.path === "/about" ? "#" : item.path}
+                  className={` capitalize  ${pathname === item.path ? "text-primary" : ""} ${item.path === "/about" ? "opacity-25 cursor-not-allowed transition-none" : ""}`}
                   style={{ fontWeight: "normal" }}
                   onClick={() => setOpenMenu(!openMenu)}
                 >
