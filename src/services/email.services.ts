@@ -1,9 +1,9 @@
 import { Resend } from "resend";
-import { env } from "@/env";
+import { env, serverEnv } from "@/env";
 import { ContactEmail } from "@/src/emails/contact";
 import type { ContactFormData } from "@/src/lib/validations/contact.schema";
 
-const resend = new Resend(env.RESEND_API_KEY);
+const resend = new Resend(serverEnv.RESEND_API_KEY);
 
 export class EmailServiceError extends Error {
   constructor(
@@ -17,8 +17,8 @@ export class EmailServiceError extends Error {
 
 export const emailService = {
   async sendContactEmail(data: ContactFormData): Promise<void> {
-    const emailDestination: string = env.RESEND_TO_EMAIL!;
-    const emailexpedition: string = env.RESEND_FROM_EMAIL!;
+    const emailDestination: string = env.RESEND_TO_EMAIL;
+    const emailexpedition: string = env.RESEND_FROM_EMAIL;
     const { error } = await resend.emails.send({
       from: emailexpedition, // ex: "Portfolio <contact@tondomaine.fr>"
       to: emailDestination, // ton adresse de réception

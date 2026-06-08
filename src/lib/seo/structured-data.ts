@@ -6,7 +6,7 @@ export function getPersonSchema(locale: Locale) {
     "@context": "https://schema.org",
     "@type": "Person",
     name: "Lucas Yvernaux",
-    url: env.BASE_URL,
+    url: env.NEXT_PUBLIC_BASE_URL,
     jobTitle:
       locale === "fr"
         ? "Développeur web fullstack freelance"
@@ -24,7 +24,7 @@ export function getWebsiteSchema(locale: Locale) {
     "@context": "https://schema.org",
     "@type": "WebSite",
     name: "Prénom Nom",
-    url: env.BASE_URL,
+    url: env.NEXT_PUBLIC_BASE_URL,
     inLanguage: locale === "fr" ? "fr-FR" : "en-US",
   };
 }
@@ -50,7 +50,7 @@ export function getProjectSchema({
     author: {
       "@type": "Person",
       name: "Lucas Yvernaux",
-      url: env.BASE_URL,
+      url: env.NEXT_PUBLIC_BASE_URL,
     },
   };
 }

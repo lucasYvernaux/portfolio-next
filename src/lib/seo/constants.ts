@@ -11,7 +11,7 @@ import { env } from "@/env";
 // export { LOCALES, DEFAULT_LOCALE, isValidLocale, safeParseLocale };
 export type { Locale };
 
-export const SITE_URL = env.BASE_URL;
+export const SITE_URL = env.NEXT_PUBLIC_BASE_URL;
 export const SITE_NAME = "Yvernaux Web Solutions";
 export const BRAND_COLOR = "#c4a35a" as const;
 export const BRAND_COLOR_LIGHT = "#e8d5a3" as const;
