@@ -34,34 +34,52 @@ const serverSchema = z.object({
 });
 
 const isServer = typeof window === "undefined";
-// schéma avec toutes les variables
-const envSchema = isServer
-  ? clienSchema.extend(serverSchema.shape)
-  : clienSchema;
+let serverData: z.infer<typeof serverSchema> | null = null;
 
-// Créer les variables à partir de process.env
-const envVars = {
+// Validation
+
+const clientParse = clienSchema.safeParse({
   NEXT_PUBLIC_NODE_ENV: process.env.NEXT_PUBLIC_NODE_ENV,
   NEXT_PUBLIC_BASE_URL: process.env.NEXT_PUBLIC_BASE_URL,
   NEXT_PUBLIC_CALENDLY_URL: process.env.NEXT_PUBLIC_CALENDLY_URL,
-  NODE_ENV: process.env.NODE_ENV,
-  BASE_URL: process.env.BASE_URL,
-  RESEND_API_KEY: process.env.RESEND_API_KEY,
-  RESEND_FROM_EMAIL: process.env.RESEND_FROM_EMAIL,
-  RESEND_TO_EMAIL: process.env.RESEND_TO_EMAIL,
-};
+});
 
-// Validation
-const parsed = envSchema.safeParse(envVars);
-
-if (!parsed.success) {
-  console.error("❌ Variables d'environnement invalides:\n");
-  parsed.error.issues.forEach((issue) => {
-    console.error(`   → ${issue.path.join(".")}: ${issue.message}`);
+if (isServer) {
+  const serverParsed = serverSchema.safeParse({
+    NODE_ENV: process.env.NODE_ENV,
+    BASE_URL: process.env.BASE_URL,
+    RESEND_API_KEY: process.env.RESEND_API_KEY,
+    RESEND_FROM_EMAIL: process.env.RESEND_FROM_EMAIL,
+    RESEND_TO_EMAIL: process.env.RESEND_TO_EMAIL,
   });
-  throw new Error("Variables d'environnement invalides");
+
+  if (!serverParsed.success) {
+    console.error("❌ Variables server invalides :");
+    serverParsed.error.issues.forEach((issue) => {
+      console.error(`   → ${issue.path.join(".")}: ${issue.message}`);
+    });
+    throw new Error("Variables d'environnement serveur invalides");
+  }
+  serverData = serverParsed.data;
 }
 
-export const env = parsed.data;
+if (!clientParse.success) {
+  console.error("❌ Variables client invalides :");
+  clientParse.error.issues.forEach((issue) => {
+    console.error(`   → ${issue.path.join(".")}: ${issue.message}`);
+  });
+  throw new Error("Variables d'environnement client invalides");
+}
 
-export type Env = typeof env;
+export const clientEnv = clientParse.data;
+
+export const serverEnv = serverData as z.infer<typeof serverSchema>;
+
+export const env = {
+  ...clientParse.data,
+  ...(serverData ?? {}),
+} as z.infer<typeof clienSchema> & z.infer<typeof serverSchema>;
+
+export type ClientEnv = z.infer<typeof clienSchema>;
+export type ServerEnv = z.infer<typeof serverSchema>;
+export type Env = ClientEnv & ServerEnv;
