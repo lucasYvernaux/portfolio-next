@@ -29,7 +29,7 @@ const STATIC_ROUTES: StaticRouteConfig[] = [
 
 function buildStaticUrl(locale: Locale, href: StaticPathname): string {
   const pathname = getPathname({ locale, href });
-  return `${env.BASE_URL}${pathname}`;
+  return `${env.NEXT_PUBLIC_BASE_URL}${pathname}`;
 }
 
 // function buildDynamicUrl(locale: Locale, slug: string): string {

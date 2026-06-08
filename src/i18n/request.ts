@@ -46,7 +46,7 @@ async function loadMessages(locale: string) {
     }
   }
 
-  if (env.NODE_ENV === "development") {
+  if (env.NEXT_PUBLIC_NODE_ENV === "development") {
     const loadedKeys = Object.keys(merged);
     const expectedKeys = NAMESPACE_FILES.map((n) => n.rootKey);
     const missing = expectedKeys.filter((k) => !loadedKeys.includes(k));
@@ -81,7 +81,7 @@ export default getRequestConfig(async ({ requestLocale }) => {
     locale,
     messages,
     onError(error) {
-      if (env.NODE_ENV === "development")
+      if (env.NEXT_PUBLIC_NODE_ENV === "development")
         console.error("[i18n]", error.message);
     },
     getMessageFallback({ namespace, key, error }) {
