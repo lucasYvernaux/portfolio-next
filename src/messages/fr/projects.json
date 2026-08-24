@@ -1,1 +1,41 @@
-{ "Projects": {} }
+{
+  "Projects": {
+    "breadcrumb": "Réalisation",
+    "title": "Projets Récents",
+    "subtitle": "Découvrez une sélection de mes réalisations récentes.",
+    "alt_image": "Illustration du projet \"{name}\"",
+    "CTA_go-to-website": "Voir le site",
+    "type": {
+      "website": "web",
+      "ecom": "e-commerce",
+      "webapp": "application web",
+      "appli": "application"
+    },
+    "Oyster": {
+      "description": "Site vitrine pour une boutique de poissonnerie."
+    },
+    "SaCy": {
+      "description": "C'est un outil de collecte de preuves et de modération en cas de cyberviolences pour les community managers."
+    },
+    "Equilys": {
+      "description": "Site ayant pour but d'aider les gens à mieux comprendre l'écriture inclusive et à les assister dans cette tâche avec un éditeur inclus."
+    },
+    "Kalmia": {
+      "description": "Kalmia est un projet open source. Il est essentiellement lié à <kalmialink>Vana Principia</kalmialink>, mais est également dédié à tout autre projet numérique."
+    },
+    "Leconte_Multiservices": {
+      "description": "Site vitrine d'une entreprise de dépannage à domicile en Île-de-France, spécialisée en électroménager, électricité, plomberie et petits travaux de rénovation."
+    },
+    "LAK": {
+      "description": "Projet d'étude utilisant Laravel pour développé un site e-commerce"
+    },
+    "Manga_Collection": {
+      "description": "Application web listant les manga basé sur <linkmal>My Anime List</linkmal>."
+    },
+    "Dene": {
+      "description": "Site vitrine présentant les prestations de coiffure une galerie photo et un système de prise de rendez-vous en ligne."
+    },
+    "Multiflix": { "description": "Site de streaming local" },
+    "Same": { "description": "" }
+  }
+}

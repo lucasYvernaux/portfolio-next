@@ -1,11 +1,14 @@
 {
   "Common": {
     "nav": {
-      "home": "Accueil",
-      "about": "À propos",
-      "projects": "Réalisations",
-      "pricing": "Tarifs",
-      "contact": "Contact"
+      "home": { "label": "Accueil", "alt": "Aller à la page d'accueil" },
+      "about": { "label": "À propos", "alt": "Aller à la page à propos" },
+      "projects": {
+        "label": "Réalisations",
+        "alt": "Aller à la page réalisation"
+      },
+      "pricing": { "label": "Tarifs", "alt": "Aller à la page tarifs" },
+      "contact": { "label": "Contact", "alt": "Aller à la page contact" }
     },
     "footer": {
       "copyright": "© {year} MonSite. Tous droits réservés.",
@@ -14,6 +17,7 @@
     "actions": {
       "startProject": "Démarrer un Projet",
       "readMore": "Lire la suite",
+      "SeeAll": "Voir tout",
       "goBack": "Retour",
       "goBackHome": "Retour à l'Accueil",
       "goHome": "Aller à l'Accueil",

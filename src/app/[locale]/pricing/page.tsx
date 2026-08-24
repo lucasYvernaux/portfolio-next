@@ -1,12 +1,129 @@
+import { PricingTabs } from "@/src/components/feature/pricing/pricing-tabs";
 import SectionDevis from "@/src/components/shared/section-devis";
 import SectionHero from "@/src/components/shared/section-hero";
 import { Link } from "@/src/i18n/navigation";
+import { PackCustom, ServiceCustom } from "@/src/lib/types";
 import { Check } from "lucide-react";
-import { getTranslations } from "next-intl/server";
+import { useFormatter } from "next-intl";
+import { getFormatter, getTranslations } from "next-intl/server";
 
 export default async function PricingPage() {
   const tPricing = await getTranslations("Pricing");
   const tCommon = await getTranslations("Common");
+  const format = await getFormatter();
+  const test_pack: PackCustom[] = [
+    {
+      id: "refonte",
+      title: tPricing("packs.refonte.title"),
+      subtitle: tPricing("packs.refonte.description"),
+      price: format.number(800, {
+        style: "currency",
+        currency: "EUR",
+        maximumFractionDigits: 0,
+      }),
+      features: [
+        tPricing("packs.refonte.features.audit"),
+        tPricing("packs.refonte.features.design"),
+        tPricing("packs.refonte.features.migration"),
+        tPricing("packs.refonte.features.mobile"),
+        tPricing("packs.refonte.features.performance"),
+        tPricing("packs.refonte.features.
+        tPricing("packs.refonte.features.seo"),
+      ],
+    },
+    {
+      id: "vitrine",
+      title: tPricing("packs.vitrine.title"),
+      subtitle: tPricing("packs.vitrine.description"),
+      price: format.number(950, {
+        style: "currency",
+        currency: "EUR",
+        maximumFractionDigits: 0,
+      }),
+      features: [
+        tPricing("packs.vitrine.features.design"),
+        tPricing("packs.vitrine.features.form"),
+        tPricing("packs.vitrine.features.hosting"),
+        tPricing("packs.vitrine.features.pages"),
+        tPricing("packs.vitrine.features.seo"),
+        tPricing("packs.vitrine.features.training"),
+      ],
+    },
+    {
+      id: "ecom",
+      title: tPricing("packs.ecommerce.title"),
+      subtitle: tPricing("packs.ecommerce.description"),
+      price: format.number(1800, {
+        style: "currency",
+        currency: "EUR",
+        maximumFractionDigits: 0,
+      }),
+      features: [
+        tPricing("packs.ecommerce.features.account"),
+        tPricing("packs.ecommerce.features.dashboard"),
+        tPricing("packs.ecommerce.features.payment"),
+        tPricing("packs.ecommerce.features.shop"),
+        tPricing("packs.ecommerce.features.stock"),
+        tPricing("packs.ecommerce.features.support"),
+        tPricing("packs.ecommerce.features.vitrine"),
+      ],
+    },
+    {
+      id: "custom",
+      title: tPricing("packs.surMesure.title"),
+      subtitle: tPricing("packs.surMesure.description"),
+      price: "sur devis",
+      features: [
+        tPricing("packs.surMesure.features.ai"),
+        tPricing("packs.surMesure.features.api"),
+        tPricing("packs.surMesure.features.app"),
+        tPricing("packs.surMesure.features.db"),
+        tPricing("packs.surMesure.features.maintenance"),
+        tPricing("packs.surMesure.features.scalable"),
+        tPricing("packs.surMesure.features.support"),
+      ],
+    },
+    {
+      id: "maint",
+      title: tPricing("packs.maintenance.title"),
+      subtitle: tPricing("packs.maintenance.description"),
+      price: tPricing("packs.refonte.price"),
+      features: [
+        tPricing("packs.maintenance.features.backup"),
+        tPricing("packs.maintenance.features.bugs"),
+        tPricing("packs.maintenance.features.monitoring"),
+        tPricing("packs.maintenance.features.report"),
+        tPricing("packs.maintenance.features.security"),
+        tPricing("packs.maintenance.features.support"),
+      ],
+    },
+  ];
+  const test_service: ServiceCustom[] = [
+    {
+      id: "erz",
+      name: "SEO",
+      price: "à partir de 50€",
+      description: "refe seo",
+    },
+    {
+      id: "erz",
+      name: "SEO",
+      price: "à partir de 50€",
+      description: "refe seo",
+    },
+    {
+      id: "erz",
+      name: "SEO",
+      price: "à partir de 50€",
+      description: "refe seo",
+    },
+    {
+      id: "erz",
+      name: "SEO",
+      price: "à partir de 50€",
+      description: "refe seo",
+    },
+  ];
   return (
     <>
       <div className="pt-23 min-h-screen">
@@ -16,7 +133,12 @@ export default async function PricingPage() {
           intro={tPricing("introduction")}
           center
         />
-        <section className="py-16 md:py-24 bg-gray-custom text-foreground">
+        <section className="py-16 md:py-24 bg-linear-to-b from-background/95 to-gray-custom text-foreground">
+          <div className="max-w-7xl mx-auto px-6 md:px-12">
+            <PricingTabs />
+          </div>
+        </section>
+        {/* <section className="py-16 md:py-24 bg-gray-custom text-foreground">
           <div className="max-w-7xl mx-auto px-6 md:px-12">
             <div className="grid md:grid-cols-3 gap-8">
               <div
@@ -34,7 +156,7 @@ export default async function PricingPage() {
                   <div className="flex items-baseline justify-center gap-1">
                     <span className="text-gray-500 text-sm">À partir de</span>
                     <span className="font-heading text-4xl text-primary">
-                      950€
+                      1 200€
                     </span>
                   </div>
                   <span className="text-gray-500 text-sm">par projet</span>
@@ -364,12 +486,11 @@ export default async function PricingPage() {
               </div>
             </div>
           </div>
-        </section>
+        </section> */}
 
         <SectionDevis
           title={tCommon("components.sectionDevis.title")}
-          paragraph="Chaque projet est unique. Contactez-moi pour obtenir un devis personnalisé adapté à vos besoins."
-        />
+          paragraph="Chaque projet est unique. Contactez-moi pour obtenir un devis personnalisé adapté à vos 
       </div>
     </>
   );

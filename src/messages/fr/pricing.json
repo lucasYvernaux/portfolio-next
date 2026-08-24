@@ -1,6 +1,151 @@
 {
   "Pricing": {
     "title": "Des solutions Adaptées",
-    "introduction": "Des solutions adaptées à chaque besoin et budget."
+    "introduction": "Des solutions adaptées à chaque besoin et budget.",
+    "tabs": {
+      "packs": "Packs",
+      "services": "Services"
+    },
+    "pricePrefix": "À partir de",
+    "priceSuffix": "par projet",
+    "packs": {
+      "refonte": {
+        "title": "Refonte de site",
+        "description": "Modernisez votre site existant",
+        "pricePrefix": "À partir de",
+        "price": "490€",
+        "priceSuffix": "par projet",
+        "isPopular": "false",
+        "features": {
+          "audit": "Audit UX/UI de l'existant",
+          "design": "Nouveau design responsive",
+          "migration": "Migration du contenu",
+          "performance": "Optimisation des performances",
+          "seo": "Optimisation SEO technique",
+          "mobile": "Compatibilité mobile garantie",
+          "redirects": "Redirection des anciennes URLs"
+        }
+      },
+      "vitrine": {
+        "title": "Site Vitrine",
+        "description": "Parfait pour présenter votre activité",
+        "pricePrefix": "À partir de",
+        "price": "950€",
+        "priceSuffix": "par projet",
+        "isPopular": "false",
+        "features": {
+          "design": "Design sur-mesure responsive",
+          "pages": "Jusqu'à 5 pages",
+          "form": "Formulaire de contact",
+          "seo": "Optimisation SEO de base",
+          "hosting": "Hébergement 1ère année inclus",
+          "training": "Formation utilisation"
+        }
+      },
+      "ecommerce": {
+        "title": "E-Commerce",
+        "description": "Vendez vos produits en ligne",
+        "pricePrefix": "À partir de",
+        "price": "1800€",
+        "priceSuffix": "par projet",
+        "isPopular": "true",
+        "features": {
+          "vitrine": "Tout du pack Vitrine",
+          "shop": "Boutique complète",
+          "stock": "Gestion des stocks",
+          "payment": "Paiement sécurisé",
+          "account": "Espace client",
+          "dashboard": "Tableau de bord admin",
+          "support": "Support 6 mois inclus"
+        }
+      },
+      "surMesure": {
+        "title": "Sur-Mesure",
+        "description": "Solutions complexes & uniques",
+        "pricePrefix": "",
+        "price": "Sur devis",
+        "priceSuffix": "",
+        "isPopular": "false",
+        "features": {
+          "app": "Application web complète",
+          "api": "Intégrations API tierces",
+          "db": "Base de données personnalisée",
+          "ai": "Fonctionnalités IA intégrées",
+          "scalable": "Architecture scalable",
+          "support": "Support prioritaire",
+          "maintenance": "Maintenance évolutive"
+        }
+      },
+      "maintenance": {
+        "title": "Maintenance",
+        "description": "Gardez votre site performant et sécurisé",
+        "pricePrefix": "À partir de",
+        "price": "50€",
+        "priceSuffix": "par mois",
+        "isPopular": "false",
+        "features": {
+          "security": "Mises à jour de sécurité",
+          "backup": "Sauvegardes régulières",
+          "monitoring": "Monitoring uptime 24/7",
+          "bugs": "Corrections de bugs",
+          "support": "Support technique par email",
+          "report": "Rapport mensuel de performance"
+        }
+      }
+    },
+    "services": {
+      "sectionTitle": "Services à la carte",
+      "sectionDescription": "Boostez votre présence en ligne avec des prestations ciblées.",
+      "items": {
+        "seo": {
+          "title": "Référencement SEO",
+          "description": "Améliorez votre visibilité sur Google avec un audit et une stratégie SEO complète.",
+          "pricePrefix": "À partir de",
+          "price": "200€"
+        },
+        "googleBusiness": {
+          "title": "Fiche Google Business",
+          "description": "Création et optimisation de votre fiche Google pour le référencement local.",
+          "pricePrefix": "À partir de",
+          "price": "150€"
+        },
+        "performance": {
+          "title": "Optimisation performances",
+          "description": "Audit et amélioration des temps de chargement et Core Web Vitals.",
+          "pricePrefix": "À partir de",
+          "price": "290€"
+        },
+        "copywriting": {
+          "title": "Rédaction web & copywriting",
+          "description": "Contenus optimisés SEO qui convertissent vos visiteurs en clients.",
+          "pricePrefix": "À partir de",
+          "price": "150€"
+        },
+        "analytics": {
+          "title": "Analytics & tracking",
+          "description": "Mise en place de Google Analytics, Tag Manager et tableaux de bord de suivi.",
+          "pricePrefix": "À partir de",
+          "price": "180€"
+        },
+        "email": {
+          "title": "Email professionnel",
+          "description": "Configuration de votre messagerie professionnelle avec votre nom de domaine.",
+          "pricePrefix": "À partir de",
+          "price": "90€"
+        },
+        "consulting": {
+          "title": "Conseil & audit technique",
+          "description": "Analyse de votre stack, recommandations d'architecture et feuille de route technique.",
+          "pricePrefix": "",
+          "price": "80€/h"
+        },
+        "apiIntegration": {
+          "title": "Intégration d'API & automatisation",
+          "description": "Connexion de vos outils (CRM, paiement, emailing) et automatisation de workflows.",
+          "pricePrefix": "À partir de",
+          "price": "300€"
+        }
+      }
+    }
   }
 }

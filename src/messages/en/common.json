@@ -1,11 +1,14 @@
 {
   "Common": {
     "nav": {
-      "home": "Home",
-      "about": "About",
-      "projects": "Projects",
-      "pricing": "Pricing",
-      "contact": "Contact"
+      "home": { "label": "Home", "alt": "Go to the homepage" },
+      "about": { "label": "About", "alt": "Go to the about page" },
+      "projects": {
+        "label": "Réalisations",
+        "alt": "Go to the réalisation"
+      },
+      "pricing": { "label": "Pricing", "alt": "Go to the pricing page" },
+      "contact": { "label": "Contact", "alt": "Go to the contact page" }
     },
     "footer": {
       "copyright": "© {year} MonSite. All rights reserved.",
@@ -14,6 +17,7 @@
     "actions": {
       "startProject": "Start a Project",
       "readMore": "Read more",
+      "SeeAll": "See all",
       "goBack": "Go back",
       "goBackHome": "Back to home",
       "goHome": "Go to home",
