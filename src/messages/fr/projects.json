@@ -36,6 +36,6 @@
       "description": "Site vitrine présentant les prestations de coiffure une galerie photo et un système de prise de rendez-vous en ligne."
     },
     "Multiflix": { "description": "Site de streaming local" },
-    "Same": { "description": "" }
+    "Same": { "description": "_" }
   }
 }
