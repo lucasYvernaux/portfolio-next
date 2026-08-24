@@ -27,7 +27,7 @@ export default async function PricingPage() {
         tPricing("packs.refonte.features.migration"),
         tPricing("packs.refonte.features.mobile"),
         tPricing("packs.refonte.features.performance"),
-        tPricing("packs.refonte.features.
+        tPricing("packs.refonte.features.redirects"),
         tPricing("packs.refonte.features.seo"),
       ],
     },
@@ -487,10 +487,10 @@ export default async function PricingPage() {
             </div>
           </div>
         </section> */}
-
         <SectionDevis
           title={tCommon("components.sectionDevis.title")}
-          paragraph="Chaque projet est unique. Contactez-moi pour obtenir un devis personnalisé adapté à vos 
+          paragraph="Chaque projet est unique. Contactez-moi pour obtenir un devis personnalisé adapté à vos besoins."
+        />
       </div>
     </>
   );

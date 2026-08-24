@@ -14,7 +14,6 @@ export function PacksGridTest() {
   const [isPaused, setIsPaused] = useState(false);
   const intervalRef = useRef<NodeJS.Timeout | null>(null);
   const maxIndex = packKeys.length - 3;
-  const test =    
 
   const next = useCallback(() => {
     setCurrent((prev) => (prev >= maxIndex ? 0 : prev + 1));
