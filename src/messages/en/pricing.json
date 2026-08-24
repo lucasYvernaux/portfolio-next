@@ -62,9 +62,9 @@
       "surMesure": {
         "title": "Custom-Built",
         "description": "Complex & unique solutions",
-        "pricePrefix": "",
+        "pricePrefix": "_",
         "price": "Quote on request",
-        "priceSuffix": "",
+        "priceSuffix": "_",
         "isPopular": "false",
         "features": {
           "app": "Full web application",
@@ -136,7 +136,7 @@
         "consulting": {
           "title": "Technical Consulting & Audit",
           "description": "Analysis of your stack, architecture recommendations, and technical roadmap.",
-          "pricePrefix": "",
+          "pricePrefix": "_",
           "price": "€80/hr"
         },
         "apiIntegration": {

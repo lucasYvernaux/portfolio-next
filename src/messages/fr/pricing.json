@@ -62,9 +62,9 @@
       "surMesure": {
         "title": "Sur-Mesure",
         "description": "Solutions complexes & uniques",
-        "pricePrefix": "",
+        "pricePrefix": "_",
         "price": "Sur devis",
-        "priceSuffix": "",
+        "priceSuffix": "_",
         "isPopular": "false",
         "features": {
           "app": "Application web complète",
@@ -136,7 +136,7 @@
         "consulting": {
           "title": "Conseil & audit technique",
           "description": "Analyse de votre stack, recommandations d'architecture et feuille de route technique.",
-          "pricePrefix": "",
+          "pricePrefix": "_",
           "price": "80€/h"
         },
         "apiIntegration": {
