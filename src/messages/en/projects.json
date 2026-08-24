@@ -1,1 +1,42 @@
-{ "Projects": {} }
+{
+  "Projects": {
+    "breadcrumb": "Projects",
+    "title": "Recent Projects",
+    "subtitle": "Discover a selection of my recent work.",
+    "CTA_go-to-website": "See the website",
+    "CTA_go-to-maquette": "See the mockup",
+    "alt_image": "Illustration of the \"{name}\" project",
+    "type": {
+      "website": "website",
+      "ecom": "e-commerce",
+      "webapp": "web application",
+      "appli": "application"
+    },
+    "Oyster": {
+      "description": "A showcase site for a fish shop."
+    },
+    "SaCy": {
+      "description": "It is a tool for gathering evidence and moderation in case of cyberviolence for community managers."
+    },
+    "Equilys": {
+      "description": "Site designed to help people better understand inclusive writing and assist them in this task with an included editor."
+    },
+    "Kalmia": {
+      "description": "Kalmia is an open source project. It is basically relate to <kalmialink>Vana Principia</kalmialink>, but is also dedicated to any other digital project."
+    },
+    "Leconte_Multiservices": {
+      "description": "A showcase site for a home repair service company in the Île-de-France region, specialized in appliances, electricity, plumbing and small renovations."
+    },
+    "LAK": {
+      "description": "Study project using Laravel to develope an e-commerce site."
+    },
+    "Manga_Collection": {
+      "description": "Web Application listing the manga based on <linkmal>My Anime List</linkmal>."
+    },
+    "Dene": {
+      "description": "Showcase site presenting hairdressing services, a photo gallery and an online appointment system.."
+    },
+    "Multiflix": { "description": "Website of local straming like netflix" },
+    "Same": { "description": "_" }
+  }
+}

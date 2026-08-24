@@ -71,7 +71,7 @@ export function Header() {
                 }}
                 className={`uppercase text-sm text-foreground font-medium ${pathname === item.path ? "text-primary" : ""} ${item.path === "/about" ? "opacity-25 cursor-not-allowed transition-none" : ""} tracking-widest transition-colors duration-300 hover:text-primary`}
               >
-                {t(item.id as NamespaceKeys<Messages, string>)}
+                {t((item.id + ".label") as NamespaceKeys<Messages, string>)}
               </Link>
             </li>
           ))}
@@ -100,7 +100,7 @@ export function Header() {
                   style={{ fontWeight: "normal" }}
                   onClick={() => setOpenMenu(!openMenu)}
                 >
-                  {t(item.id as NamespaceKeys<Messages, string>)}
+                  {t((item.id + ".label") as NamespaceKeys<Messages, string>)}
                 </Link>
               </li>
             ))}

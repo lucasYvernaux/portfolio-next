@@ -1,6 +1,151 @@
 {
   "Pricing": {
-    "title": "tailored solutions",
-    "introduction": "Solutions tailored to every need and budget."
+    "title": "Tailored Solutions",
+    "introduction": "Solutions tailored to every need and budget.",
+    "tabs": {
+      "packs": "Packages",
+      "services": "Services"
+    },
+    "pricePrefix": "Starting at",
+    "priceSuffix": "per project",
+    "packs": {
+      "refonte": {
+        "title": "Website Redesign",
+        "description": "Modernize your existing website",
+        "pricePrefix": "Starting at",
+        "price": "€490",
+        "priceSuffix": "per project",
+        "isPopular": "false",
+        "features": {
+          "audit": "UX/UI audit of the existing site",
+          "design": "New responsive design",
+          "migration": "Content migration",
+          "performance": "Performance optimization",
+          "seo": "Technical SEO optimization",
+          "mobile": "Guaranteed mobile compatibility",
+          "redirects": "Redirection of old URLs"
+        }
+      },
+      "vitrine": {
+        "title": "Showcase Website",
+        "description": "Perfect for presenting your business",
+        "pricePrefix": "Starting at",
+        "price": "€950",
+        "priceSuffix": "per project",
+        "isPopular": "false",
+        "features": {
+          "design": "Custom responsive design",
+          "pages": "Up to 5 pages",
+          "form": "Contact form",
+          "seo": "Basic SEO optimization",
+          "hosting": "First year of hosting included",
+          "training": "Usage training"
+        }
+      },
+      "ecommerce": {
+        "title": "E-Commerce",
+        "description": "Sell your products online",
+        "pricePrefix": "Starting at",
+        "price": "€1,800",
+        "priceSuffix": "per project",
+        "isPopular": "true",
+        "features": {
+          "vitrine": "Everything in the Showcase package",
+          "shop": "Full online store",
+          "stock": "Inventory management",
+          "payment": "Secure payment",
+          "account": "Customer account area",
+          "dashboard": "Admin dashboard",
+          "support": "6 months of support included"
+        }
+      },
+      "surMesure": {
+        "title": "Custom-Built",
+        "description": "Complex & unique solutions",
+        "pricePrefix": "_",
+        "price": "Quote on request",
+        "priceSuffix": "_",
+        "isPopular": "false",
+        "features": {
+          "app": "Full web application",
+          "api": "Third-party API integrations",
+          "db": "Custom database",
+          "ai": "Built-in AI features",
+          "scalable": "Scalable architecture",
+          "support": "Priority support",
+          "maintenance": "Ongoing maintenance & upgrades"
+        }
+      },
+      "maintenance": {
+        "title": "Maintenance",
+        "description": "Keep your website fast and secure",
+        "pricePrefix": "Starting at",
+        "price": "€50",
+        "priceSuffix": "per month",
+        "isPopular": "false",
+        "features": {
+          "security": "Security updates",
+          "backup": "Regular backups",
+          "monitoring": "24/7 uptime monitoring",
+          "bugs": "Bug fixes",
+          "support": "Technical support by email",
+          "report": "Monthly performance report"
+        }
+      }
+    },
+    "services": {
+      "sectionTitle": "À la carte Services",
+      "sectionDescription": "Boost your online presence with targeted services.",
+      "items": {
+        "seo": {
+          "title": "SEO",
+          "description": "Improve your visibility on Google with a comprehensive audit and SEO strategy.",
+          "pricePrefix": "Starting at",
+          "price": "€200"
+        },
+        "googleBusiness": {
+          "title": "Google Business Profile",
+          "description": "Creation and optimization of your Google profile for local search.",
+          "pricePrefix": "Starting at",
+          "price": "€150"
+        },
+        "performance": {
+          "title": "Performance Optimization",
+          "description": "Audit and improvement of load times and Core Web Vitals.",
+          "pricePrefix": "Starting at",
+          "price": "€290"
+        },
+        "copywriting": {
+          "title": "Web Copywriting",
+          "description": "SEO-optimized content that converts your visitors into customers.",
+          "pricePrefix": "Starting at",
+          "price": "€150"
+        },
+        "analytics": {
+          "title": "Analytics & Tracking",
+          "description": "Setup of Google Analytics, Tag Manager, and tracking dashboards.",
+          "pricePrefix": "Starting at",
+          "price": "€180"
+        },
+        "email": {
+          "title": "Professional Email",
+          "description": "Setup of your professional mailbox with your own domain name.",
+          "pricePrefix": "Starting at",
+          "price": "€90"
+        },
+        "consulting": {
+          "title": "Technical Consulting & Audit",
+          "description": "Analysis of your stack, architecture recommendations, and technical roadmap.",
+          "pricePrefix": "_",
+          "price": "€80/hr"
+        },
+        "apiIntegration": {
+          "title": "API Integration & Automation",
+          "description": "Connecting your tools (CRM, payment, emailing) and workflow automation.",
+          "pricePrefix": "Starting at",
+          "price": "€300"
+        }
+      }
+    }
   }
 }
