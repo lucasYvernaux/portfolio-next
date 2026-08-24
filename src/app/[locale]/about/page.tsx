@@ -54,7 +54,7 @@ export default async function AboutPage({
       <BreadcrumbJsonLd
         locale={locale as Locale}
         items={[
-          { name: tCommon("nav.home"), path: "/" },
+          { name: tCommon("nav.home.label"), path: "/" },
           { name: t("breadcrumb"), path: "/about" },
         ]}
       />

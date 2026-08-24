@@ -8,7 +8,7 @@ import { BreadcrumbJsonLd, WebPageJsonLd } from "@/src/lib/seo/json-ld";
 import SectionDevis from "@/src/components/shared/section-devis";
 import {
   ArrowRight,
-  ChevronDown,
+  ChevronRight,
   Layers,
   Server,
   ShieldCheck,
@@ -16,7 +16,12 @@ import {
 } from "lucide-react";
 import { Link } from "@/src/i18n/navigation";
 import Image from "next/image";
-// import { useEffect } from "react";
+import CardProject from "@/src/components/feature/projects/card-project";
+import { NatureProject, Project } from "@/src/lib/types";
+
+import urlImageOyster from "@/public/screenshot/ScreenOyster.png";
+import urlImageDene from "@/public/screenshot/Screen-dene.png";
+import ScrollButton from "@/src/components/shared/scroll-button";
 
 /* ── Metadata traduite ── */
 export async function generateMetadata({
@@ -48,20 +53,54 @@ export default async function HomePage({
 
   setRequestLocale(locale);
   const t = await getTranslations("Home");
+  const tProjects = await getTranslations("Projects");
   const tCommon = await getTranslations("Common");
 
-  // useEffect(() => {
-  //   document
-  //     .querySelector("#arrow-down")
-  //     ?.addEventListener("click", function () {
-  //       console.log("click ");
-  //       if (document.querySelector("#section-formule")) {
-  //         document
-  //           .querySelector("#section-formule")
-  //           ?.scrollIntoView({ behavior: "smooth", block: "center" });
-  //       }
-  //     });
-  // });
+  const projectPoissonnerie: Project = {
+    id: "project_poissonnerie",
+    title: "oyster vernon",
+    type: tProjects("type.website"),
+    nature: NatureProject.PRO,
+    description: tProjects("Oyster.description"),
+    year: 2025,
+    stack: ["NextJS", "Tailwind CSS", "TypeScript"],
+    urlImageCover: urlImageOyster,
+    urlProject: "https://poissonneriestmarcel.fr/",
+    urlRepo: "https://github.com/lucasYvernaux/oysterbb",
+  };
+  const projectSacy: Project = {
+    id: "project_cyberlove",
+    title: "SaCy",
+    nature: NatureProject.PRO,
+    type: tProjects("type.webapp"),
+    description: tProjects("SaCy.description"),
+    year: 2026,
+    stack: [
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "Material UI",
+      "Python",
+      "IA",
+      "Azure",
+    ],
+    urlProject: "https://sacy-frontend.azurewebsites.net/",
+    urlRepo: "https://github.com/Safe-Cyberspace/Cyberlove",
+    comingSoon: true,
+  };
+
+  const projectDene: Project = {
+    id: "project_dene",
+    title: "Salon Déné",
+    type: tProjects("type.website"),
+    nature: NatureProject.PRO,
+    description: tProjects("Dene.description"),
+    year: 2025,
+    stack: ["NextJS", "Tailwind CSS", "TypeScript", "Resend"],
+    urlImageCover: urlImageDene,
+    urlProject: "https://salon-dene.com/",
+    urlRepo: "https://github.com/lucasYvernaux/site-dene",
+  };
 
   return (
     <>
@@ -74,7 +113,7 @@ export default async function HomePage({
       />
       <BreadcrumbJsonLd
         locale={locale as Locale}
-        items={[{ name: tCommon("nav.home"), path: "/" }]}
+        items={[{ name: tCommon("nav.home.label"), path: "/" }]}
       />
 
       <div className="relative">
@@ -124,6 +163,7 @@ export default async function HomePage({
                     data-testid="hero-cta"
                     href="/contact"
                     data-discover="true"
+                    title={tCommon("nav.contact.alt")}
                   >
                     Démarrer un projet
                     <ArrowRight
@@ -136,6 +176,7 @@ export default async function HomePage({
                     data-testid="hero-secondary-cta"
                     href="/projects"
                     data-discover="true"
+                    title={tCommon("nav.projects.alt")}
                   >
                     Réalisations
                   </Link>
@@ -163,21 +204,13 @@ export default async function HomePage({
                 </div>
               </div>
             </div>
-            <div
-              id="arrow-down"
-              className="w-full relative top-10 cursor-pointer flex flex-col items-center justify-center text-gray-500 text-sm uppercase tracking-widest"
-            >
-              découvrir
-              <ChevronDown
-                color="var(--color-primary)"
-                className="animate-bounce mt-4"
-              />
-            </div>
+            <ScrollButton targetId="features-section" />
           </section>
         </div>
         <section
           className="py-24 bg-gray-custom relative"
           data-testid="features-section"
+          id="features-section"
           x-file-name="Home"
           x-line-number={114}
           x-column={6}
@@ -482,6 +515,383 @@ export default async function HomePage({
                       </div>
                     </div>
                   </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="projects" className="py-20 md:py-32 bg-gray-custom">
+          <div className="container mx-auto px-6 max-w-6xl">
+            <div style={{ opacity: 1, transform: "none" }}>
+              <div className="flex flex-col gap-16 items-center">
+                <div className="content-text text-center">
+                  <h2 className="text-4xl font-bold text-zinc-100 mb-6">
+                    Mes Réalisations
+                  </h2>
+                  <p className="text-zinc-400 max-w-2xl mx-auto text-lg leading-relaxed">
+                    Découvrez quelques-uns de mes projets récents, alliant
+                    design élégant et performances optimales.
+                  </p>
+                </div>
+                <div className="content-project">
+                  <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <CardProject project={projectPoissonnerie} />
+                    <CardProject project={projectSacy} />
+                    <CardProject project={projectDene} />
+                  </div>
+                </div>
+              </div>
+              <div
+                id="arrow-down"
+                className="w-full mt-30 gap-2 cursor-pointer flex items-center justify-center text-gray-500 text-sm uppercase tracking-widest"
+              >
+                <Link href="/projects">{tCommon("actions.SeeAll")}</Link>
+                <ChevronRight color="var(--color-primary)" className="" />
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="pricing" className="py-20 md:py-32 bg-zinc-900">
+          <div className="container mx-auto px-6 max-w-6xl">
+            <div style={{ opacity: 1, transform: "none" }}>
+              <div className="text-center mb-16">
+                <h2 className="text-4xl font-bold text-zinc-100 mb-6">
+                  Tarifs &amp; Prestations
+                </h2>
+                <p className="text-zinc-400 max-w-2xl mx-auto text-lg">
+                  Des solutions adaptées à vos besoins et à votre budget.
+                </p>
+              </div>
+              <div className="grid md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                <div
+                  className="bg-zinc-950 rounded-2xl p-8 border border-zinc-800 relative overflow-hidden flex flex-col"
+                  style={{ opacity: 1, transform: "none" }}
+                >
+                  <h3 className="text-xl font-bold text-zinc-100 mb-2">
+                    Site Vitrine
+                  </h3>
+                  <div className="text-3xl font-bold text-[#C5A866] mb-8">
+                    Sur devis
+                  </div>
+                  <ul className="space-y-4 mb-8 flex-1">
+                    <li className="flex items-start gap-3 text-zinc-300">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width={20}
+                        height={20}
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth={2}
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        className="lucide lucide-check text-[#C5A866] shrink-0 mt-0.5"
+                        aria-hidden="true"
+                      >
+                        <path d="M20 6 9 17l-5-5" />
+                      </svg>
+                      <span>Design responsive &amp; moderne</span>
+                    </li>
+                    <li className="flex items-start gap-3 text-zinc-300">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width={20}
+                        height={20}
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth={2}
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        className="lucide lucide-check text-[#C5A866] shrink-0 mt-0.5"
+                        aria-hidden="true"
+                      >
+                        <path d="M20 6 9 17l-5-5" />
+                      </svg>
+                      <span>Jusqu&apos;à 5 pages</span>
+                    </li>
+                    <li className="flex items-start gap-3 text-zinc-300">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width={20}
+                        height={20}
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth={2}
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        className="lucide lucide-check text-[#C5A866] shrink-0 mt-0.5"
+                        aria-hidden="true"
+                      >
+                        <path d="M20 6 9 17l-5-5" />
+                      </svg>
+                      <span>Optimisation SEO de base</span>
+                    </li>
+                    <li className="flex items-start gap-3 text-zinc-300">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width={20}
+                        height={20}
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth={2}
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        className="lucide lucide-check text-[#C5A866] shrink-0 mt-0.5"
+                        aria-hidden="true"
+                      >
+                        <path d="M20 6 9 17l-5-5" />
+                      </svg>
+                      <span>Formulaire de contact</span>
+                    </li>
+                    <li className="flex items-start gap-3 text-zinc-300">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width={20}
+                        height={20}
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth={2}
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        className="lucide lucide-check text-[#C5A866] shrink-0 mt-0.5"
+                        aria-hidden="true"
+                      >
+                        <path d="M20 6 9 17l-5-5" />
+                      </svg>
+                      <span>Livraison rapide</span>
+                    </li>
+                  </ul>
+                  <a
+                    href="#contact"
+                    className="block w-full text-center py-4 rounded-md font-bold transition-all duration-300 bg-zinc-900 text-zinc-100 hover:bg-zinc-800 border border-zinc-700 hover:border-[#C5A866]"
+                  >
+                    Contact
+                  </a>
+                </div>
+                <div
+                  className="bg-zinc-950 rounded-2xl p-8 border border-[#C5A866] shadow-xl shadow-[#C5A866]/10 transform md:-translate-y-4 relative overflow-hidden flex flex-col"
+                  style={{ opacity: 1, transform: "none" }}
+                >
+                  <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-transparent via-[#C5A866] to-transparent" />
+                  <h3 className="text-xl font-bold text-zinc-100 mb-2">
+                    Sur-Mesure / Web App
+                  </h3>
+                  <div className="text-3xl font-bold text-[#C5A866] mb-8">
+                    Sur devis
+                  </div>
+                  <ul className="space-y-4 mb-8 flex-1">
+                    <li className="flex items-start gap-3 text-zinc-300">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width={20}
+                        height={20}
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth={2}
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        className="lucide lucide-check text-[#C5A866] shrink-0 mt-0.5"
+                        aria-hidden="true"
+                      >
+                        <path d="M20 6 9 17l-5-5" />
+                      </svg>
+                      <span>Architecture sur-mesure</span>
+                    </li>
+                    <li className="flex items-start gap-3 text-zinc-300">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width={20}
+                        height={20}
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth={2}
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        className="lucide lucide-check text-[#C5A866] shrink-0 mt-0.5"
+                        aria-hidden="true"
+                      >
+                        <path d="M20 6 9 17l-5-5" />
+                      </svg>
+                      <span>Base de données</span>
+                    </li>
+                    <li className="flex items-start gap-3 text-zinc-300">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width={20}
+                        height={20}
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth={2}
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        className="lucide lucide-check text-[#C5A866] shrink-0 mt-0.5"
+                        aria-hidden="true"
+                      >
+                        <path d="M20 6 9 17l-5-5" />
+                      </svg>
+                      <span>Espace administration</span>
+                    </li>
+                    <li className="flex items-start gap-3 text-zinc-300">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width={20}
+                        height={20}
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth={2}
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        className="lucide lucide-check text-[#C5A866] shrink-0 mt-0.5"
+                        aria-hidden="true"
+                      >
+                        <path d="M20 6 9 17l-5-5" />
+                      </svg>
+                      <span>Performances maximales</span>
+                    </li>
+                    <li className="flex items-start gap-3 text-zinc-300">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width={20}
+                        height={20}
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth={2}
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        className="lucide lucide-check text-[#C5A866] shrink-0 mt-0.5"
+                        aria-hidden="true"
+                      >
+                        <path d="M20 6 9 17l-5-5" />
+                      </svg>
+                      <span>Code Vanilla ou React</span>
+                    </li>
+                  </ul>
+                  <a
+                    href="#contact"
+                    className="block w-full text-center py-4 rounded-md font-bold transition-all duration-300 bg-[#C5A866] text-zinc-950 hover:bg-[#d8bd7e]"
+                  >
+                    Contact
+                  </a>
+                </div>
+                <div
+                  className="bg-zinc-950 rounded-2xl p-8 border border-zinc-800 relative overflow-hidden flex flex-col"
+                  style={{ opacity: 1, transform: "none" }}
+                >
+                  <h3 className="text-xl font-bold text-zinc-100 mb-2">
+                    Maintenance &amp; Reprise
+                  </h3>
+                  <div className="text-3xl font-bold text-[#C5A866] mb-8">
+                    Taux horaire
+                  </div>
+                  <ul className="space-y-4 mb-8 flex-1">
+                    <li className="flex items-start gap-3 text-zinc-300">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width={20}
+                        height={20}
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth={2}
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        className="lucide lucide-check text-[#C5A866] shrink-0 mt-0.5"
+                        aria-hidden="true"
+                      >
+                        <path d="M20 6 9 17l-5-5" />
+                      </svg>
+                      <span>Audit de code existant</span>
+                    </li>
+                    <li className="flex items-start gap-3 text-zinc-300">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width={20}
+                        height={20}
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth={2}
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        className="lucide lucide-check text-[#C5A866] shrink-0 mt-0.5"
+                        aria-hidden="true"
+                      >
+                        <path d="M20 6 9 17l-5-5" />
+                      </svg>
+                      <span>Mises à jour de sécurité</span>
+                    </li>
+                    <li className="flex items-start gap-3 text-zinc-300">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width={20}
+                        height={20}
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth={2}
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        className="lucide lucide-check text-[#C5A866] shrink-0 mt-0.5"
+                        aria-hidden="true"
+                      >
+                        <path d="M20 6 9 17l-5-5" />
+                      </svg>
+                      <span>Ajout de fonctionnalités</span>
+                    </li>
+                    <li className="flex items-start gap-3 text-zinc-300">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width={20}
+                        height={20}
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth={2}
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        className="lucide lucide-check text-[#C5A866] shrink-0 mt-0.5"
+                        aria-hidden="true"
+                      >
+                        <path d="M20 6 9 17l-5-5" />
+                      </svg>
+                      <span>Optimisation des performances</span>
+                    </li>
+                    <li className="flex items-start gap-3 text-zinc-300">
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width={20}
+                        height={20}
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth={2}
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        className="lucide lucide-check text-[#C5A866] shrink-0 mt-0.5"
+                        aria-hidden="true"
+                      >
+                        <path d="M20 6 9 17l-5-5" />
+                      </svg>
+                      <span>Support technique réactif</span>
+                    </li>
+                  </ul>
+                  <a
+                    href="#contact"
+                    className="block w-full text-center py-4 rounded-md font-bold transition-all duration-300 bg-zinc-900 text-zinc-100 hover:bg-zinc-800 border border-zinc-700 hover:border-[#C5A866]"
+                  >
+                    Contact
+                  </a>
                 </div>
               </div>
             </div>
