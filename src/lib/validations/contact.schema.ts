@@ -114,6 +114,8 @@ export function getContactSchema(t: _Translator<Messages, "Contact">) {
           nb_char: 500,
         }),
       ),
+
+    website: z.string().optional(),
   });
 }
 

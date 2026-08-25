@@ -42,12 +42,27 @@ export async function POST(req: NextRequest): Promise<Response> {
     );
   }
 
-  // --0. Captcha
-
   // ── 1. Parse le body ─────────────────────────────────────────────────────
 
   try {
     const body = await req.json();
+
+    // check honeypot
+    if (body.website && body.website.trim() !== "") {
+      console.warn(
+        "Spam détecté via Honeypot ! IP:",
+        req.headers.get("x-forwarded-for"),
+      );
+
+      console.warn("Honeypot trigger by IP:", clientIp);
+
+      // On simule un succès total pour tromper le robot
+      return NextResponse.json(
+        { success: true, message: "Votre message a été envoyé avec succès !" },
+        { status: 200 },
+      );
+    }
+
     const { turnstileToken, ...formData } = body;
 
     if (!turnstileToken) {

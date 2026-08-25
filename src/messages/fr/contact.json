@@ -24,6 +24,7 @@
       "email": "Email",
       "subject": "Sujet",
       "message": "Message",
+      "website": "Website",
       "message_placeholder": "Décrivez votre projet...",
       "submit": "Envoyer le message",
       "sending": "Envoi en cours...",
