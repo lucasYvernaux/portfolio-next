@@ -2,6 +2,24 @@ import { _Translator, Messages } from "next-intl";
 import { z } from "zod";
 
 export function getContactSchema(t: _Translator<Messages, "Contact">) {
+  function optionalTrimmedString(fieldLabel: string, min: number, max: number) {
+    return z.preprocess(
+      (val) => (typeof val === "string" && val.trim() === "" ? undefined : val),
+      z
+        .string()
+        .trim()
+        .min(
+          min,
+          t("form.error.too_short_char", { field: fieldLabel, nb_char: min }),
+        )
+        .max(
+          max,
+          t("form.error.too_long_char", { field: fieldLabel, nb_char: max }),
+        )
+        .optional(),
+    );
+  }
+
   return z.object({
     lastName: z
       .string()
@@ -41,43 +59,9 @@ export function getContactSchema(t: _Translator<Messages, "Contact">) {
         }),
       ),
 
-    company: z
-      .string()
-      .trim()
-      .min(
-        2,
-        t("form.error.too_short_char", {
-          field: t("form.company"),
-          nb_char: 2,
-        }),
-      )
-      .max(
-        100,
-        t("form.error.too_long_char", {
-          field: t("form.company"),
-          nb_char: 100,
-        }),
-      )
-      .optional(),
+    company: optionalTrimmedString(t("form.company"), 2, 100),
 
-    job: z
-      .string()
-      .trim()
-      .min(
-        2,
-        t("form.error.too_short_char", {
-          field: t("form.job"),
-          nb_char: 2,
-        }),
-      )
-      .max(
-        100,
-        t("form.error.too_long_char", {
-          field: t("form.job"),
-          nb_char: 100,
-        }),
-      )
-      .optional(),
+    job: optionalTrimmedString(t("form.job"), 2, 100),
 
     email: z
       .string()

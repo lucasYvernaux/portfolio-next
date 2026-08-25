@@ -44,6 +44,8 @@ export function useContactForm() {
     turnstileToken?: string | null,
     onResetCaptcha?: () => void,
   ) {
+    console.log("je suis dans le handle submit");
+
     if (!turnstileToken) {
       setState({
         status: "error",
@@ -54,15 +56,20 @@ export function useContactForm() {
     // Validation complète côté client avant envoi
     const parsed = contactSchema.safeParse(formData);
     if (!parsed.success) {
+      console.log("erreur");
+
       const errors: FieldErrors = {};
       for (const issue of parsed.error.issues) {
         const key = issue.path[0] as keyof ContactFormData;
         if (key) errors[key] = issue.message;
       }
+      console.log(errors);
+
       setFieldErrors(errors);
       setState({ status: "idle" });
       return;
     }
+    console.log("pas d'erreur");
 
     setState({ status: "loading" });
     setFieldErrors({});
