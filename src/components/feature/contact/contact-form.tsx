@@ -5,7 +5,6 @@ import { useRef, useState } from "react";
 import { useContactForm } from "./use-contact";
 import type { ContactFormData } from "@/lib/validations/contact.schema";
 import { Turnstile, type TurnstileInstance } from "@marsidev/react-turnstile";
-import { env } from "@env";
 
 interface ContactFormProps {
   onValuesChange?: (values: Partial<ContactFormData>) => void;
@@ -26,6 +25,7 @@ export function ContactForm({ onValuesChange }: ContactFormProps) {
     email: "",
     subject: "",
     message: "",
+    website: "",
   });
 
   const [touched, setTouched] = useState<
@@ -159,6 +159,22 @@ export function ContactForm({ onValuesChange }: ContactFormProps) {
         onBlur={() => handleBlur("subject")}
         required
       />
+
+      {/* Website */}
+      <div
+        className="absolute opacity-0 -z-10 pointer-events-none h-0 w-0 overflow-hidden"
+        aria-hidden="true"
+      >
+        <Field
+          id="website"
+          label={t("form.website")}
+          type="text"
+          value={values.website ?? ""}
+          error={touched.website ? fieldErrors.website : undefined}
+          onChange={(v) => handleChange("website", v)}
+          onBlur={() => handleBlur("website")}
+        />
+      </div>
 
       {/* Message */}
       <div className="flex flex-col gap-1.5">
