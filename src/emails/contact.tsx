@@ -9,7 +9,7 @@ import {
   Section,
   Text,
 } from "@react-email/components";
-import type { ContactFormData } from "@/src/lib/validations/contact.schema";
+import type { ContactFormData } from "@/lib/validations/contact.schema";
 
 interface ContactEmailProps {
   data: ContactFormData;

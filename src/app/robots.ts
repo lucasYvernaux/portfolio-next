@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 import { DISALLOWED_PATHS, SITE_URL } from "../lib/seo/constants";
-import { env } from "@/env";
+import { env } from "@env";
 
 /**
  * robots.txt dynamique.

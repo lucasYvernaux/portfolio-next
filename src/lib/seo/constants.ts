@@ -3,8 +3,8 @@
  * → source de vérité UNIQUE pour toute l'app.
  */
 
-import { type Locale } from "@/src/i18n/locale";
-import { env } from "@/env";
+import { type Locale } from "@/i18n/locale";
+import { env } from "@env";
 
 // Re-export pour que le reste de _lib/seo n'ait pas
 // besoin d'importer depuis i18n/

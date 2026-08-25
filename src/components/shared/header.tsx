@@ -5,7 +5,7 @@ import { allNavItems } from "../../lib/config";
 import { useEffect, useState } from "react";
 import { SwitchLang } from "./toggle-lang";
 import { Messages, NamespaceKeys, useTranslations } from "next-intl";
-import { Link, usePathname } from "@/src/i18n/navigation";
+import { Link, usePathname } from "@/i18n/navigation";
 import Image from "next/image";
 
 export function Header() {

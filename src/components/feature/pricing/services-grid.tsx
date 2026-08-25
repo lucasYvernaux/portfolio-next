@@ -1,9 +1,4 @@
 "use client";
-// import { ServiceCustom } from "@/src/lib/types";
-
-// interface PropsServicesGrid {
-//   items: ServiceCustom[];
-// }
 
 import { useTranslations, useMessages } from "next-intl";
 import {
@@ -33,9 +28,7 @@ export default function ServicesGrid() {
   const t = useTranslations("Pricing");
   const messages = useMessages();
 
-  const serviceKeys = Object.keys(
-    (messages.Pricing as Record<string, any>).services.items,
-  );
+  const serviceKeys = Object.keys(messages.Pricing.services.items);
 
   return (
     <section className="mt-16">

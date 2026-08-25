@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { heading, text } from "@/src/lib/utils/primitives";
+import { heading, text } from "@/lib/utils/primitives";
 import { ArrowRight } from "lucide-react";
 import { getTranslations } from "next-intl/server";
 

@@ -1,8 +1,8 @@
 // app/sitemap.ts
 import type { MetadataRoute } from "next";
-import { getPathname } from "@/src/i18n/navigation";
-import { type Locale, routing } from "@/src/i18n/routing";
-import { env } from "@/env";
+import { getPathname } from "@/i18n/navigation";
+import { type Locale, routing } from "@/i18n/routing";
+import { env } from "@env";
 // import { getProjects } from "@/lib/fetchers/projects";
 
 type ChangeFrequency = MetadataRoute.Sitemap[number]["changeFrequency"];
@@ -65,7 +65,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
         languages: Object.fromEntries(
           routing.locales.map((altLocale) => [
             altLocale,
-            buildStaticUrl(locale, route.href),
+            buildStaticUrl(altLocale, route.href),
           ]),
         ),
       },

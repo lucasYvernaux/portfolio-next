@@ -1,8 +1,8 @@
 "use client";
 
-import { usePathname, useRouter } from "@/src/i18n/navigation";
-import { routing } from "@/src/i18n/routing";
-import { StaticPathname } from "@/src/lib/types";
+import { usePathname, useRouter } from "@/i18n/navigation";
+import { routing } from "@/i18n/routing";
+import { StaticPathname } from "@/lib/types";
 import { useLocale, useTranslations } from "next-intl";
 
 export function SwitchLang() {

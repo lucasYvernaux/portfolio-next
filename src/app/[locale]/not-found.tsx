@@ -1,6 +1,6 @@
 "use client";
 
-import { NotFoundError } from "@/src/lib/error/codes";
+import { NotFoundError } from "@/lib/error/codes";
 
 export default function NotFound() {
   throw new NotFoundError();

@@ -1,13 +1,13 @@
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { hasLocale } from "next-intl";
-import { routing } from "@/src/i18n/routing";
-import { createMetadata } from "@/src/lib/seo/metadata";
-import { type Locale } from "@/src/i18n/locale";
-import { BreadcrumbJsonLd, WebPageJsonLd } from "@/src/lib/seo/json-ld";
-import SectionHero from "@/src/components/shared/section-hero";
-import SectionDevis from "@/src/components/shared/section-devis";
-// import Pattern from "@/src/components/shared/background";
+import { routing } from "@/i18n/routing";
+import { createMetadata } from "@/lib/seo/metadata";
+import { type Locale } from "@/i18n/locale";
+import { BreadcrumbJsonLd, WebPageJsonLd } from "@/lib/seo/json-ld";
+import SectionHero from "@/components/shared/section-hero";
+import SectionDevis from "@/components/shared/section-devis";
+// import Pattern from "@/components/shared/background";
 
 /* ── Metadata traduite ── */
 export async function generateMetadata({

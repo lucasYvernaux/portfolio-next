@@ -3,7 +3,7 @@
 
 import { useTranslations } from "next-intl";
 import { CalendlyButton } from "./calendlyButton";
-import { ContactFormData } from "@/src/lib/validations/contact.schema";
+import { ContactFormData } from "@/lib/validations/contact.schema";
 
 interface CalendlySectionProps {
   className?: string;

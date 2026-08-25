@@ -1,22 +1,22 @@
 import type { Metadata } from "next";
-import "./globals.css";
-import { Header } from "@/src/components/shared/header";
-import { Footer } from "@/src/components/shared/footer";
+import "../globals.css";
+import { Header } from "@/components/shared/header";
+import { Footer } from "@/components/shared/footer";
 
 import { notFound } from "next/navigation";
-import { routing } from "@/src/i18n/routing";
+import { routing } from "@/i18n/routing";
 import { hasLocale, NextIntlClientProvider } from "next-intl";
 import {
   getMessages,
   getTranslations,
   setRequestLocale,
 } from "next-intl/server";
-import SwitchTheme from "@/src/components/shared/toggle-dark-mode";
-import { ThemeProvider } from "@/src/components/providers/theme-provider";
-import { type Locale, LOCALES } from "@/src/i18n/locale";
-import { createMetadata } from "@/src/lib/seo/metadata";
-import { SITE_NAME } from "@/src/lib/seo/constants";
-import { CalendlyProvider } from "@/src/components/feature/calendly/calendlyProvider";
+import SwitchTheme from "@/components/shared/toggle-dark-mode";
+import { ThemeProvider } from "@/components/providers/theme-provider";
+import { type Locale, LOCALES } from "@/i18n/locale";
+import { createMetadata } from "@/lib/seo/metadata";
+import { SITE_NAME } from "@/lib/seo/constants";
+import { CalendlyProvider } from "@/components/feature/calendly/calendlyProvider";
 
 export function generateStaticParams() {
   return LOCALES.map((locale) => ({ locale }));

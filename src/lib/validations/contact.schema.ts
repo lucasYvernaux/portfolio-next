@@ -1,58 +1,149 @@
+import { _Translator, Messages } from "next-intl";
 import { z } from "zod";
 
-// Partagé entre le client (validation temps réel)
-// et le serveur (validation dans le Route Handler)
-export const contactSchema = z.object({
-  lastName: z
-    .string()
-    .min(2, "Le nom doit contenir au moins 2 caractères")
-    .max(100, "Le nom ne peut pas dépasser 100 caractères")
-    .trim(),
+export function getContactSchema(t: _Translator<Messages, "Contact">) {
+  return z.object({
+    lastName: z
+      .string()
+      .trim()
+      .toLowerCase()
+      .min(
+        2,
+        t("form.error.too_short_char", {
+          field: t("form.lastName"),
+          nb_char: 2,
+        }),
+      )
+      .max(
+        100,
+        t("form.error.too_long_char", {
+          field: t("form.lastName"),
+          nb_char: 100,
+        }),
+      ),
 
-  firstName: z
-    .string()
-    .min(2, "Le prénom doit contenir au moins 2 caractères")
-    .max(100, "Le prénom ne peut pas dépasser 100 caractères")
-    .trim(),
+    firstName: z
+      .string()
+      .trim()
+      .toLowerCase()
+      .min(
+        2,
+        t("form.error.too_short_char", {
+          field: t("form.firstName"),
+          nb_char: 2,
+        }),
+      )
+      .max(
+        100,
+        t("form.error.too_long_char", {
+          field: t("form.firstName"),
+          nb_char: 100,
+        }),
+      ),
 
-  company: z
-    .string()
-    .min(2, "Le champs doit contenir au moins 2 caractères")
-    .max(100, "Le champs ne peut pas dépasser 100 caractères")
-    .trim()
-    .optional(),
+    company: z
+      .string()
+      .trim()
+      .min(
+        2,
+        t("form.error.too_short_char", {
+          field: t("form.company"),
+          nb_char: 2,
+        }),
+      )
+      .max(
+        100,
+        t("form.error.too_long_char", {
+          field: t("form.company"),
+          nb_char: 100,
+        }),
+      )
+      .optional(),
 
-  job: z
-    .string()
-    .min(2, "Le champs doit contenir au moins 2 caractères")
-    .max(100, "Le champs ne peut pas dépasser 100 caractères")
-    .trim()
-    .optional(),
+    job: z
+      .string()
+      .trim()
+      .min(
+        2,
+        t("form.error.too_short_char", {
+          field: t("form.job"),
+          nb_char: 2,
+        }),
+      )
+      .max(
+        100,
+        t("form.error.too_long_char", {
+          field: t("form.job"),
+          nb_char: 100,
+        }),
+      )
+      .optional(),
 
-  email: z
-    .string()
-    .email("Adresse email invalide")
-    .max(254, "Email trop long")
-    .trim()
-    .toLowerCase(),
+    email: z
+      .string()
+      .trim()
+      .toLowerCase()
+      .email(
+        t("form.error.invalid", {
+          field: t("form.email"),
+        }),
+      )
+      .max(
+        254,
+        t("form.error.too_long_char", {
+          field: t("form.email"),
+          nb_char: 254,
+        }),
+      ),
 
-  subject: z
-    .string()
-    .min(5, "Le sujet doit contenir au moins 5 caractères")
-    .max(200, "Le sujet ne peut pas dépasser 200 caractères")
-    .trim(),
+    subject: z
+      .string()
+      .trim()
+      .min(
+        5,
+        t("form.error.too_short_char", {
+          field: t("form.subject"),
+          nb_char: 5,
+        }),
+      )
+      .max(
+        200,
+        t("form.error.too_long_char", {
+          field: t("form.subject"),
+          nb_char: 200,
+        }),
+      ),
+    message: z
+      .string()
+      .trim()
+      .min(
+        20,
+        t("form.error.too_short_char", {
+          field: t("form.message"),
+          nb_char: 20,
+        }),
+      )
+      .max(
+        500,
+        t("form.error.too_long_char", {
+          field: t("form.message"),
+          nb_char: 500,
+        }),
+      ),
+  });
+}
 
-  message: z
-    .string()
-    .min(20, "Le message doit contenir au moins 20 caractères")
-    .max(5000, "Le message ne peut pas dépasser 5000 caractères")
-    .trim(),
-});
+export type ContactFormData = z.infer<ReturnType<typeof getContactSchema>>;
 
-export type ContactFormData = z.infer<typeof contactSchema>;
+export type RequiredFields =
+  | "lastName"
+  | "firstName"
+  | "email"
+  | "subject"
+  | "message";
 
-export type RequiredFields = "name" | "email" | "message";
 export type OptionalFields = Exclude<keyof ContactFormData, RequiredFields>;
+// export type OptionalFields = "company" | "job";
 
 // Type retourné par le Route Handler
 export type ContactApiResponse =

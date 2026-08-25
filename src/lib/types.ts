@@ -16,42 +16,76 @@ export enum NatureProject {
   ETUDE = "étude",
 }
 
-const STACKS = [
-  "NextJS",
-  "React",
-  "ReactJS",
-  "Laravel",
-  "Python",
-  "JavaScript",
-  "TypeScript",
-  "Bootstrap",
-  "Tailwind CSS",
-  "Material UI",
-  "Shadcn",
-  "HTML",
-  "CSS",
-  "EmailJS",
-  "Resend",
-  "Docker",
-  "Vercel",
-  "Azure",
-  "MySQL",
-  "PostgreSQL",
-  "Unity",
-  "Godot",
-  "Java",
-  "C",
-  "C#",
-  "C++",
-  "Rust",
-  "VBA",
-  "LUA",
-  "Git",
-  "IA",
-  "Shell",
-] as const;
+// const STACKS = [
+//   "NextJS",
+//   "React",
+//   "ReactJS",
+//   "Laravel",
+//   "Python",
+//   "JavaScript",
+//   "TypeScript",
+//   "Bootstrap",
+//   "Tailwind CSS",
+//   "Material UI",
+//   "Shadcn",
+//   "HTML",
+//   "CSS",
+//   "EmailJS",
+//   "Resend",
+//   "Docker",
+//   "Vercel",
+//   "Azure",
+//   "MySQL",
+//   "PostgreSQL",
+//   "Unity",
+//   "Godot",
+//   "Java",
+//   "C",
+//   "C#",
+//   "C++",
+//   "Rust",
+//   "VBA",
+//   "LUA",
+//   "Git",
+//   "IA",
+//   "Shell",
+// ] as const;
 
-type Stack = (typeof STACKS)[number];
+// type Stack = (typeof STACKS)[number];
+
+type Stack =
+  | "NextJS"
+  | "React"
+  | "ReactJS"
+  | "Laravel"
+  | "Python"
+  | "JavaScript"
+  | "TypeScript"
+  | "Bootstrap"
+  | "Tailwind CSS"
+  | "Material UI"
+  | "Shadcn"
+  | "HTML"
+  | "CSS"
+  | "EmailJS"
+  | "Resend"
+  | "Docker"
+  | "Vercel"
+  | "Azure"
+  | "MySQL"
+  | "PostgreSQL"
+  | "Unity"
+  | "Godot"
+  | "Java"
+  | "C"
+  | "C#"
+  | "C++"
+  | "Rust"
+  | "VBA"
+  | "LUA"
+  | "Git"
+  | "IA"
+  | "Shell";
 
 export type Project = {
   id: string;

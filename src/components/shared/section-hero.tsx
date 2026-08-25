@@ -1,4 +1,4 @@
-import { heading } from "@/src/lib/utils/primitives";
+import { heading } from "@/lib/utils/primitives";
 
 interface PropsSectionHero {
   path: string;
