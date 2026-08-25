@@ -1,9 +1,10 @@
 "use client";
 
 import { useTranslations } from "next-intl";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { useContactForm } from "./use-contact";
-import type { ContactFormData } from "@/src/lib/validations/contact.schema";
+import type { ContactFormData } from "@/lib/validations/contact.schema";
+import { Turnstile, type TurnstileInstance } from "@marsidev/react-turnstile";
 
 interface ContactFormProps {
   onValuesChange?: (values: Partial<ContactFormData>) => void;
@@ -12,6 +13,9 @@ interface ContactFormProps {
 export function ContactForm({ onValuesChange }: ContactFormProps) {
   const t = useTranslations("Contact");
   const { state, fieldErrors, handleSubmit } = useContactForm();
+
+  const [turnstileToken, setTurnstileToken] = useState<string | null>(null);
+  const turnstileRef = useRef<TurnstileInstance>(null);
 
   const [values, setValues] = useState<ContactFormData>({
     lastName: "",
@@ -37,9 +41,18 @@ export function ContactForm({ onValuesChange }: ContactFormProps) {
     setTouched((prev) => ({ ...prev, [field]: true }));
   }
 
-  async function onSubmit(e: React.FormEvent) {
+  async function onSubmit(e: React.SubmitEvent) {
     e.preventDefault();
-    await handleSubmit(values);
+    const form = e.currentTarget as HTMLFormElement;
+    const formData = new FormData(form);
+
+    const data = Object.fromEntries(
+      formData.entries(),
+    ) as unknown as ContactFormData;
+    await handleSubmit(data, turnstileToken, () => {
+      turnstileRef.current?.reset();
+      setTurnstileToken(null);
+    });
   }
 
   if (state.status === "success") {
@@ -167,10 +180,21 @@ export function ContactForm({ onValuesChange }: ContactFormProps) {
           </p>
         )}
       </div>
-
+      <div className="my-4 flex justify-center">
+        <Turnstile
+          ref={turnstileRef}
+          siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY!}
+          onSuccess={(token) => setTurnstileToken(token)}
+          onExpire={() => setTurnstileToken(null)}
+          onError={() => setTurnstileToken(null)}
+          options={{
+            theme: "auto", // S'adapte au mode clair/sombre automatiquement
+          }}
+        />
+      </div>
       <button
         type="submit"
-        disabled={state.status === "loading"}
+        disabled={state.status === "loading" || !turnstileToken}
         className="inline-flex items-center justify-center rounded-md bg-foreground px-6 py-2.5 text-sm font-medium text-background transition-opacity hover:opacity-90 disabled:opacity-50 disabled:cursor-not-allowed"
       >
         {state.status === "loading" ? t("form.sending") : t("form.submit")}
@@ -219,7 +243,7 @@ function Field({
         autoComplete={autoComplete}
         aria-describedby={error ? `${id}-error` : undefined}
         aria-invalid={!!error}
-        className="rounded-md border border-border bg-background px-3 py-2 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring aria-[invalid=true]:border-red-500"
+        className="rounded-md border border-border bg-background px-3 py-2 text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring aria-invalid:border-red-500"
       />
       {error && (
         <p id={`${id}-error`} role="alert" className="text-xs text-red-500">

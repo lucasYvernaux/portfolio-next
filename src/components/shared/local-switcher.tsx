@@ -3,9 +3,9 @@
 import { useLocale, useTranslations } from "next-intl";
 
 import { Languages } from "lucide-react";
-import { usePathname, useRouter } from "@/src/i18n/navigation";
-import { LOCALES, type Locale } from "@/src/i18n/locale";
-import { StaticPathname } from "@/src/lib/types";
+import { usePathname, useRouter } from "@/i18n/navigation";
+import { LOCALES, type Locale } from "@/i18n/locale";
+import { StaticPathname } from "@/lib/types";
 
 /**
  * Sélecteur de langue.

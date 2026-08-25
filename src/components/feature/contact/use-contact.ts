@@ -1,12 +1,13 @@
 "use client";
 
-import { useState } from "react";
+import { useMemo, useState } from "react";
 import {
-  contactSchema,
+  getContactSchema,
   type ContactFormData,
   type ContactApiResponse,
   OptionalFields,
-} from "@/src/lib/validations/contact.schema";
+} from "@/lib/validations/contact.schema";
+import { useTranslations } from "next-intl";
 
 type FieldErrors = Partial<Record<keyof ContactFormData, string>>;
 
@@ -19,6 +20,9 @@ type FormState =
 const OPTIONAL_FIELDS: OptionalFields[] = ["company", "job"];
 
 export function useContactForm() {
+  const t = useTranslations("Contact");
+  // On génère le schéma avec les traductions du client
+  const contactSchema = useMemo(() => getContactSchema(t), [t]);
   const [state, setState] = useState<FormState>({ status: "idle" });
   const [fieldErrors, setFieldErrors] = useState<FieldErrors>({});
 
@@ -35,7 +39,18 @@ export function useContactForm() {
     return result.success ? undefined : result.error.issues[0]?.message;
   }
 
-  async function handleSubmit(formData: ContactFormData) {
+  async function handleSubmit(
+    formData: ContactFormData,
+    turnstileToken?: string | null,
+    onResetCaptcha?: () => void,
+  ) {
+    if (!turnstileToken) {
+      setState({
+        status: "error",
+        error: "Veuillez compléter le test de sécurité Turnstile.",
+      });
+      return;
+    }
     // Validation complète côté client avant envoi
     const parsed = contactSchema.safeParse(formData);
     if (!parsed.success) {
@@ -56,7 +71,10 @@ export function useContactForm() {
       const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(removeEmptyOptionals(parsed.data)),
+        body: JSON.stringify({
+          ...removeEmptyOptionals(parsed.data),
+          turnstileToken,
+        }),
       });
 
       const json: ContactApiResponse = await res.json();
@@ -66,12 +84,14 @@ export function useContactForm() {
       } else {
         setFieldErrors(json.fields ?? {});
         setState({ status: "error", error: json.error });
+        onResetCaptcha?.();
       }
     } catch {
       setState({
         status: "error",
         error: "Impossible de joindre le serveur. Vérifiez votre connexion.",
       });
+      onResetCaptcha?.();
     }
   }
 

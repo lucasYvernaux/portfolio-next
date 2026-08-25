@@ -1,7 +1,7 @@
 import { Resend } from "resend";
-import { env, serverEnv } from "@/env";
-import { ContactEmail } from "@/src/emails/contact";
-import type { ContactFormData } from "@/src/lib/validations/contact.schema";
+import { env, serverEnv } from "@env";
+import { ContactEmail } from "@/emails/contact";
+import type { ContactFormData } from "@/lib/validations/contact.schema";
 
 const resend = new Resend(serverEnv.RESEND_API_KEY);
 

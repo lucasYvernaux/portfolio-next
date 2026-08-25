@@ -1,5 +1,5 @@
-import { env } from "@/env";
-import type { Locale } from "@/src/i18n/routing";
+import { env } from "@env";
+import type { Locale } from "@/i18n/routing";
 
 export function getPersonSchema(locale: Locale) {
   return {

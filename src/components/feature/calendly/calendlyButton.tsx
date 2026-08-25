@@ -4,9 +4,9 @@
 import { useCallback, useState } from "react";
 import { PopupButton } from "react-calendly";
 import { useTranslations } from "next-intl";
-import { env } from "@/env";
+import { env } from "@env";
 import { useCalendlyEvents } from "./useCalendlyEvents";
-import { ContactFormData } from "@/src/lib/validations/contact.schema";
+import { ContactFormData } from "@/lib/validations/contact.schema";
 
 interface CalendlyButtonProps {
   // Permet de passer un bouton custom si besoin
