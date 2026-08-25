@@ -16,7 +16,7 @@ const clienSchema = z.object({
     .startsWith("https://calendly.com", "L'URL doit pointer vers calendly.com"),
   NEXT_PUBLIC_TURNSTILE_SITE_KEY: z
     .string()
-    .startsWith("0x4AAAAAA", "Clé Turnstile incalide"),
+    .min(20, "Clé Cloudflare Turnstile invalide"),
 });
 
 //schema des variable côté server (caché du client)
@@ -34,9 +34,7 @@ const serverSchema = z.object({
   RESEND_TO_EMAIL: z
     .string()
     .email("RESEND_TO_EMAIL doit être un email valide"),
-  TURNSTILE_SECRET_KEY: z
-    .string()
-    .startsWith("0x4AAAAAA", "Clé Cloudflare Turnstile invalide"),
+  TURNSTILE_SECRET_KEY: z.string().min(20, "Clé Cloudflare Turnstile invalide"),
 });
 
 const isServer = typeof window === "undefined";

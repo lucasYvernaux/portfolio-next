@@ -13,7 +13,10 @@ import {
 import { verifyTurnstileToken } from "@/lib/security/turnstile";
 
 export async function GET() {
-  return new Response("ServerError", { status: 401 });
+  return NextResponse.json(
+    { success: false, error: "Méthode non autorisée" },
+    { status: 405, headers: { Allow: "POST" } },
+  );
 }
 
 // Empêche la mise en cache de cette route

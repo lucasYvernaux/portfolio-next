@@ -70,4 +70,12 @@ describe("contactSchema", async () => {
       expect(result.data.lastName).toBe("dupont");
     }
   });
+  it("accepte company et job vides (optionnels)", () => {
+    const result = contactSchema.safeParse({
+      ...validData,
+      company: "",
+      job: "",
+    });
+    expect(result.success).toBe(true);
+  });
 });
