@@ -13,7 +13,6 @@ env:
   NEXT_PUBLIC_CALENDLY_URL: https://calendly.com/lucas-yvernaux/devis
   NEXT_PUBLIC_TURNSTILE_SITE_KEY: ${{ secrets.NEXT_PUBLIC_TURNSTILE_SITE_KEY }}
 
-  NODE_ENV: production
   BASE_URL: https://yvernaux-web-solutions.com
   RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
   RESEND_FROM_EMAIL: "CI <ci@example.com>"
@@ -51,6 +50,8 @@ jobs:
     name: Tests
     runs-on: ubuntu-latest
     needs: quality
+    env:
+      NODE_ENV: test
     steps:
       - uses: actions/checkout@v4
 
@@ -81,6 +82,8 @@ jobs:
     name: Build
     runs-on: ubuntu-latest
     needs: test
+    env:
+      NODE_ENV: production
     steps:
       - uses: actions/checkout@v4
 
