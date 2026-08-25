@@ -1,9 +1,5 @@
-import { isValidLocale } from "@/src/i18n/locale";
-import {
-  BRAND_COLOR,
-  BRAND_COLOR_LIGHT,
-  SITE_NAME,
-} from "@/src/lib/seo/constants";
+import { isValidLocale } from "@/i18n/locale";
+import { BRAND_COLOR, BRAND_COLOR_LIGHT, SITE_NAME } from "@/lib/seo/constants";
 import { ImageResponse } from "next/og";
 
 export const alt = SITE_NAME;

@@ -14,6 +14,9 @@ const clienSchema = z.object({
     .string()
     .url("NEXT_PUBLIC_CALENDLY_URL doit être une URL valide")
     .startsWith("https://calendly.com", "L'URL doit pointer vers calendly.com"),
+  NEXT_PUBLIC_TURNSTILE_SITE_KEY: z
+    .string()
+    .startsWith("0x4AAAAAA", "Clé Turnstile incalide"),
 });
 
 //schema des variable côté server (caché du client)
@@ -31,6 +34,9 @@ const serverSchema = z.object({
   RESEND_TO_EMAIL: z
     .string()
     .email("RESEND_TO_EMAIL doit être un email valide"),
+  TURNSTILE_SECRET_KEY: z
+    .string()
+    .startsWith("0x4AAAAAA", "Clé Cloudflare Turnstile invalide"),
 });
 
 const isServer = typeof window === "undefined";
@@ -42,6 +48,7 @@ const clientParse = clienSchema.safeParse({
   NEXT_PUBLIC_NODE_ENV: process.env.NEXT_PUBLIC_NODE_ENV,
   NEXT_PUBLIC_BASE_URL: process.env.NEXT_PUBLIC_BASE_URL,
   NEXT_PUBLIC_CALENDLY_URL: process.env.NEXT_PUBLIC_CALENDLY_URL,
+  NEXT_PUBLIC_TURNSTILE_SITE_KEY: process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY,
 });
 
 if (isServer) {
@@ -51,6 +58,7 @@ if (isServer) {
     RESEND_API_KEY: process.env.RESEND_API_KEY,
     RESEND_FROM_EMAIL: process.env.RESEND_FROM_EMAIL,
     RESEND_TO_EMAIL: process.env.RESEND_TO_EMAIL,
+    TURNSTILE_SECRET_KEY: process.env.TURNSTILE_SECRET_KEY,
   });
 
   if (!serverParsed.success) {

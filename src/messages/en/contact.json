@@ -26,7 +26,14 @@
       "message": "Message",
       "message_placeholder": "Describe your project...",
       "submit": "Send the message",
-      "sending": "Sending ..."
+      "sending": "Sending ...",
+      "error": {
+        "too_long_char": "The \"{field}\" field cannot exceed {nb_char} characters",
+        "too_short_char": "The \"{field}\" field must contain at least {nb_char} characters",
+        "too_long": "The \"{field}\" field  is too longlong",
+        "too_short": "The \"{field}\" field is too short",
+        "invalid": "The \"{field}\" field is invalid"
+      }
     },
     "calendly": {
       "title": "Book a call",

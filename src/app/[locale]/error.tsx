@@ -7,11 +7,11 @@ import {
   ServerError,
   UnauthorizedError,
   UnavailableError,
-} from "@/src/lib/error/codes";
-import { sanitizeForClient } from "@/src/lib/error/sanitize";
-import { ErrorPageCustom } from "@/src/components/error/error-page-custom";
+} from "@/lib/error/codes";
+import { sanitizeForClient } from "@/lib/error/sanitize";
+import { ErrorPageCustom } from "@/components/error/error-page-custom";
 import { useTranslations } from "next-intl";
-import { env } from "@/env";
+import { env } from "@env";
 import { Search } from "lucide-react";
 
 type Props = {

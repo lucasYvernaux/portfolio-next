@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { SITE_URL, SITE_NAME, type Locale } from "./constants";
-import { DEFAULT_LOCALE, LOCALES } from "@/src/i18n/locale";
-import { getPathname } from "@/src/i18n/navigation";
+import { DEFAULT_LOCALE, LOCALES } from "@/i18n/locale";
+import { getPathname } from "@/i18n/navigation";
 import { StaticPathname } from "../types";
 
 type CreateMetadataParams = {

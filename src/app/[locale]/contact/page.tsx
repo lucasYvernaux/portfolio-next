@@ -1,5 +1,5 @@
-import ContactSection from "@/src/components/feature/contact/contact-section";
-import SectionHero from "@/src/components/shared/section-hero";
+import ContactSection from "@/components/feature/contact/contact-section";
+import SectionHero from "@/components/shared/section-hero";
 import { getTranslations } from "next-intl/server";
 
 export default async function ContactPage() {

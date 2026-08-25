@@ -1,19 +1,19 @@
-import CardProjects from "@/src/components/feature/projects/card-project";
-import SectionDevis from "@/src/components/shared/section-devis";
-import SectionHero from "@/src/components/shared/section-hero";
-import { type Locale } from "@/src/i18n/locale";
-import { routing } from "@/src/i18n/routing";
-import { BreadcrumbJsonLd, WebPageJsonLd } from "@/src/lib/seo/json-ld";
-import { NatureProject, Project } from "@/src/lib/types";
+import CardProjects from "@/components/feature/projects/card-project";
+import SectionDevis from "@/components/shared/section-devis";
+import SectionHero from "@/components/shared/section-hero";
+import { type Locale } from "@/i18n/locale";
+import { routing } from "@/i18n/routing";
+import { BreadcrumbJsonLd, WebPageJsonLd } from "@/lib/seo/json-ld";
+import { NatureProject, Project } from "@/lib/types";
 import { hasLocale } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 
-import urlImageEquilys from "@/public/screenshot/ScreenEquilys-v2.png";
-import urlImageLAK from "@/public/screenshot/ScreenLAC.png";
-import urlImageOyster from "@/public/screenshot/ScreenOyster.png";
-import urlImageSergio from "@/public/screenshot/ScreenLeconte_multiservices.png";
-import urlImageDene from "@/public/screenshot/Screen-dene.png";
-import urlImageManga from "@/public/screenshot/Screen-manga-v2.png";
+import urlImageEquilys from "@/../public/screenshot/ScreenEquilys-v2.png";
+import urlImageLAK from "@/../public/screenshot/ScreenLAC.png";
+import urlImageOyster from "@/../public/screenshot/ScreenOyster.png";
+import urlImageSergio from "@/../public/screenshot/ScreenLeconte_multiservices.png";
+import urlImageDene from "@/../public/screenshot/Screen-dene.png";
+import urlImageManga from "@/../public/screenshot/Screen-manga-v2.png";
 
 export default async function ProjectsPage({
   params,

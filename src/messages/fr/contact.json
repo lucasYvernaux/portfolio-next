@@ -26,7 +26,14 @@
       "message": "Message",
       "message_placeholder": "Décrivez votre projet...",
       "submit": "Envoyer le message",
-      "sending": "Envoi en cours..."
+      "sending": "Envoi en cours...",
+      "error": {
+        "too_long_char": "Le champ \"{field}\" ne peut dépasser {nb_char} caractères",
+        "too_short_char": "Le champ \"{field}\" doit contenir au moins {nb_char} caractères",
+        "too_long": "Le champs \"{field}\" est trop long",
+        "too_short": "Le champs \"{field}\" est trop court",
+        "invalid": "Le champs \"{field}\" est invalide"
+      }
     },
     "calendly": {
       "title": "Réserver un appel",

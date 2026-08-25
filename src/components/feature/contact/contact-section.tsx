@@ -6,7 +6,7 @@ import { useTranslations } from "next-intl";
 import { Mail, MapPin, Phone } from "lucide-react";
 import { CalendlySection } from "../calendly/calendly-section";
 import { useState } from "react";
-import { ContactFormData } from "@/src/lib/validations/contact.schema";
+import { ContactFormData } from "@/lib/validations/contact.schema";
 
 export default function ContactSection() {
   const tContact = useTranslations("Contact");

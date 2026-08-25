@@ -1,6 +1,6 @@
 "use client";
 
-import { NatureProject, Project } from "@/src/lib/types";
+import { NatureProject, Project } from "@/lib/types";
 import {
   ArrowUpRight,
   ExternalLink,
@@ -9,9 +9,9 @@ import {
   Gitlab,
 } from "lucide-react";
 import Image from "next/image";
-import urlImageProject from "@/public/logo-white-gpt.png";
+import urlImageProject from "@/../public/logo-white-gpt.png";
 import { useTranslations } from "next-intl";
-import { usePathname } from "@/src/i18n/navigation";
+import { usePathname } from "@/i18n/navigation";
 import Link from "next/link";
 
 interface PropsCardProject {

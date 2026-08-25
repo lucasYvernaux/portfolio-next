@@ -1,4 +1,4 @@
-import { PackKey } from "@/src/lib/types";
+import { PackKey } from "@/lib/types";
 import { Check } from "lucide-react";
 import { useMessages, useTranslations } from "next-intl";
 

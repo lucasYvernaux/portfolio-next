@@ -1,6 +1,6 @@
 "use client";
 
-import { Link as NavLink } from "@/src/i18n/navigation";
+import { Link as NavLink } from "@/i18n/navigation";
 import Image from "next/image";
 
 import Link from "next/link";

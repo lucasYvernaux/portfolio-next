@@ -1,6 +1,6 @@
 "use client";
 
-import { ServerError } from "@/src/lib/error/codes";
+import { ServerError } from "@/lib/error/codes";
 
 export default function ErrorProjectPage() {
   throw new ServerError();

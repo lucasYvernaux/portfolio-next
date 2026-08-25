@@ -1,7 +1,7 @@
 import { getRequestConfig } from "next-intl/server";
 import { hasLocale } from "next-intl";
 import { routing } from "./routing";
-import { env } from "@/env";
+import { env } from "@env";
 
 const NAMESPACE_FILES = [
   { file: "metadata", rootKey: "Metadata" },
