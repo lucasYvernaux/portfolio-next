@@ -5,6 +5,7 @@ import { useRef, useState } from "react";
 import { useContactForm } from "./use-contact";
 import type { ContactFormData } from "@/lib/validations/contact.schema";
 import { Turnstile, type TurnstileInstance } from "@marsidev/react-turnstile";
+import { env } from "@env";
 
 interface ContactFormProps {
   onValuesChange?: (values: Partial<ContactFormData>) => void;
@@ -43,13 +44,18 @@ export function ContactForm({ onValuesChange }: ContactFormProps) {
 
   async function onSubmit(e: React.SubmitEvent) {
     e.preventDefault();
-    const form = e.currentTarget as HTMLFormElement;
-    const formData = new FormData(form);
 
-    const data = Object.fromEntries(
-      formData.entries(),
-    ) as unknown as ContactFormData;
-    await handleSubmit(data, turnstileToken, () => {
+    setTouched({
+      lastName: true,
+      firstName: true,
+      company: true,
+      job: true,
+      email: true,
+      subject: true,
+      message: true,
+    });
+
+    await handleSubmit(values, turnstileToken, () => {
       turnstileRef.current?.reset();
       setTurnstileToken(null);
     });
