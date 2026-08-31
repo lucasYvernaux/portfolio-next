@@ -17,7 +17,7 @@ vi.mock("resend", () => {
 });
 
 // Mock des env vars
-vi.mock("@env", () => ({
+vi.mock("@/env/server", () => ({
   env: {
     RESEND_TO_EMAIL: "test@yopmail.com",
     RESEND_FROM_EMAIL: "Portfolio Test <noreply@example.com>",

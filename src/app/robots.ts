@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 import { DISALLOWED_PATHS, SITE_URL } from "../lib/seo/constants";
-import { env } from "@env";
+import { serverEnv } from "@/env/server";
 
 /**
  * robots.txt dynamique.
@@ -14,7 +14,7 @@ import { env } from "@env";
  * @see https://nextjs.org/docs/app/api-reference/file-conventions/metadata/robots
  */
 export default function robots(): MetadataRoute.Robots {
-  const isProduction = env.NEXT_PUBLIC_NODE_ENV === "production";
+  const isProduction = serverEnv.NODE_ENV === "production";
 
   return {
     rules: [

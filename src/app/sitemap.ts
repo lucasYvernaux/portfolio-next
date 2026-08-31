@@ -2,16 +2,12 @@
 import type { MetadataRoute } from "next";
 import { getPathname } from "@/i18n/navigation";
 import { type Locale, routing } from "@/i18n/routing";
-import { env } from "@env";
+import { serverEnv } from "@/env/server";
 // import { getProjects } from "@/lib/fetchers/projects";
 
 type ChangeFrequency = MetadataRoute.Sitemap[number]["changeFrequency"];
 
 type StaticPathname = "/" | "/about" | "/projects" | "/pricing" | "/contact";
-
-// type SitemapAlternates = NonNullable<
-//   MetadataRoute.Sitemap[number]["alternates"]
-// >;
 
 interface StaticRouteConfig {
   href: StaticPathname;
@@ -29,28 +25,8 @@ const STATIC_ROUTES: StaticRouteConfig[] = [
 
 function buildStaticUrl(locale: Locale, href: StaticPathname): string {
   const pathname = getPathname({ locale, href });
-  return `${env.NEXT_PUBLIC_BASE_URL}${pathname}`;
+  return `${serverEnv.BASE_URL}${pathname}`;
 }
-
-// function buildDynamicUrl(locale: Locale, slug: string): string {
-//   const pathname = getPathname({
-//     locale,
-//     href: { pathname: "/projects/[slug]", params: { slug } },
-//   });
-//   return `${env.BASE_URL}${pathname}`;
-// }
-
-// function buildStaticAlternates(href: StaticPathname): SitemapAlternates {
-//   return Object.fromEntries(
-//     routing.locales.map((locale) => [locale, buildStaticUrl(locale, href)]),
-//   );
-// }
-
-// function buildDynamicAlternates(slug: string): Record<string, string> {
-//   return Object.fromEntries(
-//     routing.locales.map((locale) => [locale, buildDynamicUrl(locale, slug)]),
-//   );
-// }
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const now = new Date();
@@ -71,22 +47,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       },
     })),
   );
-
-  // let projectEntries: MetadataRoute.Sitemap = [];
-  // try {
-  //   const projects = await getProjects();
-  //   projectEntries = projects.flatMap((project) =>
-  //     routing.locales.map((locale) => ({
-  //       url: buildDynamicUrl(locale, project.slug),
-  //       lastModified: new Date(project.updatedAt),
-  //       changeFrequency: "monthly" as ChangeFrequency,
-  //       priority: 0.7,
-  //       alternates: { languages: buildDynamicAlternates(project.slug) },
-  //     }))
-  //   );
-  // } catch {
-  //   console.warn("[sitemap] Impossible de récupérer les projets depuis le CMS");
-  // }
 
   return [
     ...staticEntries,

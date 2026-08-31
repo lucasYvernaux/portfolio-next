@@ -1,53 +1,56 @@
-// --- 1. RATE LIMITER EN MÉMOIRE (Sliding Window simple) ---
-interface RateLimitRecord {
-  count: number;
-  resetTime: number;
-}
+import { serverEnv } from "@/env/server";
+import { Ratelimit } from "@upstash/ratelimit";
+import { Redis } from "@upstash/redis";
 
-const rateLimitMap = new Map<string, RateLimitRecord>();
+// Création du client Redis Upstash
+const redis = new Redis({
+  url: serverEnv.UPSTASH_REDIS_REST_URL,
+  token: serverEnv.UPSTASH_REDIS_REST_TOKEN,
+});
 
-// Nettoyage régulier de la mémoire (toutes les 10 minutes)
-if (typeof setInterval !== "undefined") {
-  setInterval(
-    () => {
-      const now = Date.now();
-      for (const [ip, record] of rateLimitMap.entries()) {
-        if (record.resetTime < now) {
-          rateLimitMap.delete(ip);
-        }
-      }
-    },
-    10 * 60 * 1000,
-  );
-}
+// Configuration du rate limiter avec une fenêtre glissante (sliding window)
+// Les paramètres par défaut sont : 3 requêtes par 10 minutes.
+// On laisse la possibilité de surcharger via les paramètres de la fonction.
+const rateLimiter = new Ratelimit({
+  redis,
+  limiter: Ratelimit.slidingWindow(3, "10 m"), // valeur par défaut
+  analytics: true, // optionnel : active les statistiques dans le dashboard Upstash
+  prefix: "ratelimit:contact", // permet d'isoler ce rate limiter d'autres usages
+});
 
 /**
  * Vérifie si l'IP dépasse le quota autorisé.
  * @param ip Adresse IP du client
- * @param limit Nombre maximal de requêtes autorisées (ex: 3)
- * @param windowMs Fenêtre de temps en ms (ex: 10 * 60 * 1000 = 10 min)
+ * @param limit Nombre maximal de requêtes autorisées (par défaut 3)
+ * @param windowMs Fenêtre de temps en ms (par défaut 10 minutes)
+ * @returns { success: boolean; remaining: number }
  */
-export function checkRateLimit(
+export async function checkRateLimit(
   ip: string,
   limit: number = 3,
   windowMs: number = 10 * 60 * 1000,
-): { success: boolean; remaining: number } {
-  const now = Date.now();
-  const record = rateLimitMap.get(ip);
+): Promise<{ success: boolean; remaining: number }> {
+  // Convertir windowMs en une chaîne compréhensible par Upstash (ex: "10m")
+  // On va réinitialiser le limiter à chaque appel avec les nouveaux paramètres si besoin.
+  // Cependant, pour une flexibilité totale, on peut recréer un limiter dynamique.
+  // Mais il est plus propre de définir des limites fixes dans la config.
+  // Pour conserver la flexibilité, on va utiliser un limiter dynamique.
+  const dynamicLimiter = new Ratelimit({
+    redis,
+    limiter: Ratelimit.slidingWindow(
+      limit,
+      `${Math.floor(windowMs / 60000)} m`,
+    ),
+    prefix: `ratelimit:${ip}`, // un préfixe par IP pour éviter les collisions
+  });
 
-  // Si pas d'enregistrement ou fenêtre expirée : reset
-  if (!record || record.resetTime < now) {
-    rateLimitMap.set(ip, { count: 1, resetTime: now + windowMs });
-    return { success: true, remaining: limit - 1 };
-  }
-
-  if (record.count >= limit) {
-    return { success: false, remaining: 0 };
-  }
-
-  record.count += 1;
-  return { success: true, remaining: limit - record.count };
+  const { success, remaining } = await dynamicLimiter.limit(ip);
+  return { success, remaining };
 }
+
+// Version synchrone pour compatibilité avec les routes API existantes (si elles ne sont pas async)
+// Mais il vaut mieux tout passer en async.
+// On peut garder la même signature en rendant la fonction async et adapter l'appel.
 
 // --- 2. EXTRACTION DE L'IP DU CLIENT ---
 export function getClientIp(req: Request): string {
@@ -59,39 +62,4 @@ export function getClientIp(req: Request): string {
   if (realIp) return realIp.trim();
 
   return "127.0.0.1";
-}
-
-// --- 3. VÉRIFICATION D'ORIGINE (Anti-CSRF) ---
-export function isValidOrigin(req: Request): boolean {
-  const origin = req.headers.get("origin");
-  const host = req.headers.get("host");
-
-  // En dev local, on autorise localhost
-  if (process.env.NODE_ENV === "development") {
-    return true;
-  }
-
-  // Si le header 'origin' est présent, on compare son hôte avec le header 'host'
-  if (origin) {
-    try {
-      const originHost = new URL(origin).host;
-      return originHost === host;
-    } catch {
-      return false;
-    }
-  }
-
-  // Si pas d'origin (ex: Safari sur certains formulaires), on vérifie le referer
-  const referer = req.headers.get("referer");
-  if (referer) {
-    try {
-      const refererHost = new URL(referer).host;
-      return refererHost === host;
-    } catch {
-      return false;
-    }
-  }
-
-  // Requête suspecte sans origin ni referer
-  return false;
 }

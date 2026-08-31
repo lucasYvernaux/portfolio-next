@@ -11,8 +11,8 @@ import {
 import { sanitizeForClient } from "@/lib/error/sanitize";
 import { ErrorPageCustom } from "@/components/error/error-page-custom";
 import { useTranslations } from "next-intl";
-import { env } from "@env";
 import { Search } from "lucide-react";
+import { clientEnv } from "@/env/client";
 
 type Props = {
   error: Error & { digest?: string; statusCode?: number };
@@ -23,37 +23,48 @@ export default function ErrorBoundary({ error, reset }: Props) {
   const { safeMessage, digest } = sanitizeForClient(error);
   const t = useTranslations("Common.errors");
 
-  let statusCode = error.statusCode || 500;
-  let title: string = t("title");
-  let description: string = t("description");
+  let statusCode: number;
+  let title: string;
+  let description: string;
   let emoji: ReactNode = "⚠️";
 
-  if (error instanceof UnauthorizedError || statusCode === 401) {
-    statusCode = 401;
-    title = t("401.title");
-    description = t("401.description");
-  } else if (error instanceof ForbiddenError || statusCode === 403) {
-    statusCode = 403;
-    title = t("403.title");
-    description = t("403.description");
-    emoji = "🔒";
-  } else if (error instanceof NotFoundError || statusCode === 404) {
-    statusCode = 404;
-    title = t("404.title");
-    description = t("404.description");
-    emoji = (
-      <Search className="lucide lucide-search w-24 h-24 md:w-32 md:h-32 text-primary/30" />
-    );
-  } else if (error instanceof ServerError || statusCode === 500) {
-    statusCode = 500;
-    title = t("500.title");
-    description = t("500.description");
-    emoji = "⚙️";
-  } else if (error instanceof UnavailableError || statusCode === 503) {
-    statusCode = 503;
-    title = t("503.title");
-    description = t("503.description");
-    emoji = "🔧";
+  switch (true) {
+    case error instanceof UnauthorizedError || error.statusCode === 401:
+      statusCode = 401;
+      title = t("401.title");
+      description = t("401.description");
+      break;
+    case error instanceof ForbiddenError || error.statusCode === 403:
+      statusCode = 403;
+      title = t("403.title");
+      description = t("403.description");
+      emoji = "🔒";
+      break;
+    case error instanceof NotFoundError || error.statusCode === 404:
+      statusCode = 404;
+      title = t("404.title");
+      description = t("404.description");
+      emoji = (
+        <Search className="lucide lucide-search size-24 md:size-32 text-primary/30" />
+      );
+      break;
+    case error instanceof ServerError || error.statusCode === 500:
+      statusCode = 500;
+      title = t("500.title");
+      description = t("500.description");
+      emoji = "⚙️";
+      break;
+    case error instanceof UnavailableError || error.statusCode === 503:
+      statusCode = 503;
+      title = t("503.title");
+      description = t("503.description");
+      emoji = "🔧";
+      break;
+    default:
+      statusCode = 500;
+      title = t("500.title");
+      description = t("500.description");
+      break;
   }
 
   useEffect(() => {
@@ -61,7 +72,7 @@ export default function ErrorBoundary({ error, reset }: Props) {
     console.error("[ErrorBoundary]", {
       digest,
       // En dev uniquement :
-      ...(env.NEXT_PUBLIC_NODE_ENV === "development" && {
+      ...(clientEnv.NEXT_PUBLIC_NODE_ENV === "development" && {
         message: error.message,
       }),
     });
@@ -72,7 +83,7 @@ export default function ErrorBoundary({ error, reset }: Props) {
       code={statusCode}
       title={title}
       description={
-        env.NEXT_PUBLIC_NODE_ENV === "development"
+        clientEnv.NEXT_PUBLIC_NODE_ENV === "development"
           ? safeMessage // en dev : message sanitisé
           : description // en prod : message générique
       }
