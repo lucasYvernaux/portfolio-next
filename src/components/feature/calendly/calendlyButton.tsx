@@ -1,12 +1,11 @@
-// src/components/features/calendly/CalendlyButton.tsx
 "use client";
 
 import { useCallback, useState } from "react";
 import { PopupButton } from "react-calendly";
 import { useTranslations } from "next-intl";
-import { env } from "@env";
 import { useCalendlyEvents } from "./useCalendlyEvents";
 import { ContactFormData } from "@/lib/validations/contact.schema";
+import { clientEnv } from "@/env/client";
 
 interface CalendlyButtonProps {
   // Permet de passer un bouton custom si besoin
@@ -44,7 +43,7 @@ export function CalendlyButton({
 
   return (
     <PopupButton
-      url={env.NEXT_PUBLIC_CALENDLY_URL!}
+      url={clientEnv.NEXT_PUBLIC_CALENDLY_URL}
       // rootElement DOIT pointer vers le #__next ou body
       // sinon le popup ne s'affiche pas correctement
       rootElement={

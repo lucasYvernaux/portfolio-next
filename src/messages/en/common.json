@@ -11,10 +11,11 @@
       "contact": { "label": "Contact", "alt": "Go to the contact page" }
     },
     "footer": {
-      "copyright": "© {year} MonSite. All rights reserved.",
+      "copyright": "© {year} {company}. All rights reserved.",
       "madeWith": "Made with <heart /> in Paris"
     },
     "actions": {
+      "title": "Go to the \"{link}\" link",
       "startProject": "Start a Project",
       "readMore": "Read more",
       "SeeAll": "See all",

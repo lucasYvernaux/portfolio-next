@@ -2,10 +2,11 @@
   "About": {
     "title": "About",
     "intro": "We are a passionnate team by <b>technology</b> and <b>design</b>.",
-    "team": {
-      "title": "Notre équipe",
-      "members": "{count, plural, =0 {Aucun membre} one {# membre} other {# membres}}"
-    },
-    "breadcrumb": "À propos"
+    "text": "I am a talented web developer with four years’ experience, passionate about creating interfaces that deliver exceptional user experiences. My aim is to work alongside a dynamic team to develop innovative and stimulating web solutions.",
+    "breadcrumb": "About",
+    "hero": {
+      "title": "My approach",
+      "text": "A passionate web developer with over 4 years’ experience, I turn your ideas into high-performing digital solutions."
+    }
   }
 }

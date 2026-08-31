@@ -1,5 +1,6 @@
 "use client";
 
+import { clientEnv } from "@/env/client";
 /**
  * global-error remplace TOUT le document (<html>, <body>).
  * Il attrape les erreurs que error.tsx ne peut pas
@@ -19,7 +20,7 @@ export default function GlobalError({ error, reset }: Props) {
   useEffect(() => {
     console.error("[GlobalError]", {
       digest: error.digest,
-      ...(process.env.NODE_ENV === "development" && {
+      ...(clientEnv.NEXT_PUBLIC_NODE_ENV === "development" && {
         message: error.message,
         stack: error.stack,
       }),

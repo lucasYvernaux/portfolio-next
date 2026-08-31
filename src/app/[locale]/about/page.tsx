@@ -7,7 +7,6 @@ import { type Locale } from "@/i18n/locale";
 import { BreadcrumbJsonLd, WebPageJsonLd } from "@/lib/seo/json-ld";
 import SectionHero from "@/components/shared/section-hero";
 import SectionDevis from "@/components/shared/section-devis";
-// import Pattern from "@/components/shared/background";
 
 /* ── Metadata traduite ── */
 export async function generateMetadata({
@@ -39,7 +38,7 @@ export default async function AboutPage({
 
   setRequestLocale(locale);
 
-  const t = await getTranslations("About");
+  const tAbout = await getTranslations("About");
   const tCommon = await getTranslations("Common");
 
   return (
@@ -47,33 +46,27 @@ export default async function AboutPage({
       {/* Données structurées traduites */}
       <WebPageJsonLd
         locale={locale as Locale}
-        title={t("title")}
-        description={t("title")}
+        title={tAbout("title")}
+        description={tAbout("title")}
         path="/about"
       />
       <BreadcrumbJsonLd
         locale={locale as Locale}
         items={[
           { name: tCommon("nav.home.label"), path: "/" },
-          { name: t("breadcrumb"), path: "/about" },
+          { name: tAbout("breadcrumb"), path: "/about" },
         ]}
       />
 
       <div className="pt-23 min-h-screen">
         <SectionHero
-          path="contact"
-          title={"Mon approche"}
-          intro={
-            "Développeur web passionné avec plus de 4 ans d'expérience, je transforme vos idées en solutions digitales performantes."
-          }
+          path={tCommon("nav.about.label")}
+          title={tAbout("hero.title")}
+          intro={tAbout("hero.text")}
         />
         <section className="min-h-screen max-w-4xl mx-auto">
           <p className="mt-3 fs-3 text-start bg-gray-custom rounded p-3 shadow-lg">
-            Je suis un développeur web talentueux avec 4 ans d&apos;expérience,
-            passionné par la création d&apos;interfaces pour offrir des
-            expériences utilisateur exceptionnelles. Mon objectif est de
-            collaborer avec une équipe dynamique pour développer des solutions
-            web innovantes et stimulantes.
+            {tAbout("text")}
           </p>
         </section>
         <SectionDevis title="Pret a collaborer ?" />

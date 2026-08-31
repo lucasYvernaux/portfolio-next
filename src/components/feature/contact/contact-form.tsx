@@ -5,6 +5,7 @@ import { useRef, useState } from "react";
 import { useContactForm } from "./use-contact";
 import type { ContactFormData } from "@/lib/validations/contact.schema";
 import { Turnstile, type TurnstileInstance } from "@marsidev/react-turnstile";
+import { clientEnv } from "@/env/client";
 
 interface ContactFormProps {
   onValuesChange?: (values: Partial<ContactFormData>) => void;
@@ -205,7 +206,7 @@ export function ContactForm({ onValuesChange }: ContactFormProps) {
       <div className="my-4 flex justify-center">
         <Turnstile
           ref={turnstileRef}
-          siteKey={process.env.NEXT_PUBLIC_TURNSTILE_SITE_KEY!}
+          siteKey={clientEnv.NEXT_PUBLIC_TURNSTILE_SITE_KEY}
           onSuccess={(token) => setTurnstileToken(token)}
           onExpire={() => setTurnstileToken(null)}
           onError={() => setTurnstileToken(null)}

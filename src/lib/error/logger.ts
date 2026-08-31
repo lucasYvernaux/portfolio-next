@@ -36,7 +36,7 @@ export function logServerError(error: unknown, ctx?: ErrorContext) {
   );
 
   // ── Production : Sentry / Datadog / etc. ──
-  // if (process.env.NODE_ENV === "production") {
+  // if (serverEnv.NODE_ENV === "production") {
   //   Sentry.captureException(error, {
   //     tags: { digest: ctx?.digest },
   //     extra: ctx?.extra,

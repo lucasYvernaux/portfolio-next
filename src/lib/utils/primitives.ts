@@ -1,5 +1,12 @@
 import { tv } from "tailwind-variants/lite";
 
+import { clsx, type ClassValue } from "clsx";
+import { twMerge } from "tailwind-merge";
+
+export function cn(...inputs: ClassValue[]) {
+  return twMerge(clsx(inputs));
+}
+
 export const heading = tv({
   base: "font-serif font-bold mb-6",
   variants: {
@@ -48,5 +55,32 @@ export const text = tv({
     size: "lg",
     weight: "normal",
     color: "foreground",
+  },
+});
+
+export const button = tv({
+  base: "group flex w-full items-center justify-center gap-2 mt-4 rounded-lg tracking-wider uppercase  transition-all duration-300 disabled:pointer-events-none disabled:opacity-50",
+  variants: {
+    variant: {
+      default: "bg-primary text-background px-8 py-4 hover:bg-primary/80",
+      ghost: "p-0 font-normal",
+      secondary:
+        "bg-zinc-900 text-zinc-100 px-8 py-4 border border-zinc-700 hover:border-primary",
+      outline:
+        "border border-primary text-primary px-8 py-4 hover:bg-primary hover:text-background",
+      link: "text-secondary underline-offset-4 hover:underline hover:text-primary",
+      destructive:
+        "bg-destructive/10 text-destructive px-8 py-4 hover:bg-destructive/20",
+    },
+    weight: {
+      normal: "font-normal",
+      medium: "font-medium",
+      semibold: "font-semibold",
+      bold: "font-bold",
+    },
+  },
+  defaultVariants: {
+    weight: "bold",
+    variant: "default",
   },
 });

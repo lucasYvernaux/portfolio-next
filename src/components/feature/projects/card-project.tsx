@@ -1,13 +1,7 @@
 "use client";
 
 import { NatureProject, Project } from "@/lib/types";
-import {
-  ArrowUpRight,
-  ExternalLink,
-  GitBranch,
-  Github,
-  Gitlab,
-} from "lucide-react";
+import { ArrowUpRight, ExternalLink, GitBranch } from "lucide-react";
 import Image from "next/image";
 import urlImageProject from "@/../public/logo-white-gpt.png";
 import { useTranslations } from "next-intl";
@@ -65,10 +59,10 @@ export default function CardProject({
 
   switch (hostRepo) {
     case "gitlab":
-      LogoRepo = <Gitlab />;
+      LogoRepo = <GitBranch />;
       break;
     case "github":
-      LogoRepo = <Github />;
+      LogoRepo = <GitBranch />;
       break;
     default:
       LogoRepo = <GitBranch />;
