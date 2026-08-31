@@ -3,15 +3,15 @@
  * → source de vérité UNIQUE pour toute l'app.
  */
 
+import { serverEnv } from "@/env/server";
 import { type Locale } from "@/i18n/locale";
-import { env } from "@env";
 
 // Re-export pour que le reste de _lib/seo n'ait pas
 // besoin d'importer depuis i18n/
 // export { LOCALES, DEFAULT_LOCALE, isValidLocale, safeParseLocale };
 export type { Locale };
 
-export const SITE_URL = env.NEXT_PUBLIC_BASE_URL;
+export const SITE_URL = serverEnv.BASE_URL;
 export const SITE_NAME = "Yvernaux Web Solutions";
 export const BRAND_COLOR = "#c4a35a" as const;
 export const BRAND_COLOR_LIGHT = "#e8d5a3" as const;

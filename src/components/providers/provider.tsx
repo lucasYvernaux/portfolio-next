@@ -1,17 +1,12 @@
-import type { Metadata } from "next";
-import "../globals.css";
-import { Header } from "@/components/shared/header";
-
-import { notFound } from "next/navigation";
-import { routing } from "@/i18n/routing";
+import { Locale, LOCALES } from "@/i18n/locale";
+import { ThemeProvider } from "./theme-provider";
+import { TranslationProvider } from "./translation-providers";
+import { Metadata } from "next";
 import { hasLocale } from "next-intl";
-import { getTranslations, setRequestLocale } from "next-intl/server";
-
-import { type Locale, LOCALES } from "@/i18n/locale";
+import { routing } from "@/i18n/routing";
+import { getTranslations } from "next-intl/server";
 import { createMetadata } from "@/lib/seo/metadata";
 import { SITE_NAME } from "@/lib/seo/constants";
-import { Footer } from "@/components/shared/footer";
-import { Provider } from "@/components/providers/provider";
 
 export function generateStaticParams() {
   return LOCALES.map((locale) => ({ locale }));
@@ -44,29 +39,22 @@ export async function generateMetadata({
   };
 }
 
-export default async function LocalLayout({
+export async function Provider({
   children,
   params,
 }: {
   children: React.ReactNode;
   params: Promise<{ locale: string }>;
 }) {
-  const { locale } = await params;
-
-  if (!hasLocale(LOCALES, locale)) {
-    notFound();
-  }
-
-  // Enable static rendering
-  setRequestLocale(locale);
+  const { locale } = await params!;
 
   return (
-    <Provider params={params}>
-      <Header />
-      <main id="root" className="relative bg-background text-foreground">
-        {children}
-      </main>
-      <Footer />
-    </Provider>
+    <html lang={locale} suppressHydrationWarning>
+      <body>
+        <TranslationProvider params={params!}>
+          <ThemeProvider>{children}</ThemeProvider>
+        </TranslationProvider>
+      </body>
+    </html>
   );
 }

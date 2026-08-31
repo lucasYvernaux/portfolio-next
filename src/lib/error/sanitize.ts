@@ -9,6 +9,8 @@
  * + un digest pour corrélation dans les logs.
  */
 
+import { clientEnv } from "@/env/client";
+
 const SENSITIVE_PATTERNS = [
   /at\s+.*\(.*:\d+:\d+\)/i, // stack traces
   /node_modules/i,
@@ -35,7 +37,7 @@ export function sanitizeForClient(error: unknown): {
       : undefined;
 
   // En production, JAMAIS le vrai message
-  if (process.env.NODE_ENV === "production") {
+  if (clientEnv.NEXT_PUBLIC_NODE_ENV === "production") {
     return {
       safeMessage: "Une erreur inattendue est survenue.",
       digest,

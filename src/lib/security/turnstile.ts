@@ -1,4 +1,4 @@
-import { env } from "@env";
+import { serverEnv } from "@/env/server";
 
 interface TurnstileVerifyResponse {
   success: boolean;
@@ -11,7 +11,7 @@ export async function verifyTurnstileToken(
   token: string,
   ip?: string,
 ): Promise<boolean> {
-  const secret = env.TURNSTILE_SECRET_KEY;
+  const secret = serverEnv.TURNSTILE_SECRET_KEY;
   if (!secret) {
     console.error("TURNSTILE_SECRET_KEY is missing in environment variables.");
     return false;
