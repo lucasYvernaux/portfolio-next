@@ -1,4 +1,4 @@
-import { StaticPathname } from "../types";
+import { StaticPathname } from "@/types/global";
 import { SITE_URL, SITE_NAME, type Locale } from "./constants";
 import { buildUrl } from "./metadata";
 
