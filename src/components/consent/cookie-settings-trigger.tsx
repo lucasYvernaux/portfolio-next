@@ -10,12 +10,10 @@ export function CookieSettingsTrigger() {
   return (
     <div className="w-fit">
       <Button
-        href="#"
         onClick={openModal}
         variant="link"
-        size="short"
-        style={{ color: "var(--color-foreground)" }}
-        //   className="text-sm underline text-muted-foreground "
+        size="mini"
+        style={{ paddingLeft: 0 }}
       >
         {t("manageLink")}
       </Button>

@@ -59,7 +59,7 @@ export const text = tv({
 });
 
 export const button = tv({
-  base: "group flex items-center justify-center gap-2 rounded-lg tracking-wider transition-all duration-300 disabled:pointer-events-none disabled:opacity-50",
+  base: "group flex items-center cursor-pointer justify-center gap-2 rounded-lg tracking-wider transition-all duration-300 disabled:pointer-events-none disabled:opacity-50",
   variants: {
     variant: {
       default: "bg-primary text-primary-foreground hover:bg-primary/80",
