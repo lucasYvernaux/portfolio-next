@@ -4,18 +4,16 @@
       "breadcrumb": "Legal Notice",
       "pageTitle": "Legal Notice",
       "lastUpdated": "Last updated: {date}",
+      "editor": {
+        "heading": "1. Website publisher",
+        "intro": "This website, accessible at yvernaux-web-solutions.com, is published by:",
+        "identity": "{fullName} — {companyStatut}, trading as « {companyName} »",
+        "address": "Address: {companyAddress}",
+        "siret": "Business registration number (SIRET): {companySiret}",
+        "email": "Email: {email}",
+        "phone": "Phone: {phone}"
+      },
       "sections": [
-        {
-          "heading": "1. Website publisher",
-          "body": [
-            "This website, accessible at yvernaux-web-solutions.com, is published by:",
-            "Lucas YVERNAUX — [TO COMPLETE: legal status, e.g. Sole Trader / SASU]",
-            "Address: [TO COMPLETE: registered business address]",
-            "Business registration number (SIRET): [TO COMPLETE — available via annuaire-entreprises.data.gouv.fr]",
-            "Email: lucas.yvernaux@gmail.com",
-            "Phone: +33 6 51 07 60 91"
-          ]
-        },
         {
           "heading": "2. Publication director",
           "body": [
@@ -69,14 +67,12 @@
       "breadcrumb": "Privacy Policy",
       "pageTitle": "Privacy Policy",
       "lastUpdated": "Last updated: {date}",
+      "controller": {
+        "heading": "1. Data controller",
+        "intro": "The controller for personal data collected on this website is {fullName} ({companyStatut}, SIRET {companySiret}), reachable at {email}.",
+        "noDpo": "Given the size and nature of the activity, no Data Protection Officer (DPO) is mandatorily appointed; any request regarding your personal data should be sent directly to the controller above."
+      },
       "sections": [
-        {
-          "heading": "1. Data controller",
-          "body": [
-            "The controller for personal data collected on this website is Lucas Yvernaux, publisher of yvernaux-web-solutions.com, reachable at lucas.yvernaux@gmail.com.",
-            "Given the size and nature of the activity, no Data Protection Officer (DPO) is mandatorily appointed; any request regarding your personal data should be sent directly to the controller above."
-          ]
-        },
         {
           "heading": "2. Data collected",
           "body": [

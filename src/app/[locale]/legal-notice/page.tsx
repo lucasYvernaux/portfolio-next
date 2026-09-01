@@ -7,6 +7,7 @@ import { type Locale } from "@/i18n/locale";
 import { BreadcrumbJsonLd, WebPageJsonLd } from "@/lib/seo/json-ld";
 import SectionHero from "@/components/shared/section-hero";
 import { LegalSection } from "@/components/shared/legal-section";
+import { siteConfig } from "@/config/site";
 
 export async function generateMetadata({
   params,
@@ -43,6 +44,19 @@ export default async function LegalNoticePage({
     ),
   });
 
+  const editorBody = [
+    t("editor.intro"),
+    t("editor.identity", {
+      fullName: siteConfig.FullName,
+      companyStatut: siteConfig.companyStatut,
+      companyName: siteConfig.companyName,
+    }),
+    t("editor.address", { companyAddress: siteConfig.companyAddress }),
+    t("editor.siret", { companySiret: siteConfig.companySiret }),
+    t("editor.email", { email: siteConfig.email }),
+    t("editor.phone", { phone: siteConfig.telephone }),
+  ];
+
   return (
     <>
       <WebPageJsonLd
@@ -63,6 +77,7 @@ export default async function LegalNoticePage({
         <SectionHero path={t("breadcrumb")} title={t("pageTitle")} />
         <section className="max-w-4xl mx-auto px-6 md:px-12 py-12">
           <p className="text-gray-500 text-xs mb-8">{lastUpdated}</p>
+          <LegalSection heading={t("editor.heading")} body={editorBody} />
           {sections.map((section, i) => (
             <LegalSection
               key={i}

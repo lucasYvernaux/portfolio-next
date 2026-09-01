@@ -7,6 +7,7 @@ import { type Locale } from "@/i18n/locale";
 import { BreadcrumbJsonLd, WebPageJsonLd } from "@/lib/seo/json-ld";
 import SectionHero from "@/components/shared/section-hero";
 import { LegalSection } from "@/components/shared/legal-section";
+import { siteConfig } from "@/config/site";
 
 export async function generateMetadata({
   params,
@@ -43,6 +44,16 @@ export default async function PrivacyPolicyPage({
     ),
   });
 
+  const controllerBody = [
+    t("controller.intro", {
+      fullName: siteConfig.FullName,
+      companyStatut: siteConfig.companyStatut,
+      companySiret: siteConfig.companySiret,
+      email: siteConfig.email,
+    }),
+    t("controller.noDpo"),
+  ];
+
   return (
     <>
       <WebPageJsonLd
@@ -63,6 +74,10 @@ export default async function PrivacyPolicyPage({
         <SectionHero path={t("breadcrumb")} title={t("pageTitle")} />
         <section className="max-w-4xl mx-auto px-6 md:px-12 py-12">
           <p className="text-gray-500 text-xs mb-8">{lastUpdated}</p>
+          <LegalSection
+            heading={t("controller.heading")}
+            body={controllerBody}
+          />
           {sections.map((section, i) => (
             <LegalSection
               key={i}
