@@ -13,7 +13,7 @@ export function CookieSettingsTrigger() {
         href="#"
         onClick={openModal}
         variant="link"
-        size="xs"
+        size="short"
         style={{ color: "var(--color-foreground)" }}
         //   className="text-sm underline text-muted-foreground "
       >

@@ -7,6 +7,7 @@ import { Messages, NamespaceKeys, useTranslations } from "next-intl";
 import { Link, usePathname } from "@/i18n/navigation";
 import Image from "next/image";
 import { allNavItems } from "@/config/site";
+import Button from "../ui/button";
 
 export function Header() {
   const pathname = usePathname();
@@ -76,14 +77,19 @@ export function Header() {
             </li>
           ))}
         </ul>
-        <div className="flex gap-4">
+        <div className="flex h-10 gap-4">
           <SwitchLang />
-          <button
-            className="md:hidden p-2"
-            onClick={() => setOpenMenu(!openMenu)}
-          >
-            {!openMenu ? <Menu size={24} /> : <X size={24} />}
-          </button>
+          <div className="size-10 md:hidden p-2">
+            <Button
+              href={"#"}
+              variant="ghost"
+              size="mini"
+              style={{ margin: 0 }}
+              onClick={() => setOpenMenu(!openMenu)}
+            >
+              {!openMenu ? <Menu size={24} /> : <X size={24} />}
+            </Button>
+          </div>
         </div>
       </nav>
       {openMenu && (

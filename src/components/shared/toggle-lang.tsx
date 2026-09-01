@@ -4,6 +4,7 @@ import { usePathname, useRouter } from "@/i18n/navigation";
 import { routing } from "@/i18n/routing";
 import { StaticPathname } from "@/types/global";
 import { useLocale, useTranslations } from "next-intl";
+import Button from "../ui/button";
 
 export function SwitchLang() {
   const locale = useLocale();
@@ -19,17 +20,20 @@ export function SwitchLang() {
   };
 
   return (
-    <div className="flex items-center gap-1">
+    <div className="flex items-center relative gap-1">
       {routing.locales.map((l) => (
-        <button
+        <Button
           key={l}
+          href={"#"}
+          variant="secondary"
+          size="short"
           onClick={() => handleSwitch(l)}
           disabled={l === locale}
-          className="px-2 py-1 text-sm cursor-pointer border rounded-md disabled:opacity-25 disabled:cursor-not-allowed hover:bg-muted transition-colors uppercase"
+          className="uppercase"
           title={t("switchTo", { locale: t(l) })}
         >
           {l}
-        </button>
+        </Button>
       ))}
     </div>
   );
