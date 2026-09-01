@@ -5,7 +5,7 @@ export async function HomeFeatures() {
     <section
       className="py-24 bg-gray-custom relative"
       data-testid="features-section"
-      id="features-section"
+      id="features"
     >
       <div className="max-w-7xl mx-auto px-6 md:px-12">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6">

@@ -110,6 +110,8 @@ export type PackCustom = {
   features: string[];
 };
 
+export type PricingTab = "packs" | "services";
+
 export type ServiceCustom = {
   id: string;
   name: string;

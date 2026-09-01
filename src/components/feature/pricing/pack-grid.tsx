@@ -6,7 +6,7 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 import { PackKey } from "@/types/global";
 import PackCardTest from "./pack-card";
 
-export function PacksGridTest() {
+export function PacksGrid() {
   const messages = useMessages();
   const packKeys = Object.keys(messages.Pricing.packs) as PackKey[];
 
@@ -51,7 +51,11 @@ export function PacksGridTest() {
           style={{ transform: `translateX(-${current * (100 / 3)}%)` }}
         >
           {packKeys.map((key, index) => (
-            <PackCardTest key={`${index}-${key}`} pack={key} />
+            <PackCardTest
+              className="w-1/3"
+              key={`${index}-${key}`}
+              pack={key}
+            />
           ))}
         </div>
       </div>

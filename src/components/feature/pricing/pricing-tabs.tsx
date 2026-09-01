@@ -1,15 +1,15 @@
 "use client";
 import { useState } from "react";
 
-import { PacksGridTest } from "./pack-grid";
 import ServicesGrid from "./services-grid";
 import { AnimatedBackground } from "@/components/animation/motion-primitive/animated-background";
+import { PacksGrid } from "./pack-grid";
+import { PricingTab } from "@/types/global";
 
-type Tab = "packs" | "services";
-const TABS: Tab[] = ["packs", "services"];
+const TABS: PricingTab[] = ["packs", "services"];
 
 export function PricingTabs() {
-  const [active, setActive] = useState<Tab>("services");
+  const [active, setActive] = useState<PricingTab>("packs");
 
   return (
     <div>
@@ -23,7 +23,7 @@ export function PricingTabs() {
               duration: 0.2,
             }}
             onValueChange={(id) => {
-              if (id) setActive(id as Tab);
+              if (id) setActive(id as PricingTab);
             }}
           >
             {TABS.map((label) => {
@@ -44,7 +44,7 @@ export function PricingTabs() {
 
       {active === "packs" ? (
         <>
-          <PacksGridTest />
+          <PacksGrid />
         </>
       ) : (
         <ServicesGrid />
