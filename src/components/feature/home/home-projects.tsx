@@ -1,7 +1,7 @@
 import { ChevronRight } from "lucide-react";
 import CardProject from "../projects/card-project";
 import { getTranslations } from "next-intl/server";
-import { NatureProject, Project } from "@/lib/types";
+import { NatureProject, Project } from "@/types/global";
 
 import urlImageOyster from "@/../public/screenshot/ScreenOyster.png";
 import urlImageDene from "@/../public/screenshot/Screen-dene.png";
@@ -83,6 +83,7 @@ export async function HomeProject() {
             <Button
               variant="ghost"
               href={"/projects"}
+              className="uppercase"
               style={{ letterSpacing: "var(--tracking-widest)" }}
               endIcon={<ChevronRight color="var(--color-primary)" />}
             >

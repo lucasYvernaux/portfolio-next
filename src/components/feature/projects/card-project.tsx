@@ -1,6 +1,6 @@
 "use client";
 
-import { NatureProject, Project } from "@/lib/types";
+import { NatureProject, Project } from "@/types/global";
 import { ArrowUpRight, ExternalLink, GitBranch } from "lucide-react";
 import Image from "next/image";
 import urlImageProject from "@/../public/logo-white-gpt.png";

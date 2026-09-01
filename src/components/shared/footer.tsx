@@ -5,6 +5,7 @@ import { getTranslations } from "next-intl/server";
 import Image from "next/image";
 
 import Link from "next/link";
+import { CookieSettingsTrigger } from "../consent/cookie-settings-trigger";
 
 export async function Footer() {
   const t = await getTranslations("Common");
@@ -37,6 +38,9 @@ export async function Footer() {
               L&apos;IA m&apos;assiste, mais c&apos;est mon expertise qui
               façonne chaque ligne de code.
             </p>
+            <div>
+              <CookieSettingsTrigger />
+            </div>
           </div>
           <div className="flex-1">
             <h4 className="font-heading text-primary mb-4">Navigation</h4>

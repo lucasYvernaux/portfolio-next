@@ -59,18 +59,23 @@ export const text = tv({
 });
 
 export const button = tv({
-  base: "group flex w-full items-center justify-center gap-2 mt-4 rounded-lg tracking-wider uppercase  transition-all duration-300 disabled:pointer-events-none disabled:opacity-50",
+  base: "group flex w-full items-center justify-center gap-2 mt-4 rounded-lg tracking-wider transition-all duration-300 disabled:pointer-events-none disabled:opacity-50",
   variants: {
     variant: {
-      default: "bg-primary text-background px-8 py-4 hover:bg-primary/80",
+      default: "bg-primary text-primary-foreground hover:bg-primary/80",
       ghost: "p-0 font-normal",
       secondary:
-        "bg-zinc-900 text-zinc-100 px-8 py-4 border border-zinc-700 hover:border-primary",
+        "bg-zinc-900 text-zinc-100 border border-zinc-700 hover:border-primary",
       outline:
-        "border border-primary text-primary px-8 py-4 hover:bg-primary hover:text-background",
-      link: "text-secondary underline-offset-4 hover:underline hover:text-primary",
-      destructive:
-        "bg-destructive/10 text-destructive px-8 py-4 hover:bg-destructive/20",
+        "border border-primary text-primary hover:bg-primary hover:text-background",
+      link: "text-secondary underline-offset-4 underline hover:text-primary",
+      destructive: "bg-destructive/10 text-destructive hover:bg-destructive/20",
+    },
+    size: {
+      xs: "p-2 text-xs",
+      small: "px-4 py-2 text-sm",
+      base: "px-8 py-4 text-base",
+      large: "px-16 py-8 text-xl",
     },
     weight: {
       normal: "font-normal",
@@ -82,5 +87,6 @@ export const button = tv({
   defaultVariants: {
     weight: "bold",
     variant: "default",
+    size: "base",
   },
 });

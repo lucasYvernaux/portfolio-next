@@ -1,0 +1,57 @@
+{
+  "consent": {
+    "manageLink": "Manage cookies",
+    "banner": {
+      "ariaLabel": "Cookie consent banner",
+      "description": "We use cookies that are strictly necessary for the site to work, as well as optional third-party cookies (such as Calendly for booking a call) which are only loaded with your consent. You can accept, reject, or customize your choice at any time.",
+      "rejectAll": "Reject all",
+      "customize": "Customize",
+      "acceptAll": "Accept all"
+    },
+    "gate": {
+      "blocked": "This content ({category}) requires your consent to load.",
+      "loadAction": "Accept and load",
+      "categories": {
+        "calendly": "Calendly booking widget",
+        "analytics": "audience measurement tool"
+      }
+    },
+    "categories": {
+      "necessary": {
+        "label": "Strictly necessary cookies",
+        "description": "Required for the site to function (language, theme, contact form security). These cannot be disabled and do not require your consent."
+      },
+      "calendly": {
+        "label": "Appointment booking (Calendly)",
+        "description": "Loads the Calendly widget allowing you to book a time slot directly from the site. Without this consent, an external link will be offered instead."
+      },
+      "analytics": {
+        "label": "Audience measurement",
+        "description": "Would allow us to understand how the site is used, anonymously. No tool is currently active in this category."
+      }
+    },
+    "modal": {
+      "title": "Cookie preferences",
+      "description": "Choose which cookie categories you allow. Strictly necessary cookies always remain active.",
+      "cancel": "Cancel",
+      "save": "Save my choices"
+    },
+    "page": {
+      "title": "Cookie policy",
+      "lastUpdated": "Last updated: {date}",
+      "intro": "This page details the cookies and trackers used on yvernaux-web-solutions.com, their purpose and retention period, in line with CNIL recommendations.",
+      "necessaryIntro": "Strictly necessary cookies",
+      "necessaryDescription": "These cookies ensure the site's basic functionality and are never subject to consent.",
+      "optionalIntro": "Cookies subject to consent",
+      "optionalDescription": "These cookies are only set after your explicit agreement, category by category.",
+      "tableHeaders": {
+        "name": "Cookie name",
+        "provider": "Provider",
+        "purpose": "Purpose",
+        "duration": "Retention period"
+      },
+      "manageCta": "Change my cookie preferences",
+      "contact": "For any question regarding your data or this site, please reach out via the contact form."
+    }
+  }
+}

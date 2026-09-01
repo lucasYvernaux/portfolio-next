@@ -16,6 +16,7 @@
     },
     "actions": {
       "title": "Aller au lien \"{link}\"",
+      "explore": "découvrir",
       "startProject": "Démarrer un Projet",
       "readMore": "Lire la suite",
       "SeeAll": "Voir tout",
