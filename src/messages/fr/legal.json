@@ -4,18 +4,16 @@
       "breadcrumb": "Mentions légales",
       "pageTitle": "Mentions légales",
       "lastUpdated": "Dernière mise à jour : {date}",
+      "editor": {
+        "heading": "1. Éditeur du site",
+        "intro": "Le présent site, accessible à l'adresse yvernaux-web-solutions.com, est édité par :",
+        "identity": "{fullName} — {companyStatut}, exerçant sous le nom commercial « {companyName} »",
+        "address": "Adresse : {companyAddress}",
+        "siret": "SIRET : {companySiret}",
+        "email": "Email : {email}",
+        "phone": "Téléphone : {phone}"
+      },
       "sections": [
-        {
-          "heading": "1. Éditeur du site",
-          "body": [
-            "Le présent site, accessible à l'adresse yvernaux-web-solutions.com, est édité par :",
-            "Lucas YVERNAUX — [À COMPLÉTER : statut juridique, ex. Entrepreneur Individuel / SASU]",
-            "Adresse : [À COMPLÉTER : adresse de domiciliation professionnelle]",
-            "SIRET : [À COMPLÉTER — consultable sur annuaire-entreprises.data.gouv.fr]",
-            "Email : lucas.yvernaux@gmail.com",
-            "Téléphone : +33 6 51 07 60 91"
-          ]
-        },
         {
           "heading": "2. Directeur de la publication",
           "body": [
@@ -69,14 +67,12 @@
       "breadcrumb": "Politique de confidentialité",
       "pageTitle": "Politique de confidentialité",
       "lastUpdated": "Dernière mise à jour : {date}",
+      "controller": {
+        "heading": "1. Responsable du traitement",
+        "intro": "Le responsable du traitement des données à caractère personnel collectées sur ce site est {fullName} ({companyStatut}, SIRET {companySiret}), joignable à l'adresse {email}.",
+        "noDpo": "Compte tenu de la taille et de la nature de l'activité, aucun délégué à la protection des données (DPO) n'est désigné à titre obligatoire ; toute demande relative à vos données personnelles doit être adressée directement au responsable du traitement ci-dessus."
+      },
       "sections": [
-        {
-          "heading": "1. Responsable du traitement",
-          "body": [
-            "Le responsable du traitement des données à caractère personnel collectées sur ce site est Lucas Yvernaux, éditeur du site yvernaux-web-solutions.com, joignable à l'adresse lucas.yvernaux@gmail.com.",
-            "Compte tenu de la taille et de la nature de l'activité, aucun délégué à la protection des données (DPO) n'est désigné à titre obligatoire ; toute demande relative à vos données personnelles doit être adressée directement au responsable du traitement ci-dessus."
-          ]
-        },
         {
           "heading": "2. Données collectées",
           "body": [
