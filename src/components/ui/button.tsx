@@ -1,7 +1,7 @@
 "use client";
 
 import { Link } from "@/i18n/routing";
-import { button } from "@/lib/utils/primitives";
+import { button, cn } from "@/lib/utils/primitives";
 import { useTranslations } from "next-intl";
 import {
   ComponentProps,
@@ -16,10 +16,11 @@ interface PropsButton {
   title?: string;
   startScon?: ReactNode;
   endIcon?: ReactNode;
+  fluid?: boolean;
   href: ComponentProps<typeof Link>["href"];
   style?: CSSProperties;
   className?: string;
-  size?: "xs" | "small" | "base" | "large";
+  size?: "mini" | "short" | "small" | "base" | "large";
   onClick?: MouseEventHandler;
   variant?:
     | "default"
@@ -39,6 +40,7 @@ export default function Button({
   startScon,
   style,
   className,
+  fluid = false,
   variant = "default",
   size = "base",
   children,
@@ -47,24 +49,24 @@ export default function Button({
 }: PropsButton) {
   const tCommon = useTranslations("Common");
   return (
-    <div
-      className={`${disabled ? "cursor-not-allowed" : ""} flex w-full justify-center`}
+    <Link
+      className={cn(
+        button({ variant, size, fluid }),
+        disabled && "cursor-not-allowed opacity-50 pointer-events-none",
+        className,
+      )}
+      href={href}
+      title={
+        title ? title : tCommon("actions.title", { link: href.toString() })
+      }
+      style={style}
+      onClick={onClick}
+      aria-disabled={disabled}
     >
-      <Link
-        className={`${button({ variant: variant, size: size })} ${className}`}
-        href={href}
-        title={
-          title ? title : tCommon("actions.title", { link: href.toString() })
-        }
-        style={style}
-        onClick={onClick}
-        aria-disabled={disabled}
-      >
-        {startScon}
-        {value}
-        {children}
-        {endIcon}
-      </Link>
-    </div>
+      {startScon}
+      {value}
+      {children}
+      {endIcon}
+    </Link>
   );
 }
