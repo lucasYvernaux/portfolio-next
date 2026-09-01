@@ -24,7 +24,6 @@ export function SwitchLang() {
       {routing.locales.map((l) => (
         <Button
           key={l}
-          href={"#"}
           variant="secondary"
           size="short"
           onClick={() => handleSwitch(l)}

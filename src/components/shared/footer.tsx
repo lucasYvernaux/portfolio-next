@@ -6,6 +6,7 @@ import Image from "next/image";
 
 import Link from "next/link";
 import { CookieSettingsTrigger } from "../consent/cookie-settings-trigger";
+import Button from "../ui/button";
 
 export async function Footer() {
   const t = await getTranslations("Common");
@@ -39,22 +40,32 @@ export async function Footer() {
               façonne chaque ligne de code.
             </p>
 
-            <div className="flex flex-col gap-1">
+            <div className="flex flex-col gap-1 mt-1">
               <CookieSettingsTrigger />
-              <NavLink
-                className="text-gray-500 hover:text-primary transition-colors text-xs"
-                href="/legal-notice"
-                title={t("nav.legalNotice.label")}
-              >
-                {t("nav.legalNotice.label")}
-              </NavLink>
-              <NavLink
-                className="text-gray-500 hover:text-primary transition-colors text-xs"
-                href="/privacy-policy"
-                title={t("nav.privacyPolicy.label")}
-              >
-                {t("nav.privacyPolicy.label")}
-              </NavLink>
+              <div className="w-fit">
+                <Button
+                  href="/legal-notice"
+                  variant="link"
+                  size="mini"
+                  style={{ paddingLeft: 0 }}
+                  fluid={false}
+                  title={t("nav.legalNotice.label")}
+                >
+                  {t("nav.legalNotice.label")}
+                </Button>
+              </div>
+              <div className="w-fit">
+                <Button
+                  variant="link"
+                  size="mini"
+                  style={{ paddingLeft: 0 }}
+                  fluid={false}
+                  href="/privacy-policy"
+                  title={t("nav.privacyPolicy.label")}
+                >
+                  {t("nav.privacyPolicy.label")}
+                </Button>
+              </div>
             </div>
           </div>
           <div className="flex-1">

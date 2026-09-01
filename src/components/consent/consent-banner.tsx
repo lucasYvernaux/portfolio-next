@@ -39,7 +39,6 @@ export function ConsentBanner() {
       <div className="flex items-center flex-wrap gap-4">
         <div>
           <Button
-            href={"#"}
             size="small"
             variant="destructive"
             onClick={() => submit({ choices: allFalse, method: "reject_all" })}
@@ -50,7 +49,6 @@ export function ConsentBanner() {
         </div>
         <div>
           <Button
-            href={"#"}
             size="small"
             variant="secondary"
             onClick={openModal}
@@ -61,7 +59,6 @@ export function ConsentBanner() {
         </div>
         <div>
           <Button
-            href={"#"}
             size="small"
             onClick={() => submit({ choices: allTrue, method: "accept_all" })}
             className="rounded-md bg-primary px-4 py-2 text-sm font-medium text-primary-foreground"

@@ -50,18 +50,12 @@ export function ConsentModal() {
 
         <div className="flex justify-end flex-wrap gap-4">
           <div>
-            <Button
-              href="#"
-              onClick={closeModal}
-              variant="secondary"
-              size="small"
-            >
+            <Button onClick={closeModal} variant="secondary" size="small">
               {t("modal.cancel")}
             </Button>
           </div>
           <div>
             <Button
-              href="#"
               onClick={() => submit({ choices: draft, method: "custom" })}
               variant="default"
               size="small"
