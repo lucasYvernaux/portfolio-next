@@ -1,7 +1,7 @@
-import { NavItems } from "../lib/types";
+import { NavItems } from "@/types/global";
 
-// id correspond to id messages.json
 //for multilanguage
+// id correspond to id messages.json
 export const allNavItems: NavItems[] = [
   { path: "/", id: "home" },
   { path: "/about", id: "about" },

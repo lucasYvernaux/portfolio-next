@@ -18,6 +18,8 @@ interface PropsButton {
   endIcon?: ReactNode;
   href: ComponentProps<typeof Link>["href"];
   style?: CSSProperties;
+  className?: string;
+  size?: "xs" | "small" | "base" | "large";
   onClick?: MouseEventHandler;
   variant?:
     | "default"
@@ -36,7 +38,9 @@ export default function Button({
   endIcon,
   startScon,
   style,
+  className,
   variant = "default",
+  size = "base",
   children,
   disabled,
   onClick,
@@ -47,7 +51,7 @@ export default function Button({
       className={`${disabled ? "cursor-not-allowed" : ""} flex w-full justify-center`}
     >
       <Link
-        className={`${button({ variant: variant })}`}
+        className={`${button({ variant: variant, size: size })} ${className}`}
         href={href}
         title={
           title ? title : tCommon("actions.title", { link: href.toString() })

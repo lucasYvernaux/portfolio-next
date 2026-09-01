@@ -1,7 +1,7 @@
 "use client";
 
+import { PackCustom } from "@/types/global";
 import { useFormatter, useTranslations } from "next-intl";
-import { PackCustom } from "../types";
 
 export function PacksData() {
   const format = useFormatter();

@@ -7,6 +7,7 @@ import { Mail, MapPin, Phone } from "lucide-react";
 import { CalendlySection } from "../calendly/calendly-section";
 import { useState } from "react";
 import { ContactFormData } from "@/lib/validations/contact.schema";
+import { ConsentGate } from "@/components/consent/consent-gate";
 
 export default function ContactSection() {
   const tContact = useTranslations("Contact");
@@ -59,10 +60,12 @@ export default function ContactSection() {
                 <p className="text-gray-100">France</p>
               </div>
             </div>
-            <CalendlySection
-              prefillData={prefillData}
-              className="inline-flex items-center justify-center rounded-md border border-border bg-background px-6 py-2.5 text-sm font-medium text-foreground transition-colors hover:bg-muted"
-            />
+            <ConsentGate category="calendly">
+              <CalendlySection
+                prefillData={prefillData}
+                className="inline-flex items-center justify-center rounded-md border border-border bg-background px-6 py-2.5 text-sm font-medium text-foreground transition-colors hover:bg-muted"
+              />
+            </ConsentGate>
           </div>
           <div>
             <h3 className="font-heading text-lg text-gray-100 mb-4">

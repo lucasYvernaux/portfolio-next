@@ -2,7 +2,7 @@
 
 import { usePathname, useRouter } from "@/i18n/navigation";
 import { routing } from "@/i18n/routing";
-import { StaticPathname } from "@/lib/types";
+import { StaticPathname } from "@/types/global";
 import { useLocale, useTranslations } from "next-intl";
 
 export function SwitchLang() {

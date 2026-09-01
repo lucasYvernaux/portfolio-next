@@ -7,6 +7,18 @@ export const routing = defineRouting({
   defaultLocale: DEFAULT_LOCALE,
   localeDetection: true,
   localePrefix: "always",
+
+  // ── Cookie de préférence de locale ──────────────────────────────────────
+  localeCookie: {
+    // Nom explicite (évite les collisions)
+    name: "NEXT_LOCALE",
+    // 1 an (préférence durable)
+    maxAge: 60 * 60 * 24 * 365,
+    // Sécurité
+    sameSite: "lax",
+    // path: "/" est la valeur par défaut
+  },
+
   pathnames: {
     "/": "/",
     "#": "#",

@@ -4,7 +4,7 @@ import SectionHero from "@/components/shared/section-hero";
 import { type Locale } from "@/i18n/locale";
 import { routing } from "@/i18n/routing";
 import { BreadcrumbJsonLd, WebPageJsonLd } from "@/lib/seo/json-ld";
-import { NatureProject, Project } from "@/lib/types";
+import { NatureProject, Project } from "@/types/global";
 import { hasLocale } from "next-intl";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 

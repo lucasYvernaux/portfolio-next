@@ -7,6 +7,10 @@ import { routing } from "@/i18n/routing";
 import { getTranslations } from "next-intl/server";
 import { createMetadata } from "@/lib/seo/metadata";
 import { SITE_NAME } from "@/lib/seo/constants";
+import { ConsentProvider } from "./consent-provider";
+import { readConsent } from "@/lib/consent/cookie";
+import { ConsentBanner } from "../consent/consent-banner";
+import { ConsentModal } from "../consent/consent-modal";
 
 export function generateStaticParams() {
   return LOCALES.map((locale) => ({ locale }));
@@ -47,13 +51,18 @@ export async function Provider({
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params!;
+  const consent = await readConsent();
 
   return (
     <html lang={locale} suppressHydrationWarning>
       <body>
-        <TranslationProvider params={params!}>
-          <ThemeProvider>{children}</ThemeProvider>
-        </TranslationProvider>
+        <ConsentProvider initialConsent={consent}>
+          <TranslationProvider params={params!}>
+            <ConsentBanner />
+            <ConsentModal />
+            <ThemeProvider>{children}</ThemeProvider>
+          </TranslationProvider>
+        </ConsentProvider>
       </body>
     </html>
   );

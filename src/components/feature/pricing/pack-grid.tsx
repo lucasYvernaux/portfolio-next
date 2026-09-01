@@ -3,7 +3,7 @@
 import { useState, useEffect, useCallback, useRef } from "react";
 import { useMessages } from "next-intl";
 import { ChevronLeft, ChevronRight } from "lucide-react";
-import { PackKey } from "@/lib/types";
+import { PackKey } from "@/types/global";
 import PackCardTest from "./pack-card";
 
 export function PacksGridTest() {
