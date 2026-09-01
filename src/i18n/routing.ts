@@ -43,6 +43,16 @@ export const routing = defineRouting({
       en: "/pricing",
     },
 
+    "/legal-notice": {
+      fr: "/mentions-legales",
+      en: "/legal-notice",
+    },
+
+    "/privacy-policy": {
+      fr: "/politique-de-confidentialite",
+      en: "/privacy-policy",
+    },
+
     "/contact": "/contact",
   },
 });

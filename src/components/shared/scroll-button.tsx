@@ -6,21 +6,19 @@ import { useTranslations } from "next-intl";
 
 export default function ScrollButton({ targetId }: { targetId: string }) {
   const handleClick = () => {
+    console.log("test log");
+
     document
       .getElementById(targetId)
       ?.scrollIntoView({ behavior: "smooth", block: "start" });
   };
   const tCommon = useTranslations("Common");
   return (
-    <div
-      onClick={handleClick}
-      className="w-full relative top-10 flex items-center justify-center"
-    >
+    <div className="w-full relative top-10 flex items-center justify-center">
       <Button
         variant="ghost"
         onClick={handleClick}
         className="uppercase"
-        href={"#"}
         style={{
           color: "var(--color-gray-500)",
           letterSpacing: "var(--tracking-widest)",

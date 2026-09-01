@@ -20,6 +20,12 @@ export const PUBLIC_ROUTES = [
   { path: "/", priority: 1.0, changeFrequency: "weekly" as const },
   { path: "/about", priority: 0.8, changeFrequency: "monthly" as const },
   { path: "/contact", priority: 0.6, changeFrequency: "monthly" as const },
+  { path: "/legal-notice", priority: 0.2, changeFrequency: "yearly" as const },
+  {
+    path: "/privacy-policy",
+    priority: 0.2,
+    changeFrequency: "yearly" as const,
+  },
 ] as const;
 
 export const DISALLOWED_PATHS = [

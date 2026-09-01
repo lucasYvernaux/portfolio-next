@@ -10,63 +10,106 @@ import {
   ReactNode,
 } from "react";
 
-interface PropsButton {
+type ButtonVariant =
+  | "default"
+  | "outline"
+  | "secondary"
+  | "link"
+  | "destructive"
+  | "ghost";
+type ButtonSize = "mini" | "short" | "small" | "base" | "large";
+
+interface BaseProps {
   value?: string;
   children?: ReactNode;
   title?: string;
-  startScon?: ReactNode;
+  startIcon?: ReactNode;
   endIcon?: ReactNode;
-  fluid?: boolean;
-  href: ComponentProps<typeof Link>["href"];
   style?: CSSProperties;
   className?: string;
-  size?: "mini" | "short" | "small" | "base" | "large";
-  onClick?: MouseEventHandler;
-  variant?:
-    | "default"
-    | "outline"
-    | "secondary"
-    | "link"
-    | "destructive"
-    | "ghost";
+  size?: ButtonSize;
+  variant?: ButtonVariant;
   disabled?: boolean;
+  fluid?: boolean;
+  onClick?: MouseEventHandler<HTMLButtonElement | HTMLAnchorElement>;
 }
 
-export default function Button({
-  href,
-  value,
-  title,
-  endIcon,
-  startScon,
-  style,
-  className,
-  fluid = false,
-  variant = "default",
-  size = "base",
-  children,
-  disabled,
-  onClick,
-}: PropsButton) {
+// Cas "navigation" : href obligatoire
+interface LinkButtonProps extends BaseProps {
+  href: ComponentProps<typeof Link>["href"];
+  locale?: ComponentProps<typeof Link>["locale"];
+  type?: never; // n'a pas de sens sur un <a>
+}
+
+// Cas "action" : pas de navigation, onClick obligatoire, type de <button> disponible
+interface ActionButtonProps extends BaseProps {
+  href?: undefined;
+  onClick: MouseEventHandler<HTMLButtonElement>;
+  type?: "button" | "submit" | "reset";
+}
+
+type PropsButton = LinkButtonProps | ActionButtonProps;
+
+function isLinkButton(props: PropsButton): props is LinkButtonProps {
+  return props.href !== undefined;
+}
+
+export default function Button(props: PropsButton) {
   const tCommon = useTranslations("Common");
+  const {
+    value,
+    title,
+    endIcon,
+    startIcon,
+    style,
+    className,
+    variant = "default",
+    size = "base",
+    fluid = false,
+    children,
+    disabled,
+    onClick,
+  } = props;
+  const classes = cn(
+    button({ variant, size, fluid }),
+    disabled && "cursor-not-allowed opacity-50 pointer-events-none",
+    className,
+  );
+  if (isLinkButton(props)) {
+    const { href, locale } = props;
+    return (
+      <Link
+        className={classes}
+        href={href}
+        locale={locale}
+        title={
+          title ? title : tCommon("actions.title", { link: href.toString() })
+        }
+        style={style}
+        aria-disabled={disabled}
+      >
+        {startIcon}
+        {value}
+        {children}
+        {endIcon}
+      </Link>
+    );
+  }
+
+  const { type = "button" } = props;
   return (
-    <Link
-      className={cn(
-        button({ variant, size, fluid }),
-        disabled && "cursor-not-allowed opacity-50 pointer-events-none",
-        className,
-      )}
-      href={href}
-      title={
-        title ? title : tCommon("actions.title", { link: href.toString() })
-      }
+    <button
+      type={type}
+      className={classes}
+      title={title}
       style={style}
       onClick={onClick}
-      aria-disabled={disabled}
+      disabled={disabled}
     >
-      {startScon}
+      {startIcon}
       {value}
       {children}
       {endIcon}
-    </Link>
+    </button>
   );
 }

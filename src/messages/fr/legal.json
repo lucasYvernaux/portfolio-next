@@ -1,0 +1,148 @@
+{
+  "Legal": {
+    "LegalNotice": {
+      "breadcrumb": "Mentions légales",
+      "pageTitle": "Mentions légales",
+      "lastUpdated": "Dernière mise à jour : {date}",
+      "sections": [
+        {
+          "heading": "1. Éditeur du site",
+          "body": [
+            "Le présent site, accessible à l'adresse yvernaux-web-solutions.com, est édité par :",
+            "Lucas YVERNAUX — [À COMPLÉTER : statut juridique, ex. Entrepreneur Individuel / SASU]",
+            "Adresse : [À COMPLÉTER : adresse de domiciliation professionnelle]",
+            "SIRET : [À COMPLÉTER — consultable sur annuaire-entreprises.data.gouv.fr]",
+            "Email : lucas.yvernaux@gmail.com",
+            "Téléphone : +33 6 51 07 60 91"
+          ]
+        },
+        {
+          "heading": "2. Directeur de la publication",
+          "body": [
+            "Le directeur de la publication du site est Lucas Yvernaux, en sa qualité d'éditeur du site."
+          ]
+        },
+        {
+          "heading": "3. Hébergement",
+          "body": [
+            "Le site est hébergé par :",
+            "Vercel Inc.",
+            "340 S Lemon Ave #4133, Walnut, CA 91789, États-Unis",
+            "Site web : https://vercel.com",
+            "Contact : privacy@vercel.com"
+          ]
+        },
+        {
+          "heading": "4. Propriété intellectuelle",
+          "body": [
+            "L'ensemble des éléments composant ce site (textes, code source, structure, graphismes, logos) est la propriété exclusive de Lucas Yvernaux, sauf mention contraire. Toute reproduction, représentation, modification ou adaptation, totale ou partielle, sans autorisation écrite préalable, est interdite et pourra faire l'objet de poursuites conformément aux articles L.335-2 et suivants du Code de la propriété intellectuelle.",
+            "Le code source du projet est publié à titre de démonstration technique sous licence propre au dépôt GitHub concerné ; cette publication ne vaut pas cession des droits sur les éléments graphiques et le contenu éditorial du site."
+          ]
+        },
+        {
+          "heading": "5. Liens hypertextes",
+          "body": [
+            "Ce site peut contenir des liens vers des sites tiers (Calendly, LinkedIn, GitHub, GitLab). Lucas Yvernaux n'exerce aucun contrôle sur ces sites et décline toute responsabilité quant à leur contenu ou leurs pratiques en matière de données personnelles."
+          ]
+        },
+        {
+          "heading": "6. Limitation de responsabilité",
+          "body": [
+            "Lucas Yvernaux s'efforce d'assurer l'exactitude et la mise à jour des informations diffusées sur ce site, sans garantie d'exhaustivité. L'éditeur ne pourra être tenu responsable des dommages directs ou indirects résultant de l'accès ou de l'utilisation du site, y compris l'inaccessibilité, les pertes de données ou la présence de virus."
+          ]
+        },
+        {
+          "heading": "7. Droit applicable et juridiction compétente",
+          "body": [
+            "Le présent site et les présentes mentions légales sont soumis au droit français. En cas de litige et à défaut de résolution amiable, les tribunaux français seront seuls compétents."
+          ]
+        },
+        {
+          "heading": "8. Contact",
+          "body": [
+            "Pour toute question relative à ces mentions légales, vous pouvez contacter l'éditeur via le formulaire de contact du site ou à l'adresse lucas.yvernaux@gmail.com."
+          ]
+        }
+      ]
+    },
+    "PrivacyPolicy": {
+      "breadcrumb": "Politique de confidentialité",
+      "pageTitle": "Politique de confidentialité",
+      "lastUpdated": "Dernière mise à jour : {date}",
+      "sections": [
+        {
+          "heading": "1. Responsable du traitement",
+          "body": [
+            "Le responsable du traitement des données à caractère personnel collectées sur ce site est Lucas Yvernaux, éditeur du site yvernaux-web-solutions.com, joignable à l'adresse lucas.yvernaux@gmail.com.",
+            "Compte tenu de la taille et de la nature de l'activité, aucun délégué à la protection des données (DPO) n'est désigné à titre obligatoire ; toute demande relative à vos données personnelles doit être adressée directement au responsable du traitement ci-dessus."
+          ]
+        },
+        {
+          "heading": "2. Données collectées",
+          "body": [
+            "Ce site ne collecte des données à caractère personnel que via le formulaire de contact, lorsque vous choisissez volontairement de le remplir. Les champs collectés sont : nom, prénom, adresse email, sujet et message, ainsi que, facultativement, votre entreprise et votre fonction.",
+            "Un champ technique invisible (« pot de miel ») est également présent dans le formulaire à des fins de lutte anti-spam ; il ne collecte aucune donnée vous concernant et ne doit jamais être rempli par un utilisateur humain.",
+            "Aucune donnée de paiement, de compte utilisateur ou de navigation individualisée n'est collectée par ailleurs, en dehors des cookies et traceurs décrits dans notre politique de cookies, accessible via le lien « Gérer mes cookies » en pied de page."
+          ]
+        },
+        {
+          "heading": "3. Finalités du traitement",
+          "body": [
+            "Les données transmises via le formulaire de contact sont exclusivement utilisées pour : répondre à votre demande, échanger dans le cadre d'un éventuel projet, et assurer le suivi de la relation précontractuelle ou contractuelle qui en découlerait.",
+            "Aucune donnée n'est utilisée à des fins de prospection commerciale automatisée non sollicitée."
+          ]
+        },
+        {
+          "heading": "4. Base légale",
+          "body": [
+            "Le traitement de vos données via le formulaire de contact repose sur votre consentement explicite au moment de l'envoi du formulaire (article 6.1.a du RGPD), ainsi que, le cas échéant, sur l'exécution de mesures précontractuelles prises à votre demande (article 6.1.b du RGPD)."
+          ]
+        },
+        {
+          "heading": "5. Destinataires des données",
+          "body": [
+            "Vos données sont traitées par les sous-traitants techniques suivants, dans la stricte mesure nécessaire au fonctionnement du site :",
+            "Resend (envoi de l'email de contact) — société tierce agissant en qualité de sous-traitant pour l'acheminement du message.",
+            "Cloudflare Turnstile (vérification anti-bot) — traite de manière transitoire des données techniques (adresse IP, empreinte navigateur) pour valider que le formulaire est rempli par un humain.",
+            "Vercel Inc. (hébergement) — héberge le site et traite les journaux techniques de connexion nécessaires au fonctionnement et à la sécurité du service.",
+            "Calendly (prise de rendez-vous) — uniquement si vous consentez explicitement au chargement du widget via notre bandeau de consentement ; dans ce cas, Calendly agit en qualité de responsable de traitement autonome pour les données que vous lui transmettez directement.",
+            "Aucune donnée n'est vendue, louée ou cédée à des tiers à des fins commerciales."
+          ]
+        },
+        {
+          "heading": "6. Transferts hors Union européenne",
+          "body": [
+            "Certains sous-traitants mentionnés ci-dessus (Resend, Cloudflare, Vercel, Calendly) sont susceptibles de traiter des données en dehors de l'Union européenne, notamment aux États-Unis. Ces transferts sont, à la connaissance de l'éditeur, encadrés par les clauses contractuelles types de la Commission européenne ou un mécanisme équivalent proposé par chacun de ces prestataires. Nous vous invitons à consulter leurs politiques de confidentialité respectives pour plus de détails."
+          ]
+        },
+        {
+          "heading": "7. Durée de conservation",
+          "body": [
+            "Les données transmises via le formulaire de contact sont conservées pendant une durée maximale de 3 ans à compter de notre dernier échange, conformément aux recommandations de la CNIL en matière de prospection commerciale, sauf obligation légale de conservation plus longue ou relation contractuelle se poursuivant au-delà de cette durée.",
+            "Les préférences de cookies exprimées via le bandeau de consentement sont conservées 6 mois maximum, comme détaillé dans notre politique de cookies."
+          ]
+        },
+        {
+          "heading": "8. Sécurité des données",
+          "body": [
+            "Le site met en œuvre des mesures techniques et organisationnelles pour protéger vos données : chiffrement des échanges (HTTPS/TLS), vérification anti-bot sur le formulaire de contact, limitation du taux de requêtes (rate limiting) et vérification de l'origine des requêtes sur les points d'API sensibles."
+          ]
+        },
+        {
+          "heading": "9. Vos droits",
+          "body": [
+            "Conformément au Règlement Général sur la Protection des Données (RGPD) et à la loi Informatique et Libertés, vous disposez des droits suivants sur vos données : droit d'accès, de rectification, d'effacement, de limitation du traitement, d'opposition et de portabilité.",
+            "Pour exercer ces droits, contactez-nous à l'adresse lucas.yvernaux@gmail.com en précisant l'objet de votre demande. Une réponse vous sera apportée dans un délai d'un mois conformément à la réglementation.",
+            "Si vous estimez, après nous avoir contactés, que vos droits ne sont pas respectés, vous pouvez introduire une réclamation auprès de la Commission Nationale de l'Informatique et des Libertés (CNIL) via www.cnil.fr."
+          ]
+        },
+        {
+          "heading": "10. Modification de la présente politique",
+          "body": [
+            "Cette politique de confidentialité peut être mise à jour à tout moment, notamment pour se conformer à toute évolution réglementaire, technique ou légale. La date de dernière mise à jour figure en haut de cette page."
+          ]
+        }
+      ]
+    }
+  }
+}

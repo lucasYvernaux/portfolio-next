@@ -81,7 +81,6 @@ export function Header() {
           <SwitchLang />
           <div className="size-10 md:hidden p-2">
             <Button
-              href={"#"}
               variant="ghost"
               size="mini"
               style={{ margin: 0 }}

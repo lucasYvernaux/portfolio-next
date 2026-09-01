@@ -99,7 +99,7 @@ export async function HomeHero() {
           </div>
         </div>
         <div className="w-fit relative top-20  m-auto">
-          <ScrollButton targetId="features-section" />
+          <ScrollButton targetId="features" />
         </div>
       </section>
     </div>
