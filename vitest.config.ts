@@ -24,7 +24,6 @@ export default defineConfig({
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
-      "@env": path.resolve(__dirname, "./env.ts"),
     },
   },
 });
