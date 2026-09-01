@@ -6,6 +6,7 @@ import type frContact from "../messages/fr/contact.json";
 import type frPricing from "../messages/fr/pricing.json";
 import type frProjects from "../messages/fr/projects.json";
 import type frConsent from "../messages/fr/consent.json";
+import frLegal from "../messages/fr/legal.json";
 
 type Messages = typeof frCommon &
   typeof frMetadata &
@@ -14,7 +15,8 @@ type Messages = typeof frCommon &
   typeof frContact &
   typeof frPricing &
   typeof frProjects &
-  typeof frConsent;
+  typeof frConsent &
+  typeof frLegal;
 
 declare module "next-intl" {
   interface AppConfig {
