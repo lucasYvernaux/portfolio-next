@@ -1,7 +1,10 @@
 import Button from "@/components/ui/button";
 import { Check } from "lucide-react";
+import { getTranslations } from "next-intl/server";
 
 export async function HomePricing() {
+  const tCommon = await getTranslations("Common");
+
   return (
     <section id="pricing" className="py-20 md:py-32 bg-zinc-900">
       <div className="container mx-auto px-6 max-w-6xl">
@@ -50,9 +53,9 @@ export async function HomePricing() {
               <Button
                 href="/contact"
                 variant="secondary"
-                style={{ textTransform: "capitalize" }}
+                className="capitalize"
               >
-                Contact
+                {tCommon("nav.contact.label")}
               </Button>
             </div>
             <div
@@ -88,8 +91,8 @@ export async function HomePricing() {
                   <span>Code Vanilla ou React</span>
                 </li>
               </ul>
-              <Button href="/contact" style={{ textTransform: "capitalize" }}>
-                Contact
+              <Button href="/contact" className="capitalize">
+                {tCommon("nav.contact.label")}
               </Button>
             </div>
             <div
@@ -127,9 +130,9 @@ export async function HomePricing() {
               <Button
                 href="/contact"
                 variant="secondary"
-                style={{ textTransform: "capitalize" }}
+                className="capitalize"
               >
-                Contact
+                {tCommon("nav.contact.label")}
               </Button>
             </div>
           </div>

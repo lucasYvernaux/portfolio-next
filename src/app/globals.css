@@ -13,6 +13,7 @@
   --color-foreground: var(--color-zinc-100);
   --color-gray-custom: #121212;
   --color-primary: #c4a35a;
+  --color-primary-foreground: var(--color-gray-custom); /* color #121212 */
   --color-destructive: lab(63.7053% 60.745 31.3109);
   --color-surface: rgb(42 42 42 / var(--tw-bg-opacity, 1));
   --color-surface-border: "rgb(61 61 61 / var(--tw-border-opacity, 1))";

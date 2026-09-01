@@ -4,8 +4,8 @@
       "home": { "label": "Home", "alt": "Go to the homepage" },
       "about": { "label": "About", "alt": "Go to the about page" },
       "projects": {
-        "label": "Réalisations",
-        "alt": "Go to the réalisation"
+        "label": "Projects",
+        "alt": "Go to the projects"
       },
       "pricing": { "label": "Pricing", "alt": "Go to the pricing page" },
       "contact": { "label": "Contact", "alt": "Go to the contact page" }
@@ -16,6 +16,7 @@
     },
     "actions": {
       "title": "Go to the \"{link}\" link",
+      "explore": "explore",
       "startProject": "Start a Project",
       "readMore": "Read more",
       "SeeAll": "See all",

@@ -53,6 +53,7 @@ export async function HomeHero() {
                 <Button
                   href="/contact"
                   title={tCommon("nav.contact.alt")}
+                  className="uppercase"
                   endIcon={
                     <ArrowRight
                       size={20}
@@ -67,9 +68,10 @@ export async function HomeHero() {
                 <Button
                   variant="outline"
                   href="/projects"
+                  className="uppercase"
                   title={tCommon("nav.projects.alt")}
                 >
-                  Réalisations
+                  {tCommon("nav.projects.label")}
                 </Button>
               </div>
             </div>

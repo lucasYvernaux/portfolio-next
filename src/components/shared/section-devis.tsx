@@ -28,6 +28,7 @@ export default async function SectionDevis({
           <Button
             href="/contact"
             title={t("nav.contact.alt")}
+            className="uppercase"
             endIcon={
               <ArrowRight
                 size={20}

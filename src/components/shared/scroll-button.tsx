@@ -2,6 +2,7 @@
 
 import { ChevronDown } from "lucide-react";
 import Button from "../ui/button";
+import { useTranslations } from "next-intl";
 
 export default function ScrollButton({ targetId }: { targetId: string }) {
   const handleClick = () => {
@@ -9,7 +10,7 @@ export default function ScrollButton({ targetId }: { targetId: string }) {
       .getElementById(targetId)
       ?.scrollIntoView({ behavior: "smooth", block: "start" });
   };
-
+  const tCommon = useTranslations("Common");
   return (
     <div
       onClick={handleClick}
@@ -18,6 +19,7 @@ export default function ScrollButton({ targetId }: { targetId: string }) {
       <Button
         variant="ghost"
         onClick={handleClick}
+        className="uppercase"
         href={"#"}
         style={{
           color: "var(--color-gray-500)",
@@ -25,7 +27,7 @@ export default function ScrollButton({ targetId }: { targetId: string }) {
           flexDirection: "column",
         }}
       >
-        découvrir
+        {tCommon("actions.explore")}
         <ChevronDown
           color="var(--color-primary)"
           className="animate-bounce mt-4"

@@ -1,0 +1,57 @@
+{
+  "consent": {
+    "manageLink": "Gérer mes cookies",
+    "banner": {
+      "ariaLabel": "Bandeau de gestion des cookies",
+      "description": "Nous utilisons des cookies strictement nécessaires au fonctionnement du site, ainsi que des cookies tiers optionnels (comme Calendly pour la prise de rendez-vous) qui ne seront chargés qu'avec votre accord. Vous pouvez accepter, refuser ou personnaliser votre choix à tout moment.",
+      "rejectAll": "Tout refuser",
+      "customize": "Personnaliser",
+      "acceptAll": "Tout accepter"
+    },
+    "gate": {
+      "blocked": "Ce contenu ({category}) nécessite votre consentement pour être chargé.",
+      "loadAction": "Accepter et charger",
+      "categories": {
+        "calendly": "widget de prise de rendez-vous Calendly",
+        "analytics": "outil de mesure d'audience"
+      }
+    },
+    "categories": {
+      "necessary": {
+        "label": "Cookies strictement nécessaires",
+        "description": "Indispensables au fonctionnement du site (langue, thème, sécurité du formulaire de contact). Ils ne peuvent pas être désactivés et ne nécessitent pas votre consentement."
+      },
+      "calendly": {
+        "label": "Prise de rendez-vous (Calendly)",
+        "description": "Charge le widget Calendly permettant de réserver un créneau directement depuis le site. Sans ce consentement, un lien externe vous sera proposé à la place."
+      },
+      "analytics": {
+        "label": "Mesure d'audience",
+        "description": "Nous permettrait de comprendre comment le site est utilisé, de façon anonyme. Aucun outil n'est actuellement actif dans cette catégorie."
+      }
+    },
+    "modal": {
+      "title": "Préférences de cookies",
+      "description": "Choisissez les catégories de cookies que vous autorisez. Les cookies strictement nécessaires restent toujours actifs.",
+      "cancel": "Annuler",
+      "save": "Enregistrer mes choix"
+    },
+    "page": {
+      "title": "Politique de cookies",
+      "lastUpdated": "Dernière mise à jour : {date}",
+      "intro": "Cette page détaille les cookies et traceurs utilisés sur yvernaux-web-solutions.com, leur finalité et leur durée de conservation, conformément aux recommandations de la CNIL.",
+      "necessaryIntro": "Cookies strictement nécessaires",
+      "necessaryDescription": "Ces cookies assurent le fonctionnement de base du site et ne sont jamais soumis à consentement.",
+      "optionalIntro": "Cookies soumis à consentement",
+      "optionalDescription": "Ces cookies ne sont déposés qu'après votre accord explicite, catégorie par catégorie.",
+      "tableHeaders": {
+        "name": "Nom du cookie",
+        "provider": "Fournisseur",
+        "purpose": "Finalité",
+        "duration": "Durée de conservation"
+      },
+      "manageCta": "Modifier mes préférences de cookies",
+      "contact": "Pour toute question relative à vos données ou à ce site, contactez-nous via le formulaire de contact."
+    }
+  }
+}

@@ -1,12 +1,12 @@
 "use client";
 
 import { Menu, X } from "lucide-react";
-import { allNavItems } from "../../lib/config";
 import { useEffect, useState } from "react";
 import { SwitchLang } from "./toggle-lang";
 import { Messages, NamespaceKeys, useTranslations } from "next-intl";
 import { Link, usePathname } from "@/i18n/navigation";
 import Image from "next/image";
+import { allNavItems } from "@/config/site";
 
 export function Header() {
   const pathname = usePathname();
