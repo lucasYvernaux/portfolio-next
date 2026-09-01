@@ -12,6 +12,7 @@ const NAMESPACE_FILES = [
   { file: "projects", rootKey: "Projects" },
   { file: "pricing", rootKey: "Pricing" },
   { file: "consent", rootKey: "consent" },
+  { file: "legal", rootKey: "Legal" },
 ] as const;
 
 async function loadMessages(locale: string) {

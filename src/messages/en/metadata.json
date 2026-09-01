@@ -5,7 +5,7 @@
       "description": "Web development and Artificial Intelligence specialist."
     },
     "home": {
-      "title": "Web lol & IA Developer - Custom Solutions",
+      "title": "Web & IA Developer - Custom Solutions",
       "description": "Web development and Artificial Intelligence specialist. Yvernaux Web Solutions offers innovative solutions for business. Contact us for a free quote."
     },
     "about": {
@@ -15,6 +15,14 @@
     "blog": {
       "title": "Blog",
       "description": "Articles and news from MonSite."
+    },
+    "legalNotice": {
+      "title": "Legal Notice",
+      "description": "Legal notice for Yvernaux Web Solutions: publisher, host, and legal information."
+    },
+    "privacyPolicy": {
+      "title": "Privacy Policy",
+      "description": "Yvernaux Web Solutions privacy policy: data collected, purposes, and your GDPR rights."
     }
   }
 }

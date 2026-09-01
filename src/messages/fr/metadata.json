@@ -15,6 +15,14 @@
     "blog": {
       "title": "Blog",
       "description": "Articles et actualités de MonSite."
+    },
+    "legalNotice": {
+      "title": "Mentions légales",
+      "description": "Mentions légales du site Yvernaux Web Solutions : éditeur, hébergeur et informations légales."
+    },
+    "privacyPolicy": {
+      "title": "Politique de confidentialité",
+      "description": "Politique de confidentialité de Yvernaux Web Solutions : données collectées, finalités et vos droits RGPD."
     }
   }
 }
