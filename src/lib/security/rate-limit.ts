@@ -29,7 +29,7 @@ export async function checkContactRateLimit(
   return { success, remaining };
 }
 
-// ── 3. (Optionnel) Factory pour d’autres limites dynamiques ───────────────
+// ── 3. Factory pour d’autres limites dynamiques ─────────────────────
 // À utiliser uniquement si tu as vraiment besoin de limites différentes
 // ailleurs dans l’application.
 const limiterCache = new Map<string, Ratelimit>();
@@ -54,7 +54,7 @@ export function getDynamicRateLimiter(
   return limiter;
 }
 
-// ── 4. Extraction de l’IP (inchangée, déjà correcte) ──────────────────────
+// ── 4. Extraction de l’IP ──────────────────────────────────────────────
 export function getClientIp(req: Request): string {
   const forwardedFor = req.headers.get("x-forwarded-for");
   if (forwardedFor) {
