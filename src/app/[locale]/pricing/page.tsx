@@ -14,7 +14,6 @@ export default async function PricingPage() {
           path="pricing"
           title={tPricing("title")}
           intro={tPricing("introduction")}
-          center
         />
         <section className="py-16 md:py-24 bg-linear-to-b from-background/95 to-gray-custom text-foreground">
           <div className="max-w-7xl mx-auto px-6 md:px-12">

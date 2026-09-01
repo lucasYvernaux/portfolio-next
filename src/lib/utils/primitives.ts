@@ -59,7 +59,7 @@ export const text = tv({
 });
 
 export const button = tv({
-  base: "group flex w-full items-center justify-center gap-2 mt-4 rounded-lg tracking-wider transition-all duration-300 disabled:pointer-events-none disabled:opacity-50",
+  base: "group flex items-center justify-center gap-2 rounded-lg tracking-wider transition-all duration-300 disabled:pointer-events-none disabled:opacity-50",
   variants: {
     variant: {
       default: "bg-primary text-primary-foreground hover:bg-primary/80",
@@ -72,7 +72,8 @@ export const button = tv({
       destructive: "bg-destructive/10 text-destructive hover:bg-destructive/20",
     },
     size: {
-      xs: "p-2 text-xs",
+      mini: "p-1 text-xs",
+      short: "px-2 py-1 text-sm",
       small: "px-4 py-2 text-sm",
       base: "px-8 py-4 text-base",
       large: "px-16 py-8 text-xl",
@@ -83,10 +84,15 @@ export const button = tv({
       semibold: "font-semibold",
       bold: "font-bold",
     },
+    fluid: {
+      true: "w-full mt-4",
+      false: "",
+    },
   },
   defaultVariants: {
     weight: "bold",
     variant: "default",
     size: "base",
+    fluid: false,
   },
 });

@@ -5,7 +5,7 @@ import {
 } from "@/lib/validations/contact.schema";
 import { emailService, EmailServiceError } from "@/services/email.services";
 import { getTranslations } from "next-intl/server";
-import { checkRateLimit, getClientIp } from "@/lib/security/rate-limit";
+import { checkContactRateLimit, getClientIp } from "@/lib/security/rate-limit";
 import { verifyTurnstileToken } from "@/lib/security/turnstile";
 import { isValidOrigin } from "@/lib/security/origin-check";
 
@@ -27,7 +27,7 @@ export async function POST(req: NextRequest): Promise<Response> {
     );
   }
   const clientIp = getClientIp(req);
-  const rateLimit = await checkRateLimit(clientIp, 3, 1000 * 60 * 10);
+  const rateLimit = await checkContactRateLimit(clientIp);
   if (!rateLimit.success) {
     return NextResponse.json(
       {
