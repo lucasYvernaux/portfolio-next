@@ -1,0 +1,148 @@
+{
+  "Legal": {
+    "LegalNotice": {
+      "breadcrumb": "Legal Notice",
+      "pageTitle": "Legal Notice",
+      "lastUpdated": "Last updated: {date}",
+      "sections": [
+        {
+          "heading": "1. Website publisher",
+          "body": [
+            "This website, accessible at yvernaux-web-solutions.com, is published by:",
+            "Lucas YVERNAUX — [TO COMPLETE: legal status, e.g. Sole Trader / SASU]",
+            "Address: [TO COMPLETE: registered business address]",
+            "Business registration number (SIRET): [TO COMPLETE — available via annuaire-entreprises.data.gouv.fr]",
+            "Email: lucas.yvernaux@gmail.com",
+            "Phone: +33 6 51 07 60 91"
+          ]
+        },
+        {
+          "heading": "2. Publication director",
+          "body": [
+            "The publication director for this website is Lucas Yvernaux, in his capacity as website publisher."
+          ]
+        },
+        {
+          "heading": "3. Hosting",
+          "body": [
+            "This website is hosted by:",
+            "Vercel Inc.",
+            "340 S Lemon Ave #4133, Walnut, CA 91789, United States",
+            "Website: https://vercel.com",
+            "Contact: privacy@vercel.com"
+          ]
+        },
+        {
+          "heading": "4. Intellectual property",
+          "body": [
+            "All elements of this website (text, source code, structure, graphics, logos) are the exclusive property of Lucas Yvernaux, unless stated otherwise. Any reproduction, representation, modification or adaptation, in whole or in part, without prior written authorization, is prohibited.",
+            "The project's source code is published on GitHub for technical demonstration purposes; this publication does not transfer rights over the graphic elements and editorial content of the website."
+          ]
+        },
+        {
+          "heading": "5. Hyperlinks",
+          "body": [
+            "This website may contain links to third-party websites (Calendly, LinkedIn, GitHub, GitLab). Lucas Yvernaux has no control over these websites and disclaims any responsibility for their content or personal data practices."
+          ]
+        },
+        {
+          "heading": "6. Limitation of liability",
+          "body": [
+            "Lucas Yvernaux strives to ensure the accuracy and up-to-dateness of the information published on this website, without guarantee of completeness. The publisher cannot be held liable for direct or indirect damages resulting from access to or use of the website."
+          ]
+        },
+        {
+          "heading": "7. Governing law and jurisdiction",
+          "body": [
+            "This website and this legal notice are governed by French law. In the event of a dispute, and failing an amicable resolution, French courts shall have exclusive jurisdiction."
+          ]
+        },
+        {
+          "heading": "8. Contact",
+          "body": [
+            "For any question regarding this legal notice, you may contact the publisher via the website's contact form or at lucas.yvernaux@gmail.com."
+          ]
+        }
+      ]
+    },
+    "PrivacyPolicy": {
+      "breadcrumb": "Privacy Policy",
+      "pageTitle": "Privacy Policy",
+      "lastUpdated": "Last updated: {date}",
+      "sections": [
+        {
+          "heading": "1. Data controller",
+          "body": [
+            "The controller for personal data collected on this website is Lucas Yvernaux, publisher of yvernaux-web-solutions.com, reachable at lucas.yvernaux@gmail.com.",
+            "Given the size and nature of the activity, no Data Protection Officer (DPO) is mandatorily appointed; any request regarding your personal data should be sent directly to the controller above."
+          ]
+        },
+        {
+          "heading": "2. Data collected",
+          "body": [
+            "This website only collects personal data through the contact form, when you voluntarily choose to fill it in. The fields collected are: last name, first name, email address, subject and message, as well as, optionally, your company and job title.",
+            "An invisible technical field (honeypot) is also present in the form for anti-spam purposes; it does not collect any data about you and should never be filled in by a human user.",
+            "No payment data, user account, or individualized browsing data is otherwise collected, aside from the cookies and trackers described in our cookie policy, accessible via the 'Manage cookies' link in the footer."
+          ]
+        },
+        {
+          "heading": "3. Purpose of processing",
+          "body": [
+            "Data submitted via the contact form is used exclusively to: respond to your request, communicate about a potential project, and follow up on the resulting pre-contractual or contractual relationship.",
+            "No data is used for unsolicited automated commercial prospecting."
+          ]
+        },
+        {
+          "heading": "4. Legal basis",
+          "body": [
+            "Processing of your data via the contact form is based on your explicit consent at the time of submission (Article 6(1)(a) GDPR), as well as, where applicable, on pre-contractual measures taken at your request (Article 6(1)(b) GDPR)."
+          ]
+        },
+        {
+          "heading": "5. Data recipients",
+          "body": [
+            "Your data is processed by the following technical sub-processors, strictly to the extent necessary for the website to function:",
+            "Resend (contact email delivery) — a third-party company acting as processor for message delivery.",
+            "Cloudflare Turnstile (anti-bot verification) — transiently processes technical data (IP address, browser fingerprint) to verify the form is submitted by a human.",
+            "Vercel Inc. (hosting) — hosts the website and processes technical connection logs necessary for the service's operation and security.",
+            "Calendly (appointment booking) — only if you explicitly consent to loading the widget via our consent banner; in that case, Calendly acts as an independent controller for the data you provide it directly.",
+            "No data is sold, rented, or transferred to third parties for commercial purposes."
+          ]
+        },
+        {
+          "heading": "6. Transfers outside the European Union",
+          "body": [
+            "Some sub-processors mentioned above (Resend, Cloudflare, Vercel, Calendly) may process data outside the European Union, notably in the United States. To the publisher's knowledge, these transfers are governed by the European Commission's standard contractual clauses or an equivalent mechanism offered by each provider. Please refer to their respective privacy policies for further details."
+          ]
+        },
+        {
+          "heading": "7. Retention period",
+          "body": [
+            "Data submitted via the contact form is retained for a maximum of 3 years from our last exchange, in line with CNIL recommendations for commercial prospecting, unless a longer legal retention obligation applies or a contractual relationship continues beyond that period.",
+            "Cookie preferences expressed via the consent banner are retained for a maximum of 6 months, as detailed in our cookie policy."
+          ]
+        },
+        {
+          "heading": "8. Data security",
+          "body": [
+            "The website implements technical and organizational measures to protect your data: encrypted communications (HTTPS/TLS), anti-bot verification on the contact form, request rate limiting, and origin verification on sensitive API endpoints."
+          ]
+        },
+        {
+          "heading": "9. Your rights",
+          "body": [
+            "In accordance with the General Data Protection Regulation (GDPR), you have the following rights over your data: right of access, rectification, erasure, restriction of processing, objection, and portability.",
+            "To exercise these rights, contact us at lucas.yvernaux@gmail.com specifying the purpose of your request. A response will be provided within one month, in accordance with applicable regulations.",
+            "If you believe, after contacting us, that your rights are not being respected, you may lodge a complaint with the French data protection authority (CNIL) via www.cnil.fr."
+          ]
+        },
+        {
+          "heading": "10. Changes to this policy",
+          "body": [
+            "This privacy policy may be updated at any time, in particular to comply with any regulatory, technical or legal change. The last update date appears at the top of this page."
+          ]
+        }
+      ]
+    }
+  }
+}

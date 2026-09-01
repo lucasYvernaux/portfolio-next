@@ -8,7 +8,12 @@
         "alt": "Go to the projects"
       },
       "pricing": { "label": "Pricing", "alt": "Go to the pricing page" },
-      "contact": { "label": "Contact", "alt": "Go to the contact page" }
+      "contact": { "label": "Contact", "alt": "Go to the contact page" },
+      "legalNotice": { "label": "Legal Notice", "alt": "Go to legal notice" },
+      "privacyPolicy": {
+        "label": "Privacy Policy",
+        "alt": "Go to privacy policy"
+      }
     },
     "footer": {
       "copyright": "© {year} {company}. All rights reserved.",

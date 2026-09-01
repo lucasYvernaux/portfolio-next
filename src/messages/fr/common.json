@@ -8,7 +8,15 @@
         "alt": "Aller à la page réalisation"
       },
       "pricing": { "label": "Tarifs", "alt": "Aller à la page tarifs" },
-      "contact": { "label": "Contact", "alt": "Aller à la page contact" }
+      "contact": { "label": "Contact", "alt": "Aller à la page contact" },
+      "legalNotice": {
+        "label": "Mentions légales",
+        "alt": "Aller aux mentions légales"
+      },
+      "privacyPolicy": {
+        "label": "Politique de confidentialité",
+        "alt": "Aller à la politique de confidentialité"
+      }
     },
     "footer": {
       "copyright": "© {year} {company}. Tous droits réservés.",

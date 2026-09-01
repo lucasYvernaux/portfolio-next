@@ -38,8 +38,23 @@ export async function Footer() {
               L&apos;IA m&apos;assiste, mais c&apos;est mon expertise qui
               façonne chaque ligne de code.
             </p>
-            <div>
+
+            <div className="flex flex-col gap-1">
               <CookieSettingsTrigger />
+              <NavLink
+                className="text-gray-500 hover:text-primary transition-colors text-xs"
+                href="/legal-notice"
+                title={t("nav.legalNotice.label")}
+              >
+                {t("nav.legalNotice.label")}
+              </NavLink>
+              <NavLink
+                className="text-gray-500 hover:text-primary transition-colors text-xs"
+                href="/privacy-policy"
+                title={t("nav.privacyPolicy.label")}
+              >
+                {t("nav.privacyPolicy.label")}
+              </NavLink>
             </div>
           </div>
           <div className="flex-1">
