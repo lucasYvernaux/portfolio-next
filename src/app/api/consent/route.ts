@@ -5,8 +5,8 @@ import {
   CONSENT_VERSION,
   CONSENT_MAX_AGE_SECONDS,
 } from "@/lib/consent/constant";
-import { checkRateLimit, getClientIp } from "@/lib/security/rate-limit";
 import { isValidOrigin } from "@/lib/security/origin-check";
+import { getClientIp, getDynamicRateLimiter } from "@/lib/security/rate-limit";
 
 export async function POST(req: NextRequest) {
   if (!isValidOrigin(req)) {
@@ -14,7 +14,8 @@ export async function POST(req: NextRequest) {
   }
 
   const ip = getClientIp(req);
-  const rateLimitResult = await checkRateLimit(ip, 3, 1000 * 60 * 10);
+  const consentRateLimiter = await getDynamicRateLimiter(3, "10 m");
+  const rateLimitResult = await consentRateLimiter.limit(ip);
   if (!rateLimitResult.success) {
     return NextResponse.json({ error: "Trop de requêtes" }, { status: 429 });
   }
