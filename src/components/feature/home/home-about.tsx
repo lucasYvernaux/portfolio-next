@@ -18,11 +18,14 @@ export async function HomeAbout() {
                   <span className="font-semibold text-[#C5A866]">
                     Note importante :
                   </span>{" "}
-                  J&apos;utilise l&apos;Intelligence Artificielle comme un outil
-                  puissant pour accélérer le développement, mais la conception,
-                  la logique métier et la sécurité sont entièrement pilotées par
-                  mon expertise humaine. Je conçois des sites web &quot;avec
-                  l&apos;aide de l&apos;IA, et non par l&apos;IA&quot;.
+                  L&apos;IA m&apos;aide à accomplir mes tâches beaucoup plus
+                  rapidement, comme un assistant très performant. Mais les
+                  grandes idées, le fonctionnement global du système et la
+                  sécurité relèvent entièrement de mes propres compétences
+                  humaines. Je crée des sites web{" "}
+                  <span className="italic">avec </span> l&apos;IA, pas{" "}
+                  <span className="italic">grâce à </span>
+                  l&apos;IA.
                 </p>
               </div>
             </div>
@@ -86,10 +89,11 @@ export async function HomeAbout() {
                   </div>
                   <div>
                     <h4 className="font-semibold text-zinc-100 mb-1">
-                      Création &amp; Refonte WordPress
+                      Sécurité
                     </h4>
                     <p className="text-sm text-zinc-400">
-                      Des sites administrables, performants et à votre image.
+                      Des sites sécurisés, suivant les dernières
+                      recommandations.
                     </p>
                   </div>
                 </div>

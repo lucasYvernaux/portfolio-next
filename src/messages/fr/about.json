@@ -2,15 +2,85 @@
   "About": {
     "breadcrumb": "À propos",
     "title": "À propos",
-    "intro": "Nous sommes une équipe passionnée par <bold>la technologie</bold> et <bold>le design</bold>.",
-    "text": "Je suis un développeur web talentueux avec 4 ans d'expérience, passionné par la création d'interfaces pour offrir des expériences utilisateur exceptionnelles. Mon objectif est de collaborer avec une équipe dynamique pour développer des solutions web innovantes et stimulantes.",
-    "team": {
-      "title": "Notre équipe",
-      "members": "{count, plural, =0 {Aucun membre} one {# membre} other {# membres}}"
-    },
+
     "hero": {
       "title": "Mon approche",
-      "text": "Développeur web passionné avec plus de 4 ans d'expérience, je transforme vos idées en solutions digitales performantes."
+      "text": "Je conçois et développe des solutions web performantes, maintenables et adaptées aux besoins réels de chaque projet."
+    },
+
+    "identity": {
+      "eyebrow": "Qui suis-je",
+      "title": "Un développeur qui pense au-delà du code",
+      "paragraph1": "Je me nomme Lucas Yvernaux, professionnel du développement web full-stack, fort de plus de quatre années d'expérience. Mon expertise s'applique aux projets web, où j'accorde une importance primordiale à l'interface utilisateur (front-end), à l'expérience utilisateur et à l'excellence technique.",
+      "paragraph2": "Ma mission dépasse la simple transposition d'une maquette graphique en une interface fonctionnelle. Je m'efforce d'appréhender les exigences fondamentales, d'anticiper les contraintes potentielles, et d'élaborer une solution qui conjugue fiabilité, évolutivité et lisibilité à long terme."
+    },
+
+    "principles": {
+      "eyebrow": "mes principes",
+      "title": "Ce qui guide mes décisions",
+      "items": {
+        "clarity": {
+          "title": "Clarté",
+          "text": "Une architecture compréhensible facilite les évolutions, le debugging et la collaboration. Je privilégie des responsabilités clairement définies et des solutions simples lorsqu'elles suffisent."
+        },
+        "quality": {
+          "title": "Qualité",
+          "text": "Le code doit répondre au besoin actuel sans compromettre les évolutions futures. Je porte une attention particulière à la maintenabilité, à la cohérence et à la robustesse."
+        },
+        "security": {
+          "title": "Sécurité",
+          "text": "La sécurité doit être prise en compte dès la conception. Validation des entrées, gestion des accès, protection des données et réduction de la surface d'attaque font partie intégrante du développement."
+        }
+      }
+    },
+
+    "expertise": {
+      "eyebrow": "expertise",
+      "title": "Construire des solutions solides",
+      "intro": "Chaque projet possède ses propres contraintes. Mon approche consiste à choisir les outils et l'architecture en fonction du besoin plutôt que de multiplier inutilement les technologies.",
+
+      "items": {
+        "customDevelopment": {
+          "title": "Développement sur mesure",
+          "text": "Création d'interfaces et de fonctionnalités adaptées aux besoins spécifiques du projet."
+        },
+        "architecture": {
+          "title": "Architecture",
+          "text": "Conception de structures modulaires, évolutives et suffisamment découplées pour accompagner la croissance du projet."
+        },
+        "security": {
+          "title": "Sécurité",
+          "text": "Prise en compte des risques applicatifs et des bonnes pratiques de sécurité tout au long du cycle de développement."
+        },
+        "performance": {
+          "title": "Performance",
+          "text": "Optimisation du rendu, des ressources et des parcours utilisateurs afin de conserver une expérience rapide et fluide."
+        },
+        "maintenance": {
+          "title": "Maintenabilité",
+          "text": "Organisation du code et des composants pour faciliter les corrections, les évolutions et la réutilisation."
+        }
+      }
+    },
+
+    "method": {
+      "eyebrow": "méthode",
+      "title": "Une approche structurée du projet",
+
+      "steps": {
+        "understand": {
+          "title": "Comprendre",
+          "text": "Identifier les objectifs, les utilisateurs, les contraintes techniques et les priorités avant de choisir une solution."
+        },
+        "design": {
+          "title": "Concevoir",
+          "text": "Définir une architecture cohérente et une expérience utilisateur adaptée aux besoins identifiés."
+        },
+        "build": {
+          "title": "Construire",
+          "text": "Développer progressivement une solution testable, sécurisée, performante et suffisamment flexible pour évoluer."
+        }
+      }
     }
   }
 }

@@ -7,8 +7,8 @@ export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
 const TAGLINES: Record<string, string> = {
-  fr: "Votre tagline en français",
-  en: "Your tagline in English",
+  fr: "Spécialiste du développement web et de l'intelligence artificielle",
+  en: "Specialist in web development and artificial intelligence",
 };
 
 /**

@@ -2,15 +2,85 @@
   "About": {
     "breadcrumb": "About",
     "title": "About",
-    "intro": "We are a passionnate team by <b>technology</b> and <b>design</b>.",
-    "text": "I am a talented web developer with four years’ experience, passionate about creating interfaces that deliver exceptional user experiences. My aim is to work alongside a dynamic team to develop innovative and stimulating web solutions.",
-    "team": {
-      "title": "Our team",
-      "members": "{count, plural, =0 {Aucun membre} one {# membre} other {# membres}}"
-    },
+
     "hero": {
       "title": "My approach",
-      "text": "A passionate web developer with over 4 years’ experience, I turn your ideas into high-performing digital solutions."
+      "text": "I design and develop high-performing, maintainable web solutions tailored to the real needs of each project."
+    },
+
+    "identity": {
+      "eyebrow": "who I am",
+      "title": "A developer who thinks beyond the code",
+      "paragraph1": "I am Lucas Yvernaux, a full-stack web developer with more than four years of experience. I work on web projects with a particular focus on front-end development, user experience and technical quality.",
+      "paragraph2": "My role is not simply to turn a design into an interface. I aim to understand the underlying needs, anticipate constraints and build solutions that remain reliable, scalable and understandable over time."
+    },
+
+    "principles": {
+      "eyebrow": "my principles",
+      "title": "What guides my decisions",
+      "items": {
+        "clarity": {
+          "title": "Clarity",
+          "text": "A clear architecture makes future changes, debugging and collaboration easier. I favour clearly defined responsibilities and simple solutions whenever they are sufficient."
+        },
+        "quality": {
+          "title": "Quality",
+          "text": "Code should meet today's requirements without compromising future evolution. I pay particular attention to maintainability, consistency and robustness."
+        },
+        "security": {
+          "title": "Security",
+          "text": "Security should be considered from the beginning. Input validation, access control, data protection and attack-surface reduction are part of the development process."
+        }
+      }
+    },
+
+    "expertise": {
+      "eyebrow": "expertise",
+      "title": "Building solid solutions",
+      "intro": "Every project has its own constraints. My approach is to choose tools and architecture according to the actual requirements rather than unnecessarily increasing the technology stack.",
+
+      "items": {
+        "customDevelopment": {
+          "title": "Custom development",
+          "text": "Building interfaces and features tailored to the specific requirements of each project."
+        },
+        "architecture": {
+          "title": "Architecture",
+          "text": "Designing modular and scalable structures with clear boundaries that can support the growth of a project."
+        },
+        "security": {
+          "title": "Security",
+          "text": "Considering application risks and security best practices throughout the development lifecycle."
+        },
+        "performance": {
+          "title": "Performance",
+          "text": "Optimising rendering, resources and user journeys to maintain a fast and fluid experience."
+        },
+        "maintenance": {
+          "title": "Maintainability",
+          "text": "Structuring code and components to make fixes, future changes and reuse easier."
+        }
+      }
+    },
+
+    "method": {
+      "eyebrow": "method",
+      "title": "A structured approach to projects",
+
+      "steps": {
+        "understand": {
+          "title": "Understand",
+          "text": "Identify objectives, users, technical constraints and priorities before choosing a solution."
+        },
+        "design": {
+          "title": "Design",
+          "text": "Define a coherent architecture and user experience based on the identified requirements."
+        },
+        "build": {
+          "title": "Build",
+          "text": "Progressively develop a testable, secure and performant solution that remains flexible enough to evolve."
+        }
+      }
     }
   }
 }
