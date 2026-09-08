@@ -7,7 +7,7 @@
       "editor": {
         "heading": "1. Éditeur du site",
         "intro": "Le présent site, accessible à l'adresse yvernaux-web-solutions.com, est édité par :",
-        "identity": "{fullName} — {companyStatut}, exerçant sous le nom commercial « {companyName} »",
+        "identity": "{fullName} - {companyStatut}, exerçant sous le nom commercial « {companyName} »",
         "address": "Adresse : {companyAddress}",
         "siret": "SIRET : {companySiret}",
         "email": "Email : {email}",
