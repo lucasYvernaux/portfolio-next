@@ -100,7 +100,7 @@ export async function AboutContent() {
       <section aria-labelledby="about-expertise-title" className="bg-[#0a0a0a]">
         <div className="content px-6 py-20 md:px-12 md:py-28">
           <div className="max-w-2xl">
-            <p className="mb-4 font-mono text-sm tracking-wider text-primary">
+            <p className="mb-4 font-mono text-sm capitalize tracking-wider text-primary">
               {t("expertise.eyebrow")}
             </p>
 
@@ -122,13 +122,15 @@ export async function AboutContent() {
                 key={key}
                 className="group rounded-xl border border-border bg-card/30 p-6 transition-colors hover:border-primary/40 hover:bg-card/60"
               >
-                <div className="mb-5 inline-flex rounded-lg border border-border bg-background p-3 text-primary">
-                  <Icon size={22} aria-hidden="true" />
-                </div>
+                <div className="flex items-center gap-4 mb-5">
+                  <div className="inline-flex rounded-lg border border-border bg-background p-3 text-primary">
+                    <Icon size={22} aria-hidden="true" />
+                  </div>
 
-                <h3 className="text-lg font-semibold text-gray-100">
-                  {t(`expertise.items.${key}.title`)}
-                </h3>
+                  <h3 className="text-lg font-semibold text-gray-100">
+                    {t(`expertise.items.${key}.title`)}
+                  </h3>
+                </div>
 
                 <p className="mt-2 text-sm leading-6 text-gray-400">
                   {t(`expertise.items.${key}.text`)}
@@ -147,13 +149,13 @@ export async function AboutContent() {
         <div className="content px-6 py-20 md:px-12 md:py-28">
           <div className="grid gap-10 lg:grid-cols-3">
             <div>
-              <p className="font-mono text-sm tracking-wider text-primary">
+              <p className="font-mono text-sm capitalize tracking-wider text-primary">
                 {t("method.eyebrow")}
               </p>
 
               <h2
                 id="about-method-title"
-                className="mt-4 text-3xl font-semibold text-gray-100 md:text-4xl"
+                className="mt-4 text-3xl font-semibold text-gray-100 md:max-w-md md:text-4xl"
               >
                 {t("method.title")}
               </h2>
@@ -162,17 +164,18 @@ export async function AboutContent() {
             <div className="grid gap-4 md:grid-cols-3 lg:col-span-2">
               {METHOD_STEPS.map((key, index) => (
                 <article key={key} className="border-t border-primary/40 pt-5">
-                  <span
-                    aria-hidden="true"
-                    className="font-mono text-sm text-primary"
-                  >
-                    {String(index + 1).padStart(2, "0")}
-                  </span>
+                  <div className="flex items-center gap-4">
+                    <span
+                      aria-hidden="true"
+                      className="font-mono text-sm text-primary"
+                    >
+                      {String(index + 1).padStart(2, "0")}
+                    </span>
 
-                  <h3 className="mt-3 font-semibold text-gray-100">
-                    {t(`method.steps.${key}.title`)}
-                  </h3>
-
+                    <h3 className="font-semibold text-gray-100">
+                      {t(`method.steps.${key}.title`)}
+                    </h3>
+                  </div>
                   <p className="mt-2 text-sm leading-6 text-gray-400">
                     {t(`method.steps.${key}.text`)}
                   </p>

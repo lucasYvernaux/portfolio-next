@@ -14,7 +14,7 @@
         "description": "Modernisez votre site existant",
         "pricePrefix": "À partir de",
         "price": "490€",
-        "priceSuffix": "par projet",
+        "priceSuffix": "_",
         "isPopular": "false",
         "features": {
           "audit": "Audit UX/UI de l'existant",
@@ -31,7 +31,7 @@
         "description": "Parfait pour présenter votre activité",
         "pricePrefix": "À partir de",
         "price": "950€",
-        "priceSuffix": "par projet",
+        "priceSuffix": "HT",
         "isPopular": "false",
         "features": {
           "design": "Design sur-mesure responsive",
@@ -47,7 +47,7 @@
         "description": "Vendez vos produits en ligne",
         "pricePrefix": "À partir de",
         "price": "1800€",
-        "priceSuffix": "par projet",
+        "priceSuffix": "HT",
         "isPopular": "true",
         "features": {
           "vitrine": "Tout du pack Vitrine",
@@ -80,8 +80,8 @@
         "title": "Maintenance",
         "description": "Gardez votre site performant et sécurisé",
         "pricePrefix": "À partir de",
-        "price": "50€",
-        "priceSuffix": "par mois",
+        "price": "30€",
+        "priceSuffix": "HT/mois",
         "isPopular": "false",
         "features": {
           "security": "Mises à jour de sécurité",

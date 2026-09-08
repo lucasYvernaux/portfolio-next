@@ -44,9 +44,9 @@ export async function HomeHero() {
               className="text-gray-400 text-lg leading-relaxed max-w-lg mb-10"
               data-testid="hero-description"
             >
-              Je n&apos;utilise pas l&apos;IA à votre place — je m&apos;en sers
+              Je n&apos;utilise pas l&apos;IA à votre place, je m&apos;en sers
               comme levier pour livrer plus vite, sans sacrifier la qualité ni
-              la maîtrise.
+              la sécurité.
             </p>
             <div className="flex flex-wrap gap-4 w-fit">
               <div>

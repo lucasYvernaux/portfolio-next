@@ -9,9 +9,9 @@
     },
 
     "identity": {
-      "eyebrow": "Qui suis-je",
+      "eyebrow": "Qui suis-je ?",
       "title": "Un développeur qui pense au-delà du code",
-      "paragraph1": "Je me nomme Lucas Yvernaux, professionnel du développement web full-stack, fort de plus de quatre années d'expérience. Mon expertise s'applique aux projets web, où j'accorde une importance primordiale à l'interface utilisateur (front-end), à l'expérience utilisateur et à l'excellence technique.",
+      "paragraph1": "Je me nomme Lucas Yvernaux, professionnel en développement web full-stack, fort de plus de quatre années d'expérience. Mon expertise s'applique aux projets web, où j'accorde une importance primordiale à l'interface utilisateur (front-end), à l'expérience utilisateur et à l'excellence technique.",
       "paragraph2": "Ma mission dépasse la simple transposition d'une maquette graphique en une interface fonctionnelle. Je m'efforce d'appréhender les exigences fondamentales, d'anticiper les contraintes potentielles, et d'élaborer une solution qui conjugue fiabilité, évolutivité et lisibilité à long terme."
     },
 
