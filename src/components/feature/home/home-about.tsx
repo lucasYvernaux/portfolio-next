@@ -11,21 +11,18 @@ export async function HomeAbout() {
               <div className="space-y-6 text-lg leading-relaxed">
                 <p>
                   Je suis Lucas Yvernaux, développeur web freelance capable de
-                  gérer vos projets de A à Z : de la conception initiale au
-                  déploiement et à la maintenance.
+                  gérer vos projets de A à Z : de la toute première idée
+                  jusqu&apos;à sa mise en ligne et son bon fonctionnement au
+                  quotidien.
                 </p>
                 <p className="bg-zinc-800/50 p-6 rounded-lg border-l-4 border-[#C5A866] shadow-inner">
                   <span className="font-semibold text-[#C5A866]">
                     Note importante :
                   </span>{" "}
                   L&apos;IA m&apos;aide à accomplir mes tâches beaucoup plus
-                  rapidement, comme un assistant très performant. Mais les
-                  grandes idées, le fonctionnement global du système et la
-                  sécurité relèvent entièrement de mes propres compétences
-                  humaines. Je crée des sites web{" "}
-                  <span className="italic">avec </span> l&apos;IA, pas{" "}
-                  <span className="italic">grâce à </span>
-                  l&apos;IA.
+                  rapidement, comme un assistant très performant. Mais la
+                  sécurité et le fonctionnement global du système relèvent
+                  entièrement de mes propres compétences personnelle.
                 </p>
               </div>
             </div>

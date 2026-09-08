@@ -47,21 +47,6 @@ export default function PackCard({
           <p className="text-gray-500 text-sm mb-6">
             {t(`packs.${pack}.description`)}
           </p>
-          <div className="flex items-baseline justify-center gap-1">
-            <span className="text-gray-500 text-sm">
-              {t(`packs.${pack}.pricePrefix`) === "_"
-                ? ""
-                : t(`packs.${pack}.pricePrefix`) || t("pricePrefix")}
-            </span>
-            <span className="font-heading text-4xl text-primary">
-              {t(`packs.${pack}.price`)}
-            </span>
-          </div>
-          <span className="text-gray-500 text-sm">
-            {t(`packs.${pack}.priceSuffix`) === "_"
-              ? ""
-              : t(`packs.${pack}.priceSuffix`) || t("priceSuffix")}
-          </span>
         </div>
 
         <ul className="space-y-4 mb-8">
@@ -74,6 +59,23 @@ export default function PackCard({
             </li>
           ))}
         </ul>
+
+        <div className="flex flex-col items-center justify-center gap-2 mb-8">
+          <span className="text-gray-500 text-sm">
+            {t(`packs.${pack}.pricePrefix`) === "_"
+              ? ""
+              : t(`packs.${pack}.pricePrefix`) || t("pricePrefix")}
+          </span>
+          <span className="font-heading text-4xl text-primary">
+            {t(`packs.${pack}.price`)}
+            <span className="text-gray-500 text-sm ml-2">
+              {t(`packs.${pack}.priceSuffix`) === "_"
+                ? ""
+                : t(`packs.${pack}.priceSuffix`) || t("priceSuffix")}
+            </span>
+          </span>{" "}
+        </div>
+
         {CTAContact && (
           <Button
             href="/contact"
