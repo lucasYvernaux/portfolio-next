@@ -44,3 +44,5 @@ yarn-error.log*
 desktop.ini
 *storybook.log
 storybook-static
+
+.open-next
