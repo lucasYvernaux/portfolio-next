@@ -4,6 +4,15 @@
   "name": "portfolio-next",
   "compatibility_date": "2026-10-12",
   "compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
+  "keep_vars": true,
+  "vars": {
+    "BASE_URL": "https://dev-portfolio-next.lucas-yvernaux.workers.dev",
+    "NEXT_PUBLIC_BASE_URL": "https://dev-portfolio-next.lucas-yvernaux.workers.dev",
+    "NEXT_PUBLIC_CALENDLY_URL": "https://calendly.com/lucas-yvernaux/devis",
+    "NEXT_PUBLIC_NODE_ENV": "production",
+    "NEXT_PUBLIC_TURNSTILE_SITE_KEY": "0x4AAAAAAEarZhXrxCKhOu7F",
+    "NODE_ENV": "production",
+  },
   "observability": {
     "logs": {
       "enabled": true,
