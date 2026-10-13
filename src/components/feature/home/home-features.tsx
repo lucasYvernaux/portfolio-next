@@ -8,7 +8,7 @@ export async function HomeFeatures() {
       id="features"
     >
       <div className="max-w-7xl mx-auto px-6 md:px-12">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+        <div className="grid sm:grid-cols-2 md:grid-cols-4 gap-6">
           <div
             className="p-6 bg-surface rounded-lg border border-surface-border hover:-translate-y-1 hover:border-primary/50 transition-all duration-300 group card-hover"
             data-testid="feature-clean code"

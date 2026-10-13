@@ -39,7 +39,7 @@ export function PacksGrid() {
     >
       <button
         onClick={prev}
-        className="absolute -left-25 top-1/2 -translate-y-1/2 z-10 w-10 h-10 flex items-center justify-center cursor-pointer bg-surface border border-surface-border rounded-full hover:border-primary transition-colors"
+        className="hidden absolute lg:-left-10 xl:-left-15 3xl:-left-25 top-1/2 -translate-y-1/2 z-10 w-10 h-10 lg:flex items-center justify-center cursor-pointer bg-surface border border-surface-border rounded-full hover:border-primary transition-colors"
         aria-label="Précédent"
       >
         <ChevronLeft className="w-5 h-5 text-gray-400" />
@@ -47,12 +47,12 @@ export function PacksGrid() {
 
       <div className="overflow-hidden pt-4">
         <div
-          className="flex transition-transform duration-500 ease-in-out"
-          style={{ transform: `translateX(-${current * (100 / 3)}%)` }}
+          className={`flex flex-col gap-8 lg:transition-transform lg:duration-500 lg:ease-in-out lg:flex-row transform-none`}
+          // style={{ transform: `translateX(-${current * (100 / 3)}%)` }}
         >
           {packKeys.map((key, index) => (
             <PackCardTest
-              className="w-1/3"
+              className="lg:w-1/3"
               key={`${index}-${key}`}
               pack={key}
             />
@@ -62,13 +62,13 @@ export function PacksGrid() {
 
       <button
         onClick={next}
-        className="absolute -right-25 top-1/2 -translate-y-1/2 z-10 w-10 h-10 flex items-center justify-center cursor-pointer bg-surface border border-surface-border rounded-full hover:border-primary transition-colors"
+        className="hidden absolute lg:-right-10 xl:-right-15 3xl:-right-25 top-1/2 -translate-y-1/2 z-10 w-10 h-10 lg:flex items-center justify-center cursor-pointer bg-surface border border-surface-border rounded-full hover:border-primary transition-colors"
         aria-label="Suivant"
       >
         <ChevronRight className="w-5 h-5 text-gray-400" />
       </button>
 
-      <div className="flex justify-center gap-2 mt-8">
+      <div className="hidden lg:flex justify-center gap-2 mt-8">
         {Array.from({ length: maxIndex + 1 }).map((_, i) => (
           <button
             key={i}

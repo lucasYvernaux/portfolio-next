@@ -49,7 +49,7 @@ export default function PackCard({
           </p>
         </div>
 
-        <ul className="space-y-4 mb-8">
+        <ul className="space-y-4 mb-8 m-auto w-fit">
           {featureKeys.map((fKey) => (
             <li key={fKey} className="flex items-start gap-3">
               <Check className="w-5 h-5 text-primary shrink-0" />

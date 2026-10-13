@@ -13,13 +13,13 @@ export function HomePricing() {
               Des solutions adaptées à vos besoins et à votre budget.
             </p>
           </div>
-          <div className="flex flex-col gap-8 max-w-5xl mx-auto md:flex-row">
+          <div className="flex flex-col gap-8 max-w-5xl mx-auto lg:flex-row">
             <PackCardTest pack="vitrine" CTAContact />
             <PackCardTest
               pack="surMesure"
               CTAContact
               isPopular
-              className="bottom-10 relative"
+              className="lg:bottom-10 relative"
             />
             <PackCardTest pack="maintenance" CTAContact />
           </div>
